@@ -1,0 +1,50 @@
+\hypertarget{shell_8h_source}{}\doxysection{shell.\+h}
+\label{shell_8h_source}\index{include/shell.h@{include/shell.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SHELL}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SHELL}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <armadillo>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{7 \textcolor{keyword}{using} arma::mat;}
+\DoxyCodeLine{8 \textcolor{keyword}{using} arma::rowvec;}
+\DoxyCodeLine{9 \textcolor{keyword}{using} arma::vec;}
+\DoxyCodeLine{10 \textcolor{keyword}{using} std::string;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell}{Shell}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     vec \_r\_a; \textcolor{comment}{// center (x,y,z, ...)}}
+\DoxyCodeLine{16     mat \_l\_a; \textcolor{comment}{// matrix containing all possible (l,m,n....) combinations}}
+\DoxyCodeLine{17     vec \_d\_k;}
+\DoxyCodeLine{18     vec \_alpha;}
+\DoxyCodeLine{19     mat angularMomentum(\textcolor{keywordtype}{int} l);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_shell}{Shell}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{class_shell}{Shell}}(\textcolor{keywordtype}{int} atomicNum, vec r\_a, \textcolor{keywordtype}{int} l);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \mbox{\hyperlink{class_shell}{Shell}}(\textcolor{keywordtype}{int} atomicNum, vec r\_a, vec d\_k, vec alpha, rowvec l);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     mat operator()(vec r);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     vec r\_a();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     vec l\_a(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} num\_quantum\_arrangements();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     vec alpha();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     mat alphaMat();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     vec d\_k();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} printShellMatrix();}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

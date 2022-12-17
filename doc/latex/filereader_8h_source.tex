@@ -1,0 +1,27 @@
+\hypertarget{filereader_8h_source}{}\doxysection{filereader.\+h}
+\label{filereader_8h_source}\index{include/filereader.h@{include/filereader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  This file, filereader.h, contains an API to file reading functions for SCFChem++}}
+\DoxyCodeLine{3 \textcolor{comment}{*/}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef FILEREADER}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define FILEREADER}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}cluster.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{enum} CompareMethod}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12   LTE,}
+\DoxyCodeLine{13   EQ}
+\DoxyCodeLine{14 \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{24 \textcolor{keywordtype}{void} validateAtomCount(\textcolor{keywordtype}{int} atom\_count, \textcolor{keywordtype}{int} expected\_count, CompareMethod method);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{32 \textcolor{keywordtype}{int} getAtomNum(\textcolor{keywordtype}{string} atom\_id);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{51 \mbox{\hyperlink{class_cluster}{Cluster}} readfile(\textcolor{keywordtype}{string} \&filename);}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

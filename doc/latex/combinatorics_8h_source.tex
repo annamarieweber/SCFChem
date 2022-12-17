@@ -1,0 +1,35 @@
+\hypertarget{combinatorics_8h_source}{}\doxysection{combinatorics.\+h}
+\label{combinatorics_8h_source}\index{include/combinatorics.h@{include/combinatorics.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  UC Berkeley -\/ MSSE Program}}
+\DoxyCodeLine{3 \textcolor{comment}{  Chem 279}}
+\DoxyCodeLine{4 \textcolor{comment}{  Fall 2022}}
+\DoxyCodeLine{5 \textcolor{comment}{  This file, filereader.h, contains an API to all combinatorics functions}}
+\DoxyCodeLine{6 \textcolor{comment}{  being used in Chem 279}}
+\DoxyCodeLine{7 \textcolor{comment}{*/}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef COMBO}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define COMBO}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <armadillo>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{using} arma::vec;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keywordtype}{int} factorial(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// calculates the a factorial where the output is the product of all integers from 1 to n where x\%a == n\%a}}
+\DoxyCodeLine{18 \textcolor{keywordtype}{int} factorial(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} a);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keywordtype}{int} ncr(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} r);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{double} calc\_binomial(\textcolor{keywordtype}{int} m, \textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 vec vec\_factorial(\textcolor{keywordtype}{int} n, \textcolor{keywordtype}{int} a);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 vec vec\_factorial(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 vec calc\_binomial(vec m, vec n);}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

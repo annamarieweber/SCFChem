@@ -1,0 +1,47 @@
+# Doxyfile 1.8.18
+
+# This file describes the settings to be used by the documentation system
+# doxygen (www.doxygen.org) for SCFChem++
+#
+
+# The PROJECT_NAME
+PROJECT_NAME           = "SCFChem++"
+
+# The PROJECT_NUMBER reflects the verison
+PROJECT_NUMBER         = "0.0.1"
+
+# The OUTPUT_DIRECTORY
+OUTPUT_DIRECTORY       = doc
+
+# The OUTPUT_LANGUAGE
+OUTPUT_LANGUAGE        = English
+
+# The BRIEF_MEMBER_DESC - doc should include breif
+BRIEF_MEMBER_DESC     = YES
+
+# REPEAT_BRIEF - do not repeat breif
+REPEAT_BRIEF           = NO
+
+# The ABBREVIATE_BRIEF tag specifies that doxygen should interpret the
+# Brief Description as a brief summary of the member, and should generate a
+# "detailed" section only if there is additional documentation available.
+# The default value is: NO.
+ABBREVIATE_BRIEF       = "The $name class"
+
+# The INPUT
+INPUT                  = src include test
+
+# The FILE_PATTERNS 
+FILE_PATTERNS          = *.cpp *.h
+
+# The EXAMPLE_PATH 
+EXAMPLE_PATH           = test
+
+# The EXAMPLE_PATTERNS 
+EXAMPLE_PATTERNS       = *.cpp
+
+# Settings for Custom Doxyfile
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX = NO
+FULL_SIDEBAR = NO
+HTML_EXTRA_STYLESHEET  = doc/doxygen-awesome-css/doxygen-awesome.css
