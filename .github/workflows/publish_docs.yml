@@ -27,7 +27,7 @@ jobs:
 
       # Builds the docs using the make command
       - name: build docs
-        run: Make docs
+        run: make docs
 
       # Runs action to publish generated docs to gh-pages
       - name: Publish generated content to GitHub Pages
