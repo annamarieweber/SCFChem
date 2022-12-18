@@ -29,6 +29,6 @@ jobs:
       - name: Publish generated content to GitHub Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
         with:
-          dir: docs/html
+          dir: doc/html
           branch: gh-pages
           
