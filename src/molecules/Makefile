@@ -1,6 +1,3 @@
-# MSSE Chem 279 - Fall Semester
-# University of California, Berkeley
-# 
 # Creator:  Anna Weber (anna@scfchem.com)
 # Date Created: Sept 10, 2022
 #
@@ -24,9 +21,9 @@ INC_DIR = ../../include
 LIB_DIR     = ../../lib
 
 # targets this makefile builds
-CLUSTER_OBJS = cluster.o
+CLUSTER_OBJS = cluster.o molutils.o
 
-DEBUG_OBJS = debug_cluster.o
+DEBUG_OBJS = debug_cluster.o debug_molutils.o
 
 cluster.o: $(INC_DIR)/cluster.h
 	$(CXX) $(CXXFLAGS) $(OPTIM) cluster.cxx -I$(INC_DIR)
@@ -35,6 +32,14 @@ cluster.o: $(INC_DIR)/cluster.h
 debug_cluster.o: $(INC_DIR)/cluster.h
 	$(CXX) $(DEBUG_FLAG) $(CXXFLAGS) cluster.cxx -I$(INC_DIR)
 	mv cluster.o $(LIB_DIR)/debug_cluster.o
+
+molutils.o: $(INC_DIR)/molutils.h
+	$(CXX) $(CXXFLAGS) $(OPTIM) molutils.cxx -I$(INC_DIR)
+	mv molutils.o $(LIB_DIR)
+
+debug_molutils.o: $(INC_DIR)/molutils.h
+	$(CXX) $(DEBUG_FLAG) $(CXXFLAGS) molutils.cxx -I$(INC_DIR)
+	mv molutils.o $(LIB_DIR)/debug_molutils.o
 
 debug: $(DEBUG_OBJS)
 

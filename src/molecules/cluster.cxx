@@ -9,6 +9,7 @@
 #include "combinatorics.h"
 #include "shell.h"
 #include "shelloverlapintegral.h"
+#include "molutils.h"
 #include <cmath>
 
 using std::string;
@@ -23,42 +24,19 @@ Cluster::Cluster(int numAtoms)
   K = 3;
   epsilons = vec(numAtoms);
   sigmas = vec(numAtoms);
-  int numElectrons = sum(z_vals());
-  _p = numElectrons / 2 + numElectrons % 2;
-  _q = numElectrons / 2;
-}
-
-int Cluster::countBasisFunctions()
-{
-  int sum = 0;
-  vec atoms = atomMatrix.col(0);
-  for (int i = 0; i < atoms.size(); i++)
-  {
-    sum += ATOM_BASIS_FN_MAP[atoms[i] - 1];
-  }
-  return sum;
-}
-
-int Cluster::countElectronPairs()
-{
-  int n = countBasisFunctions();
-  if (n / 2 * 2 != n)
-  {
-    return n / 2;
-    throw BaseException("InvalidConfig: number of electron pairs must be an integer");
-  }
-  else
-  {
-    return n / 2;
-  }
+  numBasisFunctions = countBasisFunctions(atomMatrix);
+  numElectronPairs = countElectronPairs(atomMatrix, false);
+  valenceElectronCountsVec = valenceElectronCounts(atomMatrix.col(0));
+  numValenceElectrons = sum(valenceElectronCountsVec);
+  p = numValenceElectrons / 2 + numValenceElectrons % 2;
+  q = numValenceElectrons / 2;
 }
 
 mat Cluster::basisFunctions()
 {
-  int b = countBasisFunctions();
-  vec l(b);
+  vec l(numBasisFunctions);
 
-  mat basisfns(b, 5 * K + 2);
+  mat basisfns(numBasisFunctions, 5 * K + 2);
 
   int fn = 0;
   for (int i = 0; i < atomMatrix.n_rows; i++)
@@ -106,38 +84,28 @@ mat Cluster::sBasisFunctions()
   return basisfns;
 }
 
-vec Cluster::z_vals()
-{
-  mat valenceElectrons = atomMatrix.col(0);
-  valenceElectrons.for_each([](vec::elem_type &val)
-                            { val = VALENCE_ATOMIC_NUM[val - 1]; });
-  return valenceElectrons;
-}
-
 mat Cluster::cndo2FockMatrix(mat p_a, mat p_b, mat &bonding_params)
 {
   mat gamma = gammaMatrix();
 
   mat p_tot = p_a + p_b;
 
-  mat gamma_expanded = broadcastToOrbitals(gamma);
-  mat z = z_vals();
-  int electron_count = sum(sum(z));
+  mat gamma_expanded = broadcastToOrbitals(gamma, atomMatrix, numValenceElectrons);
 
-  vec gamma_z_tot = (gamma - diagmat(diagvec(gamma))) * z;
+  vec gamma_z_tot = (gamma - diagmat(diagvec(gamma))) * valenceElectronCountsVec;
 
-  vec diag_gamma_z = (z.col(0) - (vec(z.n_rows, fill::ones) / 2.0)) % diagvec(gamma);
+  vec diag_gamma_z = (valenceElectronCountsVec.col(0) - (vec(valenceElectronCountsVec.n_rows, fill::ones) / 2.0)) % diagvec(gamma);
 
-  vec expanded_diag_gamma_z(electron_count);
-  vec expanded_gamma_z_tot(electron_count);
-  vec ion_energy_electron_affinity(electron_count);
+  vec expanded_diag_gamma_z(numValenceElectrons);
+  vec expanded_gamma_z_tot(numValenceElectrons);
+  vec ion_energy_electron_affinity(numValenceElectrons);
   vec atoms = atomMatrix.col(0);
-  mat h_off_diag(electron_count, electron_count, fill::ones);
-  h_off_diag -= diagmat(vec(electron_count, fill::ones));
-  vec density_tot(electron_count);
-  mat g_off_diag(electron_count, electron_count, fill::ones);
-  g_off_diag -= diagmat(vec(electron_count, fill::ones));
-  vec density_gamma_off_diag(electron_count);
+  mat h_off_diag(numValenceElectrons, numValenceElectrons, fill::ones);
+  h_off_diag -= diagmat(vec(numValenceElectrons, fill::ones));
+  vec density_tot(numValenceElectrons);
+  mat g_off_diag(numValenceElectrons, numValenceElectrons, fill::ones);
+  g_off_diag -= diagmat(vec(numValenceElectrons, fill::ones));
+  vec density_gamma_off_diag(numValenceElectrons);
   vec density_tot_by_atom(atoms.n_elem);
 
   int k = 0;
@@ -146,8 +114,8 @@ mat Cluster::cndo2FockMatrix(mat p_a, mat p_b, mat &bonding_params)
     ion_energy_electron_affinity.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) = vec(ATOM_TO_IONIZATION_ENERGY_ELECTRON_AFFINITY_PARAMS_MAPPING[atoms(i) - 1]);
     expanded_diag_gamma_z.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(diag_gamma_z(i));
     expanded_gamma_z_tot.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(gamma_z_tot(i));
-    bonding_params.rows(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], electron_count).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
-    bonding_params.cols(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(electron_count, VALENCE_ATOMIC_NUM[atoms(i) - 1]).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
+    bonding_params.rows(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], numValenceElectrons).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
+    bonding_params.cols(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(numValenceElectrons, VALENCE_ATOMIC_NUM[atoms(i) - 1]).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
     float density_a = sum(diagvec(p_tot.submat(k, k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1)));
     density_tot.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(density_a);
     density_tot_by_atom(i) = density_a;
@@ -156,7 +124,7 @@ mat Cluster::cndo2FockMatrix(mat p_a, mat p_b, mat &bonding_params)
   }
 
   vec gamma_density_sum = (gamma - diagmat(diagvec(gamma))) * density_tot_by_atom;
-  vec g_diag = (density_tot - diagvec(p_a)) % diagvec(gamma_expanded) + diagvec(broadcastToOrbitals(diagmat(gamma_density_sum)));
+  vec g_diag = (density_tot - diagvec(p_a)) % diagvec(gamma_expanded) + diagvec(broadcastToOrbitals(diagmat(gamma_density_sum), atomMatrix, numValenceElectrons));
   g_off_diag = g_off_diag % (-1.0 * p_a % gamma_expanded);
 
   h_off_diag %= (1.0 / 2.0 * bonding_params % overlapMatrix());
@@ -171,9 +139,7 @@ mat Cluster::cndo2FockMatrixRA(mat p_a, mat p_b)
 
   mat p_tot = p_a + p_b;
 
-  mat gamma_expanded = broadcastToOrbitals(gamma);
-  mat z = z_vals();
-  int electron_count = sum(sum(z));
+  mat gamma_expanded = broadcastToOrbitals(gamma, atomMatrix, numValenceElectrons);
 
   std::cout << gamma_expanded << std::endl;
   std::cout << diagmat(diagvec(gamma)) << std::endl;
@@ -182,34 +148,34 @@ mat Cluster::cndo2FockMatrixRA(mat p_a, mat p_b)
   mat y_gamma = resize(mat(gamma.row(1)), atomMatrix.n_rows, atomMatrix.n_rows);
   mat z_gamma = resize(mat(gamma.row(2)), atomMatrix.n_rows, atomMatrix.n_rows);
 
-  mat x_gamma_exp = resize(mat(gamma_expanded.row(0)), electron_count, electron_count);
-  mat y_gamma_exp = resize(mat(gamma_expanded.row(1)), electron_count, electron_count);
-  mat z_gamma_exp = resize(mat(gamma_expanded.row(2)), electron_count, electron_count);
+  mat x_gamma_exp = resize(mat(gamma_expanded.row(0)), numValenceElectrons, numValenceElectrons);
+  mat y_gamma_exp = resize(mat(gamma_expanded.row(1)), numValenceElectrons, numValenceElectrons);
+  mat z_gamma_exp = resize(mat(gamma_expanded.row(2)), numValenceElectrons, numValenceElectrons);
 
-  vec gamma_z_tot_x = (x_gamma - diagmat(diagvec(x_gamma))) * z;
-  vec gamma_z_tot_y = (y_gamma - diagmat(diagvec(y_gamma))) * z;
-  vec gamma_z_tot_z = (z_gamma - diagmat(diagvec(z_gamma))) * z;
+  vec gamma_z_tot_x = (x_gamma - diagmat(diagvec(x_gamma))) * valenceElectronCountsVec;
+  vec gamma_z_tot_y = (y_gamma - diagmat(diagvec(y_gamma))) * valenceElectronCountsVec;
+  vec gamma_z_tot_z = (z_gamma - diagmat(diagvec(z_gamma))) * valenceElectronCountsVec;
 
-  vec diag_gamma_z_x = (z.col(0) - (vec(z.n_rows, fill::ones) / 2.0)) % diagvec(x_gamma);
-  vec diag_gamma_z_y = (z.col(0) - (vec(z.n_rows, fill::ones) / 2.0)) % diagvec(y_gamma);
-  vec diag_gamma_z_z = (z.col(0) - (vec(z.n_rows, fill::ones) / 2.0)) % diagvec(z_gamma);
+  vec diag_gamma_z_x = (valenceElectronCountsVec.col(0) - (vec(valenceElectronCountsVec.n_rows, fill::ones) / 2.0)) % diagvec(x_gamma);
+  vec diag_gamma_z_y = (valenceElectronCountsVec.col(0) - (vec(valenceElectronCountsVec.n_rows, fill::ones) / 2.0)) % diagvec(y_gamma);
+  vec diag_gamma_z_z = (valenceElectronCountsVec.col(0) - (vec(valenceElectronCountsVec.n_rows, fill::ones) / 2.0)) % diagvec(z_gamma);
 
-  vec expanded_diag_gamma_z_x(electron_count);
-  vec expanded_diag_gamma_z_y(electron_count);
-  vec expanded_diag_gamma_z_z(electron_count);
+  vec expanded_diag_gamma_z_x(numValenceElectrons);
+  vec expanded_diag_gamma_z_y(numValenceElectrons);
+  vec expanded_diag_gamma_z_z(numValenceElectrons);
 
-  vec expanded_gamma_z_tot_x(electron_count);
-  vec expanded_gamma_z_tot_y(electron_count);
-  vec expanded_gamma_z_tot_z(electron_count);
+  vec expanded_gamma_z_tot_x(numValenceElectrons);
+  vec expanded_gamma_z_tot_y(numValenceElectrons);
+  vec expanded_gamma_z_tot_z(numValenceElectrons);
   vec atoms = atomMatrix.col(0);
 
-  mat bonding_params(electron_count, electron_count);
-  mat h_off_diag(electron_count, electron_count, fill::ones);
-  h_off_diag -= diagmat(vec(electron_count, fill::ones));
-  vec density_tot(electron_count);
-  mat g_off_diag(electron_count, electron_count, fill::ones);
-  g_off_diag -= diagmat(vec(electron_count, fill::ones));
-  vec density_gamma_off_diag(electron_count);
+  mat bonding_params(numValenceElectrons, numValenceElectrons);
+  mat h_off_diag(numValenceElectrons, numValenceElectrons, fill::ones);
+  h_off_diag -= diagmat(vec(numValenceElectrons, fill::ones));
+  vec density_tot(numValenceElectrons);
+  mat g_off_diag(numValenceElectrons, numValenceElectrons, fill::ones);
+  g_off_diag -= diagmat(vec(numValenceElectrons, fill::ones));
+  vec density_gamma_off_diag(numValenceElectrons);
   vec density_tot_by_atom(atoms.n_elem);
 
   int k = 0;
@@ -221,18 +187,16 @@ mat Cluster::cndo2FockMatrixRA(mat p_a, mat p_b)
     expanded_gamma_z_tot_x.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(gamma_z_tot_x(i));
     expanded_gamma_z_tot_y.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(gamma_z_tot_y(i));
     expanded_gamma_z_tot_y.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(gamma_z_tot_z(i));
-    bonding_params.rows(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], electron_count).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
-    bonding_params.cols(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(electron_count, VALENCE_ATOMIC_NUM[atoms(i) - 1]).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
+    bonding_params.rows(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], numValenceElectrons).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
+    bonding_params.cols(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1) += mat(numValenceElectrons, VALENCE_ATOMIC_NUM[atoms(i) - 1]).fill(ATOMIC_BONDING_PARAMETERS[atoms(i) - 1]);
     float density_a = sum(diagvec(p_tot.submat(k, k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1)));
     density_tot.subvec(k, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1).fill(density_a);
     density_tot_by_atom(i) = density_a;
-    std::cout << "11i: " << i << std::endl;
 
     k += VALENCE_ATOMIC_NUM[atoms(i) - 1];
-    std::cout << "kkkk" << std::endl;
   }
 
-  mat gamma_density_sum(3, pow(electron_count, 2));
+  mat gamma_density_sum(3, pow(numValenceElectrons, 2));
 
   std::cout << x_gamma - diagmat(diagvec(x_gamma)) << std::endl;
   std::cout << density_tot_by_atom << std::endl;
@@ -242,7 +206,7 @@ mat Cluster::cndo2FockMatrixRA(mat p_a, mat p_b)
   gamma_density_sum.row(0) = (z_gamma - diagmat(diagvec(z_gamma))) * density_tot_by_atom;
 
   // neeed to make shapes compatible
-  mat gamma_density_sum_expanded = broadcastToOrbitals(gamma_density_sum);
+  mat gamma_density_sum_expanded = broadcastToOrbitals(gamma_density_sum, atomMatrix, numValenceElectrons);
 
   vec g_diag_x = gamma_density_sum_expanded.row(0);
   vec g_diag_y = gamma_density_sum_expanded.row(1);
@@ -257,7 +221,7 @@ mat Cluster::cndo2FockMatrixRA(mat p_a, mat p_b)
 
   // diagmat(h_diag_x) + diagmat(g_diag_z) + h_off_diag + g_off_diag;
 
-  mat result(3, pow(electron_count, 2));
+  mat result(3, pow(numValenceElectrons, 2));
 
   result.row(0) = vectorise(diagmat(h_diag_x) + diagmat(g_diag_x));
   result.row(1) = vectorise(diagmat(h_diag_y) + diagmat(g_diag_y));
@@ -269,12 +233,11 @@ mat Cluster::cndo2FockMatrixRA(mat p_a, mat p_b)
 mat Cluster::overlapMatrixRA()
 {
   mat basisfns = basisFunctions();
-  int b = countBasisFunctions();
 
-  mat result(3, pow(b, 2));
-  for (int m = 0; m < b; m++)
+  mat result(3, pow(numBasisFunctions, 2));
+  for (int m = 0; m < numBasisFunctions; m++)
   {
-    for (int v = 0; v < b; v++)
+    for (int v = 0; v < numBasisFunctions; v++)
     {
       vec dk_m = basisfns.row(m).cols(3 * K + 1, 4 * K).t();
       rowvec dk_v = basisfns.row(v).cols(3 * K + 1, 4 * K);
@@ -297,9 +260,9 @@ mat Cluster::overlapMatrixRA()
           Shell s_lz(basisfns(v, 0), basisfns.row(v).cols(3, 3).t(), basisfns.row(v).cols(3 * K + 1 + l, 3 * K + 1 + l).t(), basisfns.row(v).cols(2 * K + 1 + l, 2 * K + 1 + l).t(), basisfns.row(v).cols(K + 3, K + 3));
           ShellOverlapIntegral s_klz(s_kz, s_lz);
 
-          result(0, m * b + v) += dk_m(k) * dk_v(l) * nk_m(k) * nk_v(l) * sum(sum(s_klx.saDerivativeIntegral() * s_kly() * s_klz()));
-          result(1, m * b + v) += dk_m(k) * dk_v(l) * nk_m(k) * nk_v(l) * sum(sum(s_klx() * s_kly.saDerivativeIntegral() * s_klz()));
-          result(2, m * b + v) += dk_m(k) * dk_v(l) * nk_m(k) * nk_v(l) * sum(sum(s_klx() * s_kly() * s_klz.saDerivativeIntegral()));
+          result(0, m * numBasisFunctions + v) += dk_m(k) * dk_v(l) * nk_m(k) * nk_v(l) * sum(sum(s_klx.saDerivativeIntegral() * s_kly() * s_klz()));
+          result(1, m * numBasisFunctions + v) += dk_m(k) * dk_v(l) * nk_m(k) * nk_v(l) * sum(sum(s_klx() * s_kly.saDerivativeIntegral() * s_klz()));
+          result(2, m * numBasisFunctions + v) += dk_m(k) * dk_v(l) * nk_m(k) * nk_v(l) * sum(sum(s_klx() * s_kly() * s_klz.saDerivativeIntegral()));
         }
       }
     }
@@ -311,12 +274,11 @@ mat Cluster::overlapMatrixRA()
 mat Cluster::overlapMatrix()
 {
   mat basisfns = basisFunctions();
-  int b = countBasisFunctions();
 
-  mat result(b, b);
-  for (int m = 0; m < b; m++)
+  mat result(numBasisFunctions, numBasisFunctions);
+  for (int m = 0; m < numBasisFunctions; m++)
   {
-    for (int v = 0; v < b; v++)
+    for (int v = 0; v < numBasisFunctions; v++)
     {
       vec dk_m = basisfns.row(m).cols(3 * K + 1, 4 * K).t();
       rowvec dk_v = basisfns.row(v).cols(3 * K + 1, 4 * K);
@@ -509,30 +471,27 @@ void Cluster::calcSCFEnergyRA(float threshold)
 {
   bool mats_eq = false;
 
-  mat z = z_vals();
-  int electron_count = accu(z);
-
   // store the alpha and beta density matrices
-  mat p_a(electron_count, electron_count, fill::zeros);
-  mat p_b(electron_count, electron_count, fill::zeros);
+  mat p_a(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat p_b(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the old alpha and beta density matrices
-  mat p_a_old(electron_count, electron_count, fill::zeros);
-  mat p_b_old(electron_count, electron_count, fill::zeros);
+  mat p_a_old(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat p_b_old(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the output fo the cndo2 fock matrix calculation
-  mat f_a(electron_count, electron_count, fill::zeros);
-  mat f_b(electron_count, electron_count, fill::zeros);
+  mat f_a(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat f_b(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the eigenvectors
-  mat c_a(electron_count, electron_count, fill::zeros);
-  mat c_b(electron_count, electron_count, fill::zeros);
+  mat c_a(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat c_b(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the eigenvalues
-  vec e_a(electron_count, fill::zeros);
-  vec e_b(electron_count, fill::zeros);
+  vec e_a(numValenceElectrons, fill::zeros);
+  vec e_b(numValenceElectrons, fill::zeros);
 
-  mat x(electron_count, electron_count);
+  mat x(numValenceElectrons, numValenceElectrons);
   mat y(atomMatrix.n_rows, atomMatrix.n_rows);
 
   while (!mats_eq)
@@ -546,13 +505,13 @@ void Cluster::calcSCFEnergyRA(float threshold)
     eig_sym(e_a, c_a, f_a);
     eig_sym(e_b, c_b, f_b);
 
-    p_a = (c_a.cols(0, _p - 1) * c_a.cols(0, _p - 1).t());
-    p_b = (c_b.cols(0, _q - 1) * c_b.cols(0, _q - 1).t());
+    p_a = (c_a.cols(0, p - 1) * c_a.cols(0, p - 1).t());
+    p_b = (c_b.cols(0, q - 1) * c_b.cols(0, q - 1).t());
 
     mats_eq = approx_equal(p_a_old, p_a, "absdiff", threshold) && approx_equal(p_b_old, p_b, "absdiff", threshold);
   }
 
-  mat h_core = cndo2FockMatrixRA(mat(electron_count, electron_count, fill::zeros), mat(electron_count, electron_count, fill::zeros));
+  mat h_core = cndo2FockMatrixRA(mat(numValenceElectrons, numValenceElectrons, fill::zeros), mat(numValenceElectrons, numValenceElectrons, fill::zeros));
 
   x = (p_a + p_b);
 
@@ -579,40 +538,37 @@ void Cluster::calcSCFEnergy(float threshold)
 
   vec atoms = atomMatrix.col(0);
 
-  mat z = z_vals();
-  int electron_count = sum(sum(z));
-
   // store the alpha and beta density matrices
-  mat p_a(electron_count, electron_count, fill::zeros);
-  mat p_b(electron_count, electron_count, fill::zeros);
+  mat p_a(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat p_b(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the old alpha and beta density matrices
-  mat p_a_old(electron_count, electron_count, fill::zeros);
-  mat p_b_old(electron_count, electron_count, fill::zeros);
+  mat p_a_old(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat p_b_old(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the output fo the cndo2 fock matrix calculation
-  mat f_a(electron_count, electron_count, fill::zeros);
-  mat f_b(electron_count, electron_count, fill::zeros);
+  mat f_a(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat f_b(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the eigenvectors
-  mat c_a(electron_count, electron_count, fill::zeros);
-  mat c_b(electron_count, electron_count, fill::zeros);
+  mat c_a(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat c_b(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   // store the eigenvalues
-  vec e_a(electron_count, fill::zeros);
-  vec e_b(electron_count, fill::zeros);
+  vec e_a(numValenceElectrons, fill::zeros);
+  vec e_b(numValenceElectrons, fill::zeros);
 
   // matrix that stores the bonding param sum
-  mat bonding_params(electron_count, electron_count, fill::zeros);
+  mat bonding_params(numValenceElectrons, numValenceElectrons, fill::zeros);
 
   while (!mats_eq)
   {
 
-    bonding_params = mat(electron_count, electron_count, fill::zeros);
+    bonding_params = mat(numValenceElectrons, numValenceElectrons, fill::zeros);
 
     f_a = cndo2FockMatrix(p_a, p_b, bonding_params);
 
-    bonding_params = mat(electron_count, electron_count, fill::zeros);
+    bonding_params = mat(numValenceElectrons, numValenceElectrons, fill::zeros);
     f_b = cndo2FockMatrix(p_b, p_a, bonding_params);
 
     p_a_old = p_a;
@@ -621,14 +577,14 @@ void Cluster::calcSCFEnergy(float threshold)
     eig_sym(e_a, c_a, f_a);
     eig_sym(e_b, c_b, f_b);
 
-    p_a = (c_a.cols(0, _p - 1) * c_a.cols(0, _p - 1).t());
-    p_b = (c_b.cols(0, _q - 1) * c_b.cols(0, _q - 1).t());
+    p_a = (c_a.cols(0, p - 1) * c_a.cols(0, p - 1).t());
+    p_b = (c_b.cols(0, q - 1) * c_b.cols(0, q - 1).t());
 
     mats_eq = approx_equal(p_a_old, p_a, "absdiff", threshold) && approx_equal(p_b_old, p_b, "absdiff", threshold);
   }
 
-  bonding_params = mat(electron_count, electron_count, fill::zeros);
-  mat h_core = cndo2FockMatrix(mat(electron_count, electron_count, fill::zeros), mat(electron_count, electron_count, fill::zeros), bonding_params);
+  bonding_params = mat(numValenceElectrons, numValenceElectrons, fill::zeros);
+  mat h_core = cndo2FockMatrix(mat(numValenceElectrons, numValenceElectrons, fill::zeros), mat(numValenceElectrons, numValenceElectrons, fill::zeros), bonding_params);
 
   float electron_energy = (1.0 / 2.0) * sum(sum((p_a % (h_core + f_a) + p_b % (h_core + f_b))));
 
@@ -637,7 +593,7 @@ void Cluster::calcSCFEnergy(float threshold)
 
   int idx = 0;
 
-  vec valence_atomic_num_vec(electron_count);
+  vec valence_atomic_num_vec(numValenceElectrons);
 
   for (int i = 0; i < atomMatrix.n_rows; i++)
   {
@@ -673,13 +629,13 @@ void Cluster::calcSCFEnergy(float threshold)
 
   mat ra_gamma = gammaMatrixRA();
 
-  mat xs_mask = mat(electron_count, electron_count, fill::ones) - broadcastToOrbitals(diagmat(vec(atomMatrix.n_rows, fill::ones)));
+  mat xs_mask = mat(numValenceElectrons, numValenceElectrons, fill::ones) - broadcastToOrbitals(diagmat(vec(atomMatrix.n_rows, fill::ones)), atomMatrix, numValenceElectrons);
 
-  mat density_term_expanded_x = xs_mask % x(p_a, p_b, bonding_params) % reshape(mat(ra_overlap.row(0)), electron_count, electron_count);
+  mat density_term_expanded_x = xs_mask % x(p_a, p_b, bonding_params) % reshape(mat(ra_overlap.row(0)), numValenceElectrons, numValenceElectrons);
   mat density_term_x(atomMatrix.n_rows, atomMatrix.n_rows);
-  mat density_term_expanded_y = xs_mask % x(p_a, p_b, bonding_params) % reshape(mat(ra_overlap.row(1)), electron_count, electron_count);
+  mat density_term_expanded_y = xs_mask % x(p_a, p_b, bonding_params) % reshape(mat(ra_overlap.row(1)), numValenceElectrons, numValenceElectrons);
   mat density_term_y(atomMatrix.n_rows, atomMatrix.n_rows);
-  mat density_term_expanded_z = xs_mask % x(p_a, p_b, bonding_params) % reshape(mat(ra_overlap.row(2)), electron_count, electron_count);
+  mat density_term_expanded_z = xs_mask % x(p_a, p_b, bonding_params) % reshape(mat(ra_overlap.row(2)), numValenceElectrons, numValenceElectrons);
   mat density_term_z(atomMatrix.n_rows, atomMatrix.n_rows);
 
   int idx_i = 0;
@@ -740,67 +696,6 @@ void Cluster::calcSCFEnergy(float threshold)
   std::cout << "Total Energy is " << electron_energy + nuc_repulsion << " eV." << std::endl;
 }
 
-mat Cluster::broadcastToOrbitals(mat x)
-{
-  mat z = z_vals();
-  int electron_count = sum(sum(z));
-  vec atoms = atomMatrix.col(0);
-
-  mat orbitalRepresentation(electron_count, electron_count);
-  int k = 0;
-  int l = 0;
-  for (int i = 0; i < x.n_rows; i++)
-  {
-    l = 0;
-
-    for (int j = 0; j < x.n_cols; j++)
-    {
-      orbitalRepresentation.submat(k, l, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1, l + VALENCE_ATOMIC_NUM[atoms(j) - 1] - 1) = mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], VALENCE_ATOMIC_NUM[atoms(j) - 1]).fill(x(i, j));
-      l += VALENCE_ATOMIC_NUM[atoms(j) - 1];
-    }
-    k += VALENCE_ATOMIC_NUM[atoms(i) - 1];
-  }
-  return orbitalRepresentation;
-}
-
-mat Cluster::broadcastToOrbitalsRA(mat x)
-{
-  mat z = z_vals();
-  int electron_count = accu(z);
-  vec atoms = atomMatrix.col(0);
-
-  mat xOrbitalRepresentation(electron_count, electron_count);
-  mat yOrbitalRepresentation(electron_count, electron_count);
-  mat zOrbitalRepresentation(electron_count, electron_count);
-
-  mat orbitalRepresentation(3, pow(electron_count, 2));
-
-  int k = 0;
-  int l = 0;
-
-  for (int i = 0; i < sqrt(x.n_cols); i++)
-  {
-    l = 0;
-
-    for (int j = 0; j < sqrt(x.n_cols); j++)
-    {
-      xOrbitalRepresentation.submat(k, l, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1, l + VALENCE_ATOMIC_NUM[atoms(j) - 1] - 1) = mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], VALENCE_ATOMIC_NUM[atoms(j) - 1]).fill(x(0, i * sqrt(electron_count) + j));
-      yOrbitalRepresentation.submat(k, l, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1, l + VALENCE_ATOMIC_NUM[atoms(j) - 1] - 1) = mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], VALENCE_ATOMIC_NUM[atoms(j) - 1]).fill(x(1, i * sqrt(electron_count) + j));
-      zOrbitalRepresentation.submat(k, l, k + VALENCE_ATOMIC_NUM[atoms(i) - 1] - 1, l + VALENCE_ATOMIC_NUM[atoms(j) - 1] - 1) = mat(VALENCE_ATOMIC_NUM[atoms(i) - 1], VALENCE_ATOMIC_NUM[atoms(j) - 1]).fill(x(2, i * sqrt(electron_count) + j));
-
-      l += VALENCE_ATOMIC_NUM[atoms(j) - 1];
-    }
-    k += VALENCE_ATOMIC_NUM[atoms(i) - 1];
-  }
-
-  std::cout << xOrbitalRepresentation << std::endl;
-  orbitalRepresentation.row(0) = vectorise(xOrbitalRepresentation, 1);
-  orbitalRepresentation.row(1) = vectorise(yOrbitalRepresentation, 1);
-  orbitalRepresentation.row(2) = vectorise(zOrbitalRepresentation, 1);
-
-  return orbitalRepresentation;
-}
-
 mat Cluster::molecularOrbitalCoefficients()
 {
   // vec eigval;
@@ -848,13 +743,6 @@ vec Cluster::eigenvalues()
   // return e;
 }
 
-double Cluster::calcDistance(mat a1, mat a2)
-{
-  double distance = 0;
-  rowvec coordDists = square(a2.row(0) - a1.row(0));
-  return sqrt(sum(coordDists));
-}
-
 void Cluster::addAtom(int index, int atomNum, double x, double y, double z, double e, double s)
 {
   atomMatrix(index, 0) = atomNum;
@@ -863,9 +751,12 @@ void Cluster::addAtom(int index, int atomNum, double x, double y, double z, doub
   atomMatrix(index, 3) = z;
   epsilons(index) = e;
   sigmas(index) = s;
-  int numElectrons = sum(z_vals());
-  _p = numElectrons / 2 + numElectrons % 2;
-  _q = numElectrons / 2;
+  numBasisFunctions = countBasisFunctions(atomMatrix);
+  numElectronPairs = countElectronPairs(atomMatrix, false);
+  valenceElectronCountsVec = valenceElectronCounts(atomMatrix.col(0));
+  numValenceElectrons = sum(valenceElectronCountsVec);
+  p = numValenceElectrons / 2 + numValenceElectrons % 2;
+  q = numValenceElectrons / 2;
 }
 
 std::ostream &operator<<(std::ostream &os, const Cluster &c)

@@ -32,9 +32,9 @@ OUTPUT_DIR  = ../../output
 MOL_FILE_DIR = ../../molecule_files
 
 # the lib objects to include
-INC_OBJS = $(INC_DIR) $(LIB_DIR)/filereader.o $(LIB_DIR)/combinatorics.o $(LIB_DIR)/baseexception.o $(LIB_DIR)/clusterconfigexception.o $(LIB_DIR)/shell.o $(LIB_DIR)/shelloverlapintegral.o $(LIB_DIR)/cluster.o 
+INC_OBJS = $(INC_DIR) $(LIB_DIR)/filereader.o $(LIB_DIR)/combinatorics.o $(LIB_DIR)/baseexception.o $(LIB_DIR)/clusterconfigexception.o $(LIB_DIR)/shell.o $(LIB_DIR)/shelloverlapintegral.o $(LIB_DIR)/cluster.o $(LIB_DIR)/molutils.o 
 
-DEBUG_OBJS = $(INC_DIR) $(LIB_DIR)/debug_filereader.o $(LIB_DIR)/debug_combinatorics.o $(LIB_DIR)/debug_baseexception.o $(LIB_DIR)/debug_clusterconfigexception.o $(LIB_DIR)/debug_shell.o $(LIB_DIR)/debug_shelloverlapintegral.o $(LIB_DIR)/debug_cluster.o 
+DEBUG_OBJS = $(INC_DIR) $(LIB_DIR)/debug_filereader.o $(LIB_DIR)/debug_combinatorics.o $(LIB_DIR)/debug_baseexception.o $(LIB_DIR)/debug_clusterconfigexception.o $(LIB_DIR)/debug_shell.o $(LIB_DIR)/debug_shelloverlapintegral.o $(LIB_DIR)/debug_cluster.o $(LIB_DIR)/debug_molutils.o 
 
 # The next line contains the list of utility objects created by this Makefile.
 EXECUTABLES = main_program

@@ -47,8 +47,8 @@ int main(int argc, char *argv[])
 		Cluster cluster = readfile(filename);
 		std::cout << cluster << std::endl;
 
-		std::cout << "numBasisFunctions: " << cluster.countBasisFunctions() << std::endl;
-		std::cout << "numElectronPairs: " << cluster.countElectronPairs() << std::endl;
+		std::cout << "numBasisFunctions: " << cluster.numBasisFunctions << std::endl;
+		std::cout << "numElectronPairs: " << cluster.numElectronPairs << std::endl;
 		std::cout << "BasisFunctions:" << std::endl
 				  << cluster.basisFunctions() << std::endl;
 		std::cout << "OV_mat_Ra: " << std::endl

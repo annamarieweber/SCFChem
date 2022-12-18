@@ -25,11 +25,15 @@ private:
   vec epsilons;
   vec sigmas;
   int K;
-  int _p; // spin up electrons
-  int _q; // spin down electrons
 
 public:
   mat atomMatrix;
+  int p; // spin up electrons
+  int q; // spin down electrons
+  int numElectronPairs;
+  int numValenceElectrons;
+  int numBasisFunctions;
+  vec valenceElectronCountsVec;
 
   Cluster();
 
@@ -43,25 +47,6 @@ public:
   Cluster(int numAtoms);
 
   /**
-   * @brief Check if all atoms in cluster match provided atomic number
-   * @param num int the atomic number to match
-   * @return bool
-   **/
-  bool allAtomsMatch(int num);
-
-  /**
-   * @brief Calculate the number of basis functions N for the described cluster
-   * @return int
-   */
-  int countBasisFunctions();
-
-  /**
-   * @brief Calculate the number of electron pairs n for the described cluster
-   * @return int
-   */
-  int countElectronPairs();
-
-  /**
    * @brief Returns a matrix representing the basis functions for all of the overlaps
    * @return mat
    */
@@ -72,10 +57,6 @@ public:
    * @return mat
    */
   mat sBasisFunctions();
-
-  mat broadcastToOrbitals(mat x);
-
-  mat broadcastToOrbitalsRA(mat x);
 
   /**
    * @brief calculate the x component of the gradient calculation
@@ -140,8 +121,6 @@ public:
    */
   void calcSCFEnergyRA(float threshold);
 
-  vec z_vals();
-
   mat molecularOrbitalCoefficients();
 
   vec eigenvalues();
@@ -151,14 +130,6 @@ public:
    * @return double
    */
   double molecularEnergy();
-
-  /**
-   * @brief calculates the distance between two atoms represented by 1d matrices with 3 values for x,y,and z respectively
-   * @param a1 (mat): matrix representing the first atoms
-   * @param a2 (mat): matrix representing the second value
-   * @return double: the distance between the two atoms described as having positions a1 and a2
-   **/
-  double calcDistance(mat a1, mat a2);
 
   /**
    * @brief inserts an atom into the cluster

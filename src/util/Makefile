@@ -1,6 +1,3 @@
-# MSSE Chem 279- Fall Semester
-# University of California, Berkeley
-# 
 # Creator:  Anna Weber
 # Date Created: November 5 2022
 #
@@ -11,7 +8,7 @@
 CXX         = g++      
 
 # compiler flags -g debug, -O3 optimized version -c create a library object
-CXXFLAGS    = -std=c++11 -c 
+CXXFLAGS    = -std=c++14 -c 
 
 OPTIM       = -O3
 
