@@ -31,4 +31,5 @@ jobs:
         with:
           dir: doc/html
           branch: gh-pages
+          token: ${{ GITHUB_TOKEN }}
           
