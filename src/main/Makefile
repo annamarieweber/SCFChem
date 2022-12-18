@@ -1,6 +1,3 @@
-# MSSE Chem 279 - Fall Semester
-# University of California, Berkeley
-# 
 # Creator: Anna Weber
 # Date Created: November 5, 2022
 #
@@ -10,7 +7,7 @@
 CXX         = g++      
 
 # compiler flags, -O3 optimized version -c create a library object
-CXXFLAGS    = -std=c++11 -o
+CXXFLAGS    = -std=c++14 -o
 
 OPTIM       = -O3
 
@@ -24,8 +21,15 @@ INC_DIR = ../../include
 
 # The directory where all object files are going to moved afer creation
 LIB_DIR     = ../../lib
+
+# The directory for the executables
 BIN_DIR     = ../../bin
+
+# The directory for program output
 OUTPUT_DIR  = ../../output
+
+# The directory for molecule input files
+MOL_FILE_DIR = ../../molecule_files
 
 # the lib objects to include
 INC_OBJS = $(INC_DIR) $(LIB_DIR)/filereader.o $(LIB_DIR)/combinatorics.o $(LIB_DIR)/baseexception.o $(LIB_DIR)/clusterconfigexception.o $(LIB_DIR)/shell.o $(LIB_DIR)/shelloverlapintegral.o $(LIB_DIR)/cluster.o 
@@ -46,10 +50,9 @@ debug:$(INC_DIR)/filereader.h $(INC_DIR)/combinatorics.h $(INC_DIR)/baseexceptio
 	rm -rf $(BIN_DIR)/*
 	mv main_program* $(BIN_DIR)
 	
-
 run:
 	make all
-	$(BIN_DIR)/main_program ../../C2H2.txt | tee $(OUTPUT_DIR)/main_program.out
+	$(BIN_DIR)/main_program $(MOL_FILE_DIR)/$(mol).txt | tee $(OUTPUT_DIR)/$(mol).out
 
 
 cleanall:

@@ -45,7 +45,7 @@ int Cluster::countElectronPairs()
   if (n / 2 * 2 != n)
   {
     return n / 2;
-    // throw BaseException("InvalidConfig: number of electron pairs must be an integer");
+    throw BaseException("InvalidConfig: number of electron pairs must be an integer");
   }
   else
   {
@@ -92,7 +92,7 @@ mat Cluster::sBasisFunctions()
   {
     rowvec l_vals("0 0 0");
     int atomNum = atomMatrix(i, 0);
-    mat coeffs(ATOM_COEFS_MAP[atomNum - 1]);
+    mat coeffs(ATOM_COEFFS_MAP[atomNum - 1]);
     Shell s(atomMatrix(i, 0), atomMatrix.row(i).cols(1, atomMatrix.n_cols - 1).t(), coeffs.col(1), coeffs.col(0), l_vals);
     ShellOverlapIntegral s_aa(s, s);
     mat norm_consts = 1.0 / sqrt(s_aa());

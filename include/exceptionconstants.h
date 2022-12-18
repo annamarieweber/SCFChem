@@ -1,3 +1,13 @@
+/**
+ * @file exceptionconstants.h
+ * @author Anna Weber(ann@scfchem.com)
+ * @brief
+ * @version 0.1
+ * @date 2022-12-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef EXCEPTION_CONSTANTS_H
 #define EXCEPTION_CONSTANTS_H
 

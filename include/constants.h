@@ -1,3 +1,13 @@
+/**
+ * @file constants.h
+ * @author Anna Weber (anna@scfchem.com)
+ * @brief Defintion of Constants Used in SCF Calculations
+ * @version 0.1
+ * @date 2022-12-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 

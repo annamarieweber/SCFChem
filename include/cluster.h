@@ -1,3 +1,13 @@
+/**
+ * @file cluster.h
+ * @author Anna Weber (anna@scfchem.com)
+ * @brief Definition of the cluster class and its methods
+ * @version 0.1
+ * @date 2022-12-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef CLUSTER
 #define CLUSTER
 #include <armadillo>

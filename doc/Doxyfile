@@ -44,4 +44,4 @@ EXAMPLE_PATTERNS       = *.cpp
 GENERATE_TREEVIEW      = YES
 DISABLE_INDEX = NO
 FULL_SIDEBAR = NO
-HTML_EXTRA_STYLESHEET  = doc/doxygen-awesome-css/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET  = doc/doxygen-awesome-css/doxygen-awesome.css doc/doxygen-awesome-css/doxygen-custom/custom.css

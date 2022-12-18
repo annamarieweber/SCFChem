@@ -24,9 +24,9 @@ make build all
 To use SCFChem++, run the following command:
 
 ```sh
-make run molecule_files/molfile.txt
+make run mol=molecule
 ```
-Where `molfile.txt` is a file in the `molecule_files` directory containing the input data for the calculation. The input data should include the atomic coordinates and other necessary information for the calculation. The output will be written to a file in the `output` directory called `molfile.out`. Some example molecules are already included in the molecule_files directory for convenience.
+Where `molecule` is a file (`molecule.txt`) in the `molecule_files` directory containing the input data for the calculation . The input data should include the atomic coordinates and other necessary information for the calculation. The output will be written to a file in the `output` directory called `molecule.out`. Some example molecules are already included in the molecule_files directory for convenience.
 
 ## Docs
 [![Publish Docs](https://github.com/annamarieweber/SCFChem/actions/workflows/publish_docs.yml/badge.svg)](https://github.com/annamarieweber/SCFChem/actions/workflows/publish_docs.yml)

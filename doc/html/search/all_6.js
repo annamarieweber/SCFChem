@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sbasisfunctions_0',['sBasisFunctions',['../class_cluster.html#a5c8d163fa46c4f71b2dd807087245dcb',1,'Cluster']]],
-  ['shell_1',['Shell',['../class_shell.html',1,'']]],
-  ['shelloverlapintegral_2',['ShellOverlapIntegral',['../class_shell_overlap_integral.html',1,'']]]
+  ['operator_3c_3c_0',['operator&lt;&lt;',['../class_cluster.html#a5c40c6ce81c82ec4cb407c65204f8b6a',1,'Cluster']]],
+  ['overlapmatrix_1',['overlapMatrix',['../class_cluster.html#aa23c4b0cace95da1a55b7a3c2fd2d593',1,'Cluster']]],
+  ['overlapmatrixra_2',['overlapMatrixRA',['../class_cluster.html#aee07ef5be59f470ca218d9d647e266fe',1,'Cluster']]]
 ];

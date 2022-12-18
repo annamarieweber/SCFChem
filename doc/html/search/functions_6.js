@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../class_cluster.html#a6ea5738623c8ecd5aceacb2f371e506f',1,'Cluster']]]
+  ['sbasisfunctions_0',['sBasisFunctions',['../class_cluster.html#a5c8d163fa46c4f71b2dd807087245dcb',1,'Cluster']]]
 ];

@@ -1,3 +1,13 @@
+/**
+ * @file shelloverlapintegral.h
+ * @author Anna Weber (anna@scfchem.com)
+ * @brief definition of electron shell overlap integral
+ * @version 0.1
+ * @date 2022-12-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef SHELL_OVERLAP_INTEGRAL
 #define SHELL_OVERLAP_INTEGRAL
 #include "shell.h"

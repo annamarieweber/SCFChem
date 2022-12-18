@@ -1,23 +1,26 @@
 \hypertarget{baseexception_8h_source}{}\doxysection{baseexception.\+h}
 \label{baseexception_8h_source}\index{include/baseexception.h@{include/baseexception.h}}
-
+\mbox{\hyperlink{baseexception_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BASE\_EXCEPTION}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BASE\_EXCEPTION}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <exception>}}
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{7 \textcolor{keyword}{using} std::string;}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_base_exception}{BaseException}} : \textcolor{keyword}{public} std::exception \{}
-\DoxyCodeLine{10   \textcolor{keyword}{private}:}
-\DoxyCodeLine{11     \textcolor{keywordtype}{string} message;}
-\DoxyCodeLine{12   \textcolor{keyword}{public}:}
-\DoxyCodeLine{13     \mbox{\hyperlink{class_base_exception}{BaseException}}(\textcolor{keywordtype}{string} msg);}
-\DoxyCodeLine{14     \textcolor{keywordtype}{void} displayError();}
-\DoxyCodeLine{15 \};}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef BASE\_EXCEPTION}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define BASE\_EXCEPTION}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{17 \textcolor{keyword}{using} std::string;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_base_exception}{BaseException}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22   \textcolor{keywordtype}{string} message;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25   \mbox{\hyperlink{class_base_exception}{BaseException}}(\textcolor{keywordtype}{string} msg);}
+\DoxyCodeLine{26   \textcolor{keywordtype}{void} displayError();}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

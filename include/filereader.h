@@ -1,6 +1,13 @@
-/*
-  This file, filereader.h, contains an API to file reading functions for SCFChem++
-*/
+/**
+ * @file filereader.h
+ * @author Anna Weber (anna@scfchem.com)
+ * @brief Definitions for file reading functions for SCFChem
+ * @version 0.1
+ * @date 2022-12-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef FILEREADER
 #define FILEREADER
 #include <string>

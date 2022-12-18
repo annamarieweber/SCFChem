@@ -1,0 +1,155 @@
+.github-corner svg {
+    fill: var(--primary-light-color);
+    color: var(--page-background-color);
+    width: 72px;
+    height: 72px;
+}
+
+@media screen and (max-width: 767px) {
+    .github-corner svg {
+        width: 50px;
+        height: 50px;
+    }
+    #projectnumber {
+        margin-right: 22px;
+    }
+}
+
+.alter-theme-button {
+    display: inline-block;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--page-background-color) !important;
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    text-decoration: none;
+}
+
+.next_section_button {
+    display: block;
+    padding: var(--spacing-large) 0 var(--spacing-small) 0;
+    color: var(--page-background-color);
+    user-select: none;
+}
+
+.next_section_button::after {
+    /* clearfix */
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.next_section_button a {
+    overflow: hidden;
+    float: right;
+    border: 1px solid var(--separator-color);
+    padding: var(--spacing-medium) calc(var(--spacing-large) / 2) var(--spacing-medium) var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    color: var(--page-secondary-foreground-color) !important;
+    text-decoration: none;
+    background-color: var(--page-background-color);
+    transition: color .08s ease-in-out, background-color .1s ease-in-out;
+}
+
+.next_section_button a:hover {
+    color: var(--page-foreground-color) !important;
+    background-color: var(--odd-color);
+}
+
+.next_section_button a::after {
+    content: '〉';
+    color: var(--page-secondary-foreground-color) !important;
+    padding-left: var(--spacing-large);
+    display: inline-block;
+    transition: color .08s ease-in-out, transform .09s ease-in-out;
+}
+
+.next_section_button a:hover::after {
+    color: var(--page-foreground-color) !important;
+    transform: translateX(3px);
+}
+
+.alter-theme-button:hover {
+    background: var(--primary-dark-color);
+}
+
+html.dark-mode .darkmode_inverted_image img, /* < doxygen 1.9.3 */
+html.dark-mode .darkmode_inverted_image object[type="image/svg+xml"] /* doxygen 1.9.3 */ {
+    filter: brightness(87%) hue-rotate(180deg) invert();
+}
+
+.bordered_image {
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--separator-color);
+    display: inline-block;
+    overflow: hidden;
+}
+
+html.dark-mode .bordered_image img, /* < doxygen 1.9.3 */
+html.dark-mode .bordered_image object[type="image/svg+xml"] /* doxygen 1.9.3 */ {
+    border-radius: var(--border-radius-small);
+}
+
+.title_screenshot {
+    filter: drop-shadow(0px 3px 10px rgba(0,0,0,0.22));
+    max-width: 500px;
+    margin: var(--spacing-large) 0;
+}
+
+.title_screenshot .caption {
+    display: none;
+}
+
+html {
+    /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
+    --primary-color: #fb00ff;
+    --primary-dark-color: #7300f5;
+    --primary-light-color: #9f3eee;
+    --primary-lighter-color: #eacaf1;
+    --primary-lightest-color: #e9f1f8;
+
+    /* page base colors */
+    --page-background-color: rgb(39, 40, 41);
+    --page-foreground-color: #e2ebf5;
+    --page-secondary-foreground-color: #67727e;
+
+
+    --border-radius-large: 22px;
+    --border-radius-small: 9px;
+    --border-radius-medium: 14px;
+    --spacing-small: 8px;
+    --spacing-medium: 14px;
+    --spacing-large: 19px;
+
+    --top-height: 125px;
+
+    --side-nav-background: #324067;
+    --side-nav-foreground: #F1FDFF;
+    --header-foreground: var(--side-nav-foreground);
+    --searchbar-background: var(--side-nav-foreground);
+    --searchbar-border-radius: var(--border-radius-medium);
+    --header-background: var(--side-nav-background);
+    --header-foreground: var(--side-nav-foreground);
+
+    --toc-background: rgb(243, 240, 252);
+    --toc-foreground: var(--page-foreground-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.light-mode) {
+        --primary-color: #ff8400;
+        --primary-dark-color: #02b3ff;
+        --primary-light-color: #ff8200;
+        --page-foreground-color: #e2ebf5;
+        --page-secondary-foreground-color: #545d67;
+        --side-nav-foreground: #cecece;
+        --header-foreground: 
+
+    }
+}
+
+#projectname {
+    background: -webkit-linear-gradient(245deg, #02b3ff 30%,#ff8400 60%,#ff8400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,45 +1,46 @@
 \hypertarget{shelloverlapintegral_8h_source}{}\doxysection{shelloverlapintegral.\+h}
 \label{shelloverlapintegral_8h_source}\index{include/shelloverlapintegral.h@{include/shelloverlapintegral.h}}
-
+\mbox{\hyperlink{shelloverlapintegral_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SHELL\_OVERLAP\_INTEGRAL}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SHELL\_OVERLAP\_INTEGRAL}}
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}shell.h"{}}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{keyword}{using} arma::cube;}
-\DoxyCodeLine{6 \textcolor{keyword}{using} std::vector;}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}}
-\DoxyCodeLine{9 \{}
-\DoxyCodeLine{10 \textcolor{keyword}{private}:}
-\DoxyCodeLine{11     \mbox{\hyperlink{class_shell}{Shell}} \_s\_a;}
-\DoxyCodeLine{12     \mbox{\hyperlink{class_shell}{Shell}} \_s\_b;}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14     vec alphas\_product();}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16     vec alphas\_sum();}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef SHELL\_OVERLAP\_INTEGRAL}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define SHELL\_OVERLAP\_INTEGRAL}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shell_8h}{shell.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using} arma::cube;}
+\DoxyCodeLine{16 \textcolor{keyword}{using} std::vector;}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{18     vec dim\_dist\_sqr();}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20     vec exponential\_prefactor();}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22     vec root\_term();}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_shell}{Shell}} \_s\_a;}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_shell}{Shell}} \_s\_b;}
 \DoxyCodeLine{23 }
-\DoxyCodeLine{24     vec overlap\_summation(vec x\_p, \textcolor{keywordtype}{int} l\_pair\_a, \textcolor{keywordtype}{int} l\_pair\_b);}
+\DoxyCodeLine{24     vec alphas\_product();}
 \DoxyCodeLine{25 }
-\DoxyCodeLine{26     vec product\_center();}
+\DoxyCodeLine{26     vec alphas\_sum();}
 \DoxyCodeLine{27 }
-\DoxyCodeLine{28 \textcolor{keyword}{public}:}
-\DoxyCodeLine{29     \mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}();}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31     \mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}(\mbox{\hyperlink{class_shell}{Shell}} s\_a, \mbox{\hyperlink{class_shell}{Shell}} s\_b);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33     mat operator()();}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35     mat saDerivativeIntegral();}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37     mat sbDerivativeIntegral();}
-\DoxyCodeLine{38 \};}
-\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28     vec dim\_dist\_sqr();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     vec exponential\_prefactor();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     vec root\_term();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     vec overlap\_summation(vec x\_p, \textcolor{keywordtype}{int} l\_pair\_a, \textcolor{keywordtype}{int} l\_pair\_b);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     vec product\_center();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}(\mbox{\hyperlink{class_shell}{Shell}} s\_a, \mbox{\hyperlink{class_shell}{Shell}} s\_b);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     mat operator()();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     mat saDerivativeIntegral();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     mat sbDerivativeIntegral();}
+\DoxyCodeLine{48 \};}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

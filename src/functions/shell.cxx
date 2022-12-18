@@ -36,7 +36,7 @@ Shell::Shell(int atomicNum, vec r_a, int l)
     _r_a = r_a;
     _l_a = angularMomentum(l);
 
-    mat coeffs(ATOM_COEFS_MAP[atomicNum - 1]);
+    mat coeffs(ATOM_COEFFS_MAP[atomicNum - 1]);
     _d_k = coeffs.col(1 + l);
     _alpha = coeffs.col(0);
 };

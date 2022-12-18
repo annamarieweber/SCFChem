@@ -1,31 +1,32 @@
 \hypertarget{exceptionconstants_8h_source}{}\doxysection{exceptionconstants.\+h}
 \label{exceptionconstants_8h_source}\index{include/exceptionconstants.h@{include/exceptionconstants.h}}
-
+\mbox{\hyperlink{exceptionconstants_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef EXCEPTION\_CONSTANTS\_H}}
-\DoxyCodeLine{2 \textcolor{preprocessor}{\#define EXCEPTION\_CONSTANTS\_H}}
-\DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <map>}}
-\DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{keyword}{using} std::map;}
-\DoxyCodeLine{9 \textcolor{keyword}{using} std::string;}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{namespace }exception\_constants}
-\DoxyCodeLine{12 \{}
-\DoxyCodeLine{13     \textcolor{keyword}{enum} Error\_Type}
-\DoxyCodeLine{14     \{}
-\DoxyCodeLine{15         INVALID\_ATOM\_IDENTIFIER,}
-\DoxyCodeLine{16         ATOM\_COUNT\_MISMATCH,}
-\DoxyCodeLine{17         INVALID\_ATOM\_POSITION,}
-\DoxyCodeLine{18     \};}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20     \textcolor{keyword}{const} map<Error\_Type, string> ERROR\_MESSAGE = \{}
-\DoxyCodeLine{21         \{INVALID\_ATOM\_IDENTIFIER, \textcolor{stringliteral}{"{}InvalidAtomIdentifier: One or more atom identifier is not a valid atom id."{}}\},}
-\DoxyCodeLine{22         \{ATOM\_COUNT\_MISMATCH, \textcolor{stringliteral}{"{}AtomCountMismatch: Atom Count provided in input file must match number of atoms listed"{}}\},}
-\DoxyCodeLine{23         \{INVALID\_ATOM\_POSITION, \textcolor{stringliteral}{"{}InvalidAtomPosition: Distance between atoms must be > 0. Check coordinates to ensure coordinates are valid."{}}\}\};}
-\DoxyCodeLine{24 \}}
-\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef EXCEPTION\_CONSTANTS\_H}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define EXCEPTION\_CONSTANTS\_H}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{using} std::map;}
+\DoxyCodeLine{19 \textcolor{keyword}{using} std::string;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }exception\_constants}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keyword}{enum} Error\_Type}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25         INVALID\_ATOM\_IDENTIFIER,}
+\DoxyCodeLine{26         ATOM\_COUNT\_MISMATCH,}
+\DoxyCodeLine{27         INVALID\_ATOM\_POSITION,}
+\DoxyCodeLine{28     \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{const} map<Error\_Type, string> ERROR\_MESSAGE = \{}
+\DoxyCodeLine{31         \{INVALID\_ATOM\_IDENTIFIER, \textcolor{stringliteral}{"{}InvalidAtomIdentifier: One or more atom identifier is not a valid atom id."{}}\},}
+\DoxyCodeLine{32         \{ATOM\_COUNT\_MISMATCH, \textcolor{stringliteral}{"{}AtomCountMismatch: Atom Count provided in input file must match number of atoms listed"{}}\},}
+\DoxyCodeLine{33         \{INVALID\_ATOM\_POSITION, \textcolor{stringliteral}{"{}InvalidAtomPosition: Distance between atoms must be > 0. Check coordinates to ensure coordinates are valid."{}}\}\};}
+\DoxyCodeLine{34 \}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,3 +1,13 @@
+/**
+ * @file shell.h
+ * @author Anna Weber (anna@scfchem.com)
+ * @brief Definition of an electron shell
+ * @version 0.1
+ * @date 2022-12-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #ifndef SHELL
 #define SHELL
 #include <armadillo>

@@ -1,7 +1,7 @@
 # MSSE Chem 279 - Fall Semester
 # University of California, Berkeley
 # 
-# Creator:  Anna Weber
+# Creator:  Anna Weber (anna@scfchem.com)
 # Date Created: Sept 10, 2022
 #
 # This makefile creates molecules objects in C++
@@ -11,7 +11,7 @@
 CXX         = g++      
 
 # compiler flags -g debug, -O3 optimized version -c create a library object
-CXXFLAGS    = -std=c++11 -c  
+CXXFLAGS    = -std=c++14 -c  
 
 OPTIM       = -O3
 
