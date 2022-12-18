@@ -137,19 +137,24 @@ html {
 
 @media (prefers-color-scheme: dark) {
     html:not(.light-mode) {
-        --primary-color: #ff8400;
-        --primary-dark-color: #02b3ff;
-        --primary-light-color: #ff8200;
+        --primary-color:#6ef7e7;
+        --primary-dark-color: #1f80a3;
+        --primary-light-color: #abf6ed;
         --page-foreground-color: #e2ebf5;
         --page-secondary-foreground-color: #545d67;
-        --side-nav-foreground: #cecece;
-        --header-foreground: 
+        --side-nav-foreground: #f4f4f4;
+        --header-foreground: #6ef7e7;
+        --page-background-color: #292929;
+        --side-nav-background:#141414;
 
     }
 }
 
 #projectname {
-    background: -webkit-linear-gradient(245deg, #02b3ff 30%,#ff8400 60%,#ff8400 100%);
+    background: #6ef7e7;
+    background: linear-gradient(90deg, #6ef7e7 0%, #1f80a3 100%);
+    background: -moz-linear-gradient(90deg, #6ef7e7 0%, #1f80a3 100%);
+    background: -webkit-linear-gradient(90deg, #6ef7e7 0%, #1f80a3 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
