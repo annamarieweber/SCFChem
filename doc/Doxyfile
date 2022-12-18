@@ -1,11 +1,11 @@
 # Doxyfile 1.8.18
 
 # This file describes the settings to be used by the documentation system
-# doxygen (www.doxygen.org) for SCFChem++
+# doxygen (www.doxygen.org) for SCFChem
 #
 
 # The PROJECT_NAME
-PROJECT_NAME           = "SCFChem++"
+PROJECT_NAME           = "SCFChem"
 
 # The PROJECT_NUMBER reflects the verison
 PROJECT_NUMBER         = "0.0.1"
