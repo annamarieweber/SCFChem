@@ -20,68 +20,58 @@
 \DoxyCodeLine{25   vec epsilons;}
 \DoxyCodeLine{26   vec sigmas;}
 \DoxyCodeLine{27   \textcolor{keywordtype}{int} K;}
-\DoxyCodeLine{28   \textcolor{keywordtype}{int} \_p; \textcolor{comment}{// spin up electrons}}
-\DoxyCodeLine{29   \textcolor{keywordtype}{int} \_q; \textcolor{comment}{// spin down electrons}}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31 \textcolor{keyword}{public}:}
-\DoxyCodeLine{32   mat atomMatrix;}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34   \mbox{\hyperlink{class_cluster}{Cluster}}();}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{43   \mbox{\hyperlink{class_cluster_ae1396978d8b6298311af1141ea576259}{Cluster}}(\textcolor{keywordtype}{int} numAtoms);}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{50   \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_cluster_a385ac1bef69d2cc18778784917bf9615}{allAtomsMatch}}(\textcolor{keywordtype}{int} num);}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{56   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_cluster_af4fbd4d768a64a231111694c5ca14429}{countBasisFunctions}}();}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{62   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_cluster_ac2f97ade07ef89a6a00275bc02462232}{countElectronPairs}}();}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{68   mat \mbox{\hyperlink{class_cluster_ab1512ad6472652e408848071f817ae40}{basisFunctions}}();}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{74   mat \mbox{\hyperlink{class_cluster_a5c8d163fa46c4f71b2dd807087245dcb}{sBasisFunctions}}();}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76   mat broadcastToOrbitals(mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}});}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30   mat atomMatrix;}
+\DoxyCodeLine{31   \textcolor{keywordtype}{int} p; \textcolor{comment}{// spin up electrons}}
+\DoxyCodeLine{32   \textcolor{keywordtype}{int} q; \textcolor{comment}{// spin down electrons}}
+\DoxyCodeLine{33   \textcolor{keywordtype}{int} numElectronPairs;}
+\DoxyCodeLine{34   \textcolor{keywordtype}{int} numValenceElectrons;}
+\DoxyCodeLine{35   \textcolor{keywordtype}{int} numBasisFunctions;}
+\DoxyCodeLine{36   vec valenceElectronCountsVec;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38   \mbox{\hyperlink{class_cluster}{Cluster}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{47   \mbox{\hyperlink{class_cluster_ae1396978d8b6298311af1141ea576259}{Cluster}}(\textcolor{keywordtype}{int} numAtoms);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{53   mat \mbox{\hyperlink{class_cluster_ab1512ad6472652e408848071f817ae40}{basisFunctions}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{59   mat \mbox{\hyperlink{class_cluster_a5c8d163fa46c4f71b2dd807087245dcb}{sBasisFunctions}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{69   mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}(mat p\_a, mat p\_b, mat bonding\_parameters);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76   mat \mbox{\hyperlink{class_cluster_aaf9429ba8789a2e700f5403711c1c995}{cndo2FockMatrix}}(mat p\_a, mat p\_b, mat \&bonding\_params);}
 \DoxyCodeLine{77 }
-\DoxyCodeLine{78   mat broadcastToOrbitalsRA(mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}});}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{88   mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}(mat p\_a, mat p\_b, mat bonding\_parameters);}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{95   mat \mbox{\hyperlink{class_cluster_aaf9429ba8789a2e700f5403711c1c995}{cndo2FockMatrix}}(mat p\_a, mat p\_b, mat \&bonding\_params);}
-\DoxyCodeLine{96 }
-\DoxyCodeLine{102   mat \mbox{\hyperlink{class_cluster_a088f19ffbac085cd35830c518f20c7f1}{cndo2FockMatrixRA}}(mat p\_a, mat p\_b);}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{104   mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}(mat p\_a, mat p\_b, vec b\_a, vec b\_b);}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106   \textcolor{keywordtype}{void} calcSCFEnergy(\textcolor{keywordtype}{float} threshold);}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{113   mat \mbox{\hyperlink{class_cluster_aa23c4b0cace95da1a55b7a3c2fd2d593}{overlapMatrix}}();}
-\DoxyCodeLine{114 }
-\DoxyCodeLine{120   mat \mbox{\hyperlink{class_cluster_aee07ef5be59f470ca218d9d647e266fe}{overlapMatrixRA}}();}
-\DoxyCodeLine{121 }
-\DoxyCodeLine{127   mat \mbox{\hyperlink{class_cluster_a37286d10939c43b153a24e31b66b7e1b}{gammaMatrix}}();}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{134   mat \mbox{\hyperlink{class_cluster_a3389229703edf2e7701d4776d51d6fa5}{gammaMatrixRA}}();}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{141   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}{calcSCFEnergyRA}}(\textcolor{keywordtype}{float} threshold);}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143   vec z\_vals();}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{145   mat molecularOrbitalCoefficients();}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147   vec eigenvalues();}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149   \textcolor{comment}{/*;}}
-\DoxyCodeLine{150 \textcolor{comment}{   * @brief used eigenvalues to calculate total molecular energy}}
-\DoxyCodeLine{151 \textcolor{comment}{   * @return double}}
-\DoxyCodeLine{152 \textcolor{comment}{   */}}
-\DoxyCodeLine{153   \textcolor{keywordtype}{double} molecularEnergy();}
-\DoxyCodeLine{154 }
-\DoxyCodeLine{161   \textcolor{keywordtype}{double} \mbox{\hyperlink{class_cluster_a13b1c2b296a0d94057625e692e34db5a}{calcDistance}}(mat a1, mat a2);}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{173   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_cluster_a57ea38e70543bf83b66a6b6974941db3}{addAtom}}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} atomNum, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} e, \textcolor{keywordtype}{double} s);}
-\DoxyCodeLine{174 }
-\DoxyCodeLine{178   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_cluster_a5c40c6ce81c82ec4cb407c65204f8b6a}{operator<<}}(std::ostream \&os, \textcolor{keyword}{const} \mbox{\hyperlink{class_cluster}{Cluster}} \&c);}
-\DoxyCodeLine{179 \};}
-\DoxyCodeLine{180 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83   mat \mbox{\hyperlink{class_cluster_a088f19ffbac085cd35830c518f20c7f1}{cndo2FockMatrixRA}}(mat p\_a, mat p\_b);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85   mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}(mat p\_a, mat p\_b, vec b\_a, vec b\_b);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87   \textcolor{keywordtype}{void} calcSCFEnergy(\textcolor{keywordtype}{float} threshold);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{94   mat \mbox{\hyperlink{class_cluster_aa23c4b0cace95da1a55b7a3c2fd2d593}{overlapMatrix}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101   mat \mbox{\hyperlink{class_cluster_aee07ef5be59f470ca218d9d647e266fe}{overlapMatrixRA}}();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108   mat \mbox{\hyperlink{class_cluster_a37286d10939c43b153a24e31b66b7e1b}{gammaMatrix}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{115   mat \mbox{\hyperlink{class_cluster_a3389229703edf2e7701d4776d51d6fa5}{gammaMatrixRA}}();}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{122   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}{calcSCFEnergyRA}}(\textcolor{keywordtype}{float} threshold);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124   mat molecularOrbitalCoefficients();}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126   vec eigenvalues();}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{comment}{/*;}}
+\DoxyCodeLine{129 \textcolor{comment}{   * @brief used eigenvalues to calculate total molecular energy}}
+\DoxyCodeLine{130 \textcolor{comment}{   * @return double}}
+\DoxyCodeLine{131 \textcolor{comment}{   */}}
+\DoxyCodeLine{132   \textcolor{keywordtype}{double} molecularEnergy();}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{144   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_cluster_a57ea38e70543bf83b66a6b6974941db3}{addAtom}}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{int} atomNum, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}, \textcolor{keywordtype}{double} y, \textcolor{keywordtype}{double} z, \textcolor{keywordtype}{double} e, \textcolor{keywordtype}{double} s);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{149   \textcolor{keyword}{friend} std::ostream \&\mbox{\hyperlink{class_cluster_a5c40c6ce81c82ec4cb407c65204f8b6a}{operator<<}}(std::ostream \&os, \textcolor{keyword}{const} \mbox{\hyperlink{class_cluster}{Cluster}} \&c);}
+\DoxyCodeLine{150 \};}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

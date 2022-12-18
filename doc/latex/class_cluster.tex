@@ -5,22 +5,10 @@
 \item 
 \mbox{\hyperlink{class_cluster_ae1396978d8b6298311af1141ea576259}{Cluster}} (int num\+Atoms)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_cluster}{Cluster}} constructor @detail Creates a cluster of atoms represented as a matrix with num\+Atoms rows and 4 columns where the first column is the atomic number and the remaining there columns are the x, y, and z coordinates of the given atom respectively. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_cluster_a385ac1bef69d2cc18778784917bf9615}{all\+Atoms\+Match}} (int num)
-\begin{DoxyCompactList}\small\item\em Check if all atoms in cluster match provided atomic number. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_cluster_af4fbd4d768a64a231111694c5ca14429}{count\+Basis\+Functions}} ()
-\begin{DoxyCompactList}\small\item\em Calculate the number of basis functions N for the described cluster. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_cluster_ac2f97ade07ef89a6a00275bc02462232}{count\+Electron\+Pairs}} ()
-\begin{DoxyCompactList}\small\item\em Calculate the number of electron pairs n for the described cluster. \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{class_cluster_ab1512ad6472652e408848071f817ae40}{basis\+Functions}} ()
 \begin{DoxyCompactList}\small\item\em Returns a matrix representing the basis functions for all of the overlaps. \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{class_cluster_a5c8d163fa46c4f71b2dd807087245dcb}{s\+Basis\+Functions}} ()
 \begin{DoxyCompactList}\small\item\em Returns a matrix representing the s basis functions for all of the overlaps. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_cluster_a16c721c2c0e3fb27c74655b5b7cf993f}\label{class_cluster_a16c721c2c0e3fb27c74655b5b7cf993f}} 
-mat {\bfseries broadcast\+To\+Orbitals} (mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}})
-\item 
-\mbox{\Hypertarget{class_cluster_a2432f865e3a8f89a876f9f4f097c2f84}\label{class_cluster_a2432f865e3a8f89a876f9f4f097c2f84}} 
-mat {\bfseries broadcast\+To\+Orbitals\+RA} (mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}})
-\item 
 mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}} (mat p\+\_\+a, mat p\+\_\+b, mat bonding\+\_\+parameters)
 \begin{DoxyCompactList}\small\item\em calculate the x component of the gradient calculation \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{class_cluster_aaf9429ba8789a2e700f5403711c1c995}{cndo2\+Fock\+Matrix}} (mat p\+\_\+a, mat p\+\_\+b, mat \&bonding\+\_\+params)
@@ -43,9 +31,6 @@ mat \mbox{\hyperlink{class_cluster_a3389229703edf2e7701d4776d51d6fa5}{gamma\+Mat
 \begin{DoxyCompactList}\small\item\em gradient of gamma matrix, rows are x y z, columns are atom pairs (A, B) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}{calc\+SCFEnergy\+RA}} (float threshold)
 \begin{DoxyCompactList}\small\item\em gradient of energy, rows are x y z, columns are atoms \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_cluster_a9a03aaade2abc5e5cd5e70307269a0e0}\label{class_cluster_a9a03aaade2abc5e5cd5e70307269a0e0}} 
-vec {\bfseries z\+\_\+vals} ()
-\item 
 \mbox{\Hypertarget{class_cluster_aac00bac4df568dbcf2b7b25c53ae9e5e}\label{class_cluster_aac00bac4df568dbcf2b7b25c53ae9e5e}} 
 mat {\bfseries molecular\+Orbital\+Coefficients} ()
 \item 
@@ -55,8 +40,6 @@ vec {\bfseries eigenvalues} ()
 \mbox{\Hypertarget{class_cluster_a4992f29606bf2e74738c14a802f11f4e}\label{class_cluster_a4992f29606bf2e74738c14a802f11f4e}} 
 double {\bfseries molecular\+Energy} ()
 \item 
-double \mbox{\hyperlink{class_cluster_a13b1c2b296a0d94057625e692e34db5a}{calc\+Distance}} (mat a1, mat a2)
-\begin{DoxyCompactList}\small\item\em calculates the distance between two atoms represented by 1d matrices with 3 values for x,y,and z respectively \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_cluster_a57ea38e70543bf83b66a6b6974941db3}{add\+Atom}} (int index, int atom\+Num, double \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}, double y, double z, double e, double s)
 \begin{DoxyCompactList}\small\item\em inserts an atom into the cluster \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
@@ -64,6 +47,24 @@ void \mbox{\hyperlink{class_cluster_a57ea38e70543bf83b66a6b6974941db3}{add\+Atom
 \item 
 \mbox{\Hypertarget{class_cluster_a7dd183181a9b6a2f226cbc75a52b6fc2}\label{class_cluster_a7dd183181a9b6a2f226cbc75a52b6fc2}} 
 mat {\bfseries atom\+Matrix}
+\item 
+\mbox{\Hypertarget{class_cluster_abbaf40565b4b416c31bdfa8cf51060ba}\label{class_cluster_abbaf40565b4b416c31bdfa8cf51060ba}} 
+int {\bfseries p}
+\item 
+\mbox{\Hypertarget{class_cluster_ad1176555caa7283449b8614a77bb549d}\label{class_cluster_ad1176555caa7283449b8614a77bb549d}} 
+int {\bfseries q}
+\item 
+\mbox{\Hypertarget{class_cluster_a8ccb7648462e309cea9169165de9a2a1}\label{class_cluster_a8ccb7648462e309cea9169165de9a2a1}} 
+int {\bfseries num\+Electron\+Pairs}
+\item 
+\mbox{\Hypertarget{class_cluster_a268b92bc898f415dac4f8e1e3070413a}\label{class_cluster_a268b92bc898f415dac4f8e1e3070413a}} 
+int {\bfseries num\+Valence\+Electrons}
+\item 
+\mbox{\Hypertarget{class_cluster_adfbacd0f917368faee1807aed7acadd5}\label{class_cluster_adfbacd0f917368faee1807aed7acadd5}} 
+int {\bfseries num\+Basis\+Functions}
+\item 
+\mbox{\Hypertarget{class_cluster_a882811d919ecb65da296b8bdcdd320fa}\label{class_cluster_a882811d919ecb65da296b8bdcdd320fa}} 
+vec {\bfseries valence\+Electron\+Counts\+Vec}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -111,20 +112,6 @@ std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\
 {\em s} & (double)\+: the sigma corresponding to the atom at the specified index \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_cluster_a385ac1bef69d2cc18778784917bf9615}\label{class_cluster_a385ac1bef69d2cc18778784917bf9615}} 
-\index{Cluster@{Cluster}!allAtomsMatch@{allAtomsMatch}}
-\index{allAtomsMatch@{allAtomsMatch}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{allAtomsMatch()}{allAtomsMatch()}}
-{\footnotesize\ttfamily bool Cluster\+::all\+Atoms\+Match (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em num} & int the atomic number to match \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-bool 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_cluster_ab1512ad6472652e408848071f817ae40}\label{class_cluster_ab1512ad6472652e408848071f817ae40}} 
 \index{Cluster@{Cluster}!basisFunctions@{basisFunctions}}
 \index{basisFunctions@{basisFunctions}!Cluster@{Cluster}}
@@ -133,22 +120,6 @@ bool
 
 \begin{DoxyReturn}{Returns}
 mat 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_a13b1c2b296a0d94057625e692e34db5a}\label{class_cluster_a13b1c2b296a0d94057625e692e34db5a}} 
-\index{Cluster@{Cluster}!calcDistance@{calcDistance}}
-\index{calcDistance@{calcDistance}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{calcDistance()}{calcDistance()}}
-{\footnotesize\ttfamily double Cluster\+::calc\+Distance (\begin{DoxyParamCaption}\item[{mat}]{a1,  }\item[{mat}]{a2 }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em a1} & (mat)\+: matrix representing the first atoms \\
-\hline
-{\em a2} & (mat)\+: matrix representing the second value \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-double\+: the distance between the two atoms described as having positions a1 and a2 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}\label{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}} 
 \index{Cluster@{Cluster}!calcSCFEnergyRA@{calcSCFEnergyRA}}
@@ -176,24 +147,6 @@ mat
 
 \begin{DoxyReturn}{Returns}
 mat 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_af4fbd4d768a64a231111694c5ca14429}\label{class_cluster_af4fbd4d768a64a231111694c5ca14429}} 
-\index{Cluster@{Cluster}!countBasisFunctions@{countBasisFunctions}}
-\index{countBasisFunctions@{countBasisFunctions}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{countBasisFunctions()}{countBasisFunctions()}}
-{\footnotesize\ttfamily int Cluster\+::count\+Basis\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-int 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_ac2f97ade07ef89a6a00275bc02462232}\label{class_cluster_ac2f97ade07ef89a6a00275bc02462232}} 
-\index{Cluster@{Cluster}!countElectronPairs@{countElectronPairs}}
-\index{countElectronPairs@{countElectronPairs}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{countElectronPairs()}{countElectronPairs()}}
-{\footnotesize\ttfamily int Cluster\+::count\+Electron\+Pairs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-int 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_cluster_a37286d10939c43b153a24e31b66b7e1b}\label{class_cluster_a37286d10939c43b153a24e31b66b7e1b}} 
 \index{Cluster@{Cluster}!gammaMatrix@{gammaMatrix}}

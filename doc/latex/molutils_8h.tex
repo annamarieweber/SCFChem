@@ -1,0 +1,194 @@
+\hypertarget{molutils_8h}{}\doxysection{include/molutils.h File Reference}
+\label{molutils_8h}\index{include/molutils.h@{include/molutils.h}}
+
+
+Defines utility methods for calculations on molecules.  
+
+
+{\ttfamily \#include $<$armadillo$>$}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cluster.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{molutils_8h_a116efe9f9347c0600940aab9132b1d32}{calc\+Distance}} (mat a1, mat a2)
+\begin{DoxyCompactList}\small\item\em calculates the distance between two atoms represented by 1d matrices with 3 values for x,y,and z respectively \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{molutils_8h_aab71bbbf115f6ceee12418e33eac3858}{broadcast\+To\+Orbitals}} (mat x, mat atom\+Matrix, int electron\+Count)
+\begin{DoxyCompactList}\small\item\em resizes matrix x to be sized by electrons rather than atoms \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{molutils_8h_ae80ec6c793851cf4f24b0856553d2355}{broadcast\+To\+Orbitals\+RA}} (mat x, mat atom\+Matrix, int electron\+Count)
+\begin{DoxyCompactList}\small\item\em resizes matrix x with dimensional flattened matrices to be sized by electron count rather than atoms \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{molutils_8h_aad01d29539b7975edd68c7aab10d1a36}{count\+Electron\+Pairs}} (mat atom\+Matrix, bool expect\+Even\+Electrons)
+\begin{DoxyCompactList}\small\item\em Calculate the number of electron pairs n for the atom\+Matrix. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{molutils_8h_a6afc2187d063ee7eb44165340bb7b12a}{spin\+Up\+Electrons}} (mat atom\+Matrix)
+\begin{DoxyCompactList}\small\item\em Calculate the number of spin up electrons. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{molutils_8h_adb8a9e599e413f51b5ed7bc4da319e10}{spin\+Down\+Electrons}} (mat atom\+Matrix)
+\begin{DoxyCompactList}\small\item\em Calculate the number of spin down electrons. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{molutils_8h_a651d346360bdf0463009c7b6f7486368}{count\+Basis\+Functions}} (mat atom\+Matrix)
+\begin{DoxyCompactList}\small\item\em Calculate the number of basis functions N for the described cluster. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{molutils_8h_a6cc5619277fc64e00c83000303a1338a}{all\+Atoms\+Match}} (int num, mat a)
+\begin{DoxyCompactList}\small\item\em Check if all atoms in matrix match provided atomic number. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{molutils_8h_ad9de95646c735636a2d642fa8bb1362f}{valence\+Electron\+Counts}} (mat atom\+Matrix)
+\begin{DoxyCompactList}\small\item\em Get a vector of valence atomic numbers for each atom in atom\+Matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Anna Weber (\href{mailto:anna@scfchem.com}{\texttt{ anna@scfchem.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/12-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{molutils_8h_a6cc5619277fc64e00c83000303a1338a}\label{molutils_8h_a6cc5619277fc64e00c83000303a1338a}} 
+\index{molutils.h@{molutils.h}!allAtomsMatch@{allAtomsMatch}}
+\index{allAtomsMatch@{allAtomsMatch}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{allAtomsMatch()}{allAtomsMatch()}}
+{\footnotesize\ttfamily bool all\+Atoms\+Match (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{mat}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & (int)\+: the atomic number to match \\
+\hline
+{\em a} & mat the matrix to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_aab71bbbf115f6ceee12418e33eac3858}\label{molutils_8h_aab71bbbf115f6ceee12418e33eac3858}} 
+\index{molutils.h@{molutils.h}!broadcastToOrbitals@{broadcastToOrbitals}}
+\index{broadcastToOrbitals@{broadcastToOrbitals}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{broadcastToOrbitals()}{broadcastToOrbitals()}}
+{\footnotesize\ttfamily mat broadcast\+To\+Orbitals (\begin{DoxyParamCaption}\item[{mat}]{x,  }\item[{mat}]{atom\+Matrix,  }\item[{int}]{electron\+Count }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & (mat)\+: an n $\ast$ n matrix where n = a number of atoms \\
+\hline
+{\em atom\+Matrix} & (atoms)\+: the matrix of atoms \\
+\hline
+{\em electron\+Count} & (int)\+: the number of electrons in the cluster \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_ae80ec6c793851cf4f24b0856553d2355}\label{molutils_8h_ae80ec6c793851cf4f24b0856553d2355}} 
+\index{molutils.h@{molutils.h}!broadcastToOrbitalsRA@{broadcastToOrbitalsRA}}
+\index{broadcastToOrbitalsRA@{broadcastToOrbitalsRA}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{broadcastToOrbitalsRA()}{broadcastToOrbitalsRA()}}
+{\footnotesize\ttfamily mat broadcast\+To\+Orbitals\+RA (\begin{DoxyParamCaption}\item[{mat}]{x,  }\item[{mat}]{atom\+Matrix,  }\item[{int}]{electron\+Count }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & (mat)\+: an 3 $\ast$ (n $\ast$ n) matrix where n = a number of atoms \\
+\hline
+{\em atom\+Matrix} & (atoms)\+: the matrix of atoms \\
+\hline
+{\em electron\+Count} & (int)\+: the number of electrons in the cluster \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_a116efe9f9347c0600940aab9132b1d32}\label{molutils_8h_a116efe9f9347c0600940aab9132b1d32}} 
+\index{molutils.h@{molutils.h}!calcDistance@{calcDistance}}
+\index{calcDistance@{calcDistance}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{calcDistance()}{calcDistance()}}
+{\footnotesize\ttfamily double calc\+Distance (\begin{DoxyParamCaption}\item[{mat}]{a1,  }\item[{mat}]{a2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a1} & (mat)\+: matrix representing the first atom \\
+\hline
+{\em a2} & (mat)\+: matrix representing the second atom \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double\+: the distance between the two atoms described as having positions a1 and a2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_a651d346360bdf0463009c7b6f7486368}\label{molutils_8h_a651d346360bdf0463009c7b6f7486368}} 
+\index{molutils.h@{molutils.h}!countBasisFunctions@{countBasisFunctions}}
+\index{countBasisFunctions@{countBasisFunctions}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{countBasisFunctions()}{countBasisFunctions()}}
+{\footnotesize\ttfamily int count\+Basis\+Functions (\begin{DoxyParamCaption}\item[{mat}]{atom\+Matrix }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+Matrix} & (mat)\+: the matrix of atoms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_aad01d29539b7975edd68c7aab10d1a36}\label{molutils_8h_aad01d29539b7975edd68c7aab10d1a36}} 
+\index{molutils.h@{molutils.h}!countElectronPairs@{countElectronPairs}}
+\index{countElectronPairs@{countElectronPairs}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{countElectronPairs()}{countElectronPairs()}}
+{\footnotesize\ttfamily int count\+Electron\+Pairs (\begin{DoxyParamCaption}\item[{mat}]{atom\+Matrix,  }\item[{bool}]{expect\+Even\+Electrons }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+Matrix} & (mat)\+: the matrix of atoms \\
+\hline
+{\em expect\+Even\+Electrons} & (bool)\+: if the molecule should have an even number of electrons defaults to false \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_base_exception}{Base\+Exception}}} & invalid electron configuration if expects\+Even\+Electrons and electron count is odd \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{molutils_8h_adb8a9e599e413f51b5ed7bc4da319e10}\label{molutils_8h_adb8a9e599e413f51b5ed7bc4da319e10}} 
+\index{molutils.h@{molutils.h}!spinDownElectrons@{spinDownElectrons}}
+\index{spinDownElectrons@{spinDownElectrons}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{spinDownElectrons()}{spinDownElectrons()}}
+{\footnotesize\ttfamily int spin\+Down\+Electrons (\begin{DoxyParamCaption}\item[{mat}]{atom\+Matrix }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+Matrix} & (mat)\+: the matrix of atoms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_a6afc2187d063ee7eb44165340bb7b12a}\label{molutils_8h_a6afc2187d063ee7eb44165340bb7b12a}} 
+\index{molutils.h@{molutils.h}!spinUpElectrons@{spinUpElectrons}}
+\index{spinUpElectrons@{spinUpElectrons}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{spinUpElectrons()}{spinUpElectrons()}}
+{\footnotesize\ttfamily int spin\+Up\+Electrons (\begin{DoxyParamCaption}\item[{mat}]{atom\+Matrix }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+Matrix} & (mat)\+: the matrix of atoms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{molutils_8h_ad9de95646c735636a2d642fa8bb1362f}\label{molutils_8h_ad9de95646c735636a2d642fa8bb1362f}} 
+\index{molutils.h@{molutils.h}!valenceElectronCounts@{valenceElectronCounts}}
+\index{valenceElectronCounts@{valenceElectronCounts}!molutils.h@{molutils.h}}
+\doxysubsubsection{\texorpdfstring{valenceElectronCounts()}{valenceElectronCounts()}}
+{\footnotesize\ttfamily vec valence\+Electron\+Counts (\begin{DoxyParamCaption}\item[{mat}]{atom\+Matrix }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+Matrix} & (mat)\+: the matrix of atoms \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vec 
+\end{DoxyReturn}
