@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('class_cluster.html',''); initResizable
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1396978d8b6298311af1141ea576259"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#ae1396978d8b6298311af1141ea576259">Cluster</a> (int numAtoms)</td></tr>
-<tr class="memdesc:ae1396978d8b6298311af1141ea576259"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_cluster.html">Cluster</a> constructor @detail Creates a cluster of atoms represented as a matrix with numAtoms rows and 4 columns where the first column is the atomic number and the remaining there columns are the x, y, and z coordinates of the given atom respectively.  <a href="class_cluster.html#ae1396978d8b6298311af1141ea576259">More...</a><br /></td></tr>
+<tr class="memdesc:ae1396978d8b6298311af1141ea576259"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_cluster.html">Cluster</a> constructor.  <a href="class_cluster.html#ae1396978d8b6298311af1141ea576259">More...</a><br /></td></tr>
 <tr class="separator:ae1396978d8b6298311af1141ea576259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1512ad6472652e408848071f817ae40"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#ab1512ad6472652e408848071f817ae40">basisFunctions</a> ()</td></tr>
 <tr class="memdesc:ab1512ad6472652e408848071f817ae40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix representing the basis functions for all of the overlaps.  <a href="class_cluster.html#ab1512ad6472652e408848071f817ae40">More...</a><br /></td></tr>
@@ -104,36 +104,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c8d163fa46c4f71b2dd807087245dcb"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a5c8d163fa46c4f71b2dd807087245dcb">sBasisFunctions</a> ()</td></tr>
 <tr class="memdesc:a5c8d163fa46c4f71b2dd807087245dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a matrix representing the s basis functions for all of the overlaps.  <a href="class_cluster.html#a5c8d163fa46c4f71b2dd807087245dcb">More...</a><br /></td></tr>
 <tr class="separator:a5c8d163fa46c4f71b2dd807087245dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea5738623c8ecd5aceacb2f371e506f"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a6ea5738623c8ecd5aceacb2f371e506f">x</a> (mat p_a, mat p_b, mat bonding_parameters)</td></tr>
-<tr class="memdesc:a6ea5738623c8ecd5aceacb2f371e506f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the x component of the gradient calculation  <a href="class_cluster.html#a6ea5738623c8ecd5aceacb2f371e506f">More...</a><br /></td></tr>
-<tr class="separator:a6ea5738623c8ecd5aceacb2f371e506f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9429ba8789a2e700f5403711c1c995"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#aaf9429ba8789a2e700f5403711c1c995">cndo2FockMatrix</a> (mat p_a, mat p_b, mat &amp;bonding_params)</td></tr>
-<tr class="memdesc:aaf9429ba8789a2e700f5403711c1c995"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the CNDO2 Fock Matrix for the molecule  <a href="class_cluster.html#aaf9429ba8789a2e700f5403711c1c995">More...</a><br /></td></tr>
-<tr class="separator:aaf9429ba8789a2e700f5403711c1c995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a088f19ffbac085cd35830c518f20c7f1"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a088f19ffbac085cd35830c518f20c7f1">cndo2FockMatrixRA</a> (mat p_a, mat p_b)</td></tr>
-<tr class="memdesc:a088f19ffbac085cd35830c518f20c7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the derivative of CNDO2 Fock Matrix for the molecule with respect to Ra  <a href="class_cluster.html#a088f19ffbac085cd35830c518f20c7f1">More...</a><br /></td></tr>
-<tr class="separator:a088f19ffbac085cd35830c518f20c7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee83b1144a64a3d8dbbebe648f94732b"><td class="memItemLeft" align="right" valign="top"><a id="aee83b1144a64a3d8dbbebe648f94732b" name="aee83b1144a64a3d8dbbebe648f94732b"></a>
-mat&#160;</td><td class="memItemRight" valign="bottom"><b>x</b> (mat p_a, mat p_b, vec b_a, vec b_b)</td></tr>
-<tr class="separator:aee83b1144a64a3d8dbbebe648f94732b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0713a6ebf1a40ac5ef6252ef569795f"><td class="memItemLeft" align="right" valign="top"><a id="aa0713a6ebf1a40ac5ef6252ef569795f" name="aa0713a6ebf1a40ac5ef6252ef569795f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcSCFEnergy</b> (float threshold)</td></tr>
-<tr class="separator:aa0713a6ebf1a40ac5ef6252ef569795f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa23c4b0cace95da1a55b7a3c2fd2d593"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#aa23c4b0cace95da1a55b7a3c2fd2d593">overlapMatrix</a> ()</td></tr>
-<tr class="memdesc:aa23c4b0cace95da1a55b7a3c2fd2d593"><td class="mdescLeft">&#160;</td><td class="mdescRight">overlap matrix  <a href="class_cluster.html#aa23c4b0cace95da1a55b7a3c2fd2d593">More...</a><br /></td></tr>
-<tr class="separator:aa23c4b0cace95da1a55b7a3c2fd2d593"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee07ef5be59f470ca218d9d647e266fe"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#aee07ef5be59f470ca218d9d647e266fe">overlapMatrixRA</a> ()</td></tr>
-<tr class="memdesc:aee07ef5be59f470ca218d9d647e266fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">gradient of overlap matrix, rows are x y z, columns are overlap matrix elements  <a href="class_cluster.html#aee07ef5be59f470ca218d9d647e266fe">More...</a><br /></td></tr>
-<tr class="separator:aee07ef5be59f470ca218d9d647e266fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37286d10939c43b153a24e31b66b7e1b"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a37286d10939c43b153a24e31b66b7e1b">gammaMatrix</a> ()</td></tr>
-<tr class="memdesc:a37286d10939c43b153a24e31b66b7e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">gamma matrix,  <a href="class_cluster.html#a37286d10939c43b153a24e31b66b7e1b">More...</a><br /></td></tr>
-<tr class="separator:a37286d10939c43b153a24e31b66b7e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3389229703edf2e7701d4776d51d6fa5"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a3389229703edf2e7701d4776d51d6fa5">gammaMatrixRA</a> ()</td></tr>
-<tr class="memdesc:a3389229703edf2e7701d4776d51d6fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">gradient of gamma matrix, rows are x y z, columns are atom pairs (A, B)  <a href="class_cluster.html#a3389229703edf2e7701d4776d51d6fa5">More...</a><br /></td></tr>
-<tr class="separator:a3389229703edf2e7701d4776d51d6fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84acbd2acb93b6180a6263db3c1efc88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a84acbd2acb93b6180a6263db3c1efc88">calcSCFEnergyRA</a> (float threshold)</td></tr>
-<tr class="memdesc:a84acbd2acb93b6180a6263db3c1efc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">gradient of energy, rows are x y z, columns are atoms  <a href="class_cluster.html#a84acbd2acb93b6180a6263db3c1efc88">More...</a><br /></td></tr>
-<tr class="separator:a84acbd2acb93b6180a6263db3c1efc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac00bac4df568dbcf2b7b25c53ae9e5e"><td class="memItemLeft" align="right" valign="top"><a id="aac00bac4df568dbcf2b7b25c53ae9e5e" name="aac00bac4df568dbcf2b7b25c53ae9e5e"></a>
 mat&#160;</td><td class="memItemRight" valign="bottom"><b>molecularOrbitalCoefficients</b> ()</td></tr>
 <tr class="separator:aac00bac4df568dbcf2b7b25c53ae9e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,12 +113,15 @@ vec&#160;</td><td class="memItemRight" valign="bottom"><b>eigenvalues</b> ()</td
 <tr class="memitem:a4992f29606bf2e74738c14a802f11f4e"><td class="memItemLeft" align="right" valign="top"><a id="a4992f29606bf2e74738c14a802f11f4e" name="a4992f29606bf2e74738c14a802f11f4e"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>molecularEnergy</b> ()</td></tr>
 <tr class="separator:a4992f29606bf2e74738c14a802f11f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57ea38e70543bf83b66a6b6974941db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a57ea38e70543bf83b66a6b6974941db3">addAtom</a> (int index, int atomNum, double <a class="el" href="class_cluster.html#a6ea5738623c8ecd5aceacb2f371e506f">x</a>, double y, double z, double e, double s)</td></tr>
+<tr class="memitem:a57ea38e70543bf83b66a6b6974941db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cluster.html#a57ea38e70543bf83b66a6b6974941db3">addAtom</a> (int index, int atomNum, double x, double y, double z, double e, double s)</td></tr>
 <tr class="memdesc:a57ea38e70543bf83b66a6b6974941db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">inserts an atom into the cluster  <a href="class_cluster.html#a57ea38e70543bf83b66a6b6974941db3">More...</a><br /></td></tr>
 <tr class="separator:a57ea38e70543bf83b66a6b6974941db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a186bf3f563c3751f2ce21f79f2ed2d1e"><td class="memItemLeft" align="right" valign="top"><a id="a186bf3f563c3751f2ce21f79f2ed2d1e" name="a186bf3f563c3751f2ce21f79f2ed2d1e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>K</b></td></tr>
+<tr class="separator:a186bf3f563c3751f2ce21f79f2ed2d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dd183181a9b6a2f226cbc75a52b6fc2"><td class="memItemLeft" align="right" valign="top"><a id="a7dd183181a9b6a2f226cbc75a52b6fc2" name="a7dd183181a9b6a2f226cbc75a52b6fc2"></a>
 mat&#160;</td><td class="memItemRight" valign="bottom"><b>atomMatrix</b></td></tr>
 <tr class="separator:a7dd183181a9b6a2f226cbc75a52b6fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,7 +167,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+<p >Creates a cluster of atoms represented as a matrix with numAtoms rows and 4 columns where the first column is the atomic number and the remaining there columns are the x, y, and z coordinates of the given atom respectively. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">numAtoms</td><td>int: the number of atoms to be included in the cluster </td></tr>
   </table>
@@ -292,161 +265,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 
 </div>
 </div>
-<a id="a84acbd2acb93b6180a6263db3c1efc88" name="a84acbd2acb93b6180a6263db3c1efc88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84acbd2acb93b6180a6263db3c1efc88">&#9670;&nbsp;</a></span>calcSCFEnergyRA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Cluster::calcSCFEnergyRA </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>threshold</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>vec </dd></dl>
-
-</div>
-</div>
-<a id="aaf9429ba8789a2e700f5403711c1c995" name="aaf9429ba8789a2e700f5403711c1c995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf9429ba8789a2e700f5403711c1c995">&#9670;&nbsp;</a></span>cndo2FockMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::cndo2FockMatrix </td>
-          <td>(</td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>p_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>p_b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mat &amp;&#160;</td>
-          <td class="paramname"><em>bonding_params</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>mat </dd></dl>
-
-</div>
-</div>
-<a id="a088f19ffbac085cd35830c518f20c7f1" name="a088f19ffbac085cd35830c518f20c7f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a088f19ffbac085cd35830c518f20c7f1">&#9670;&nbsp;</a></span>cndo2FockMatrixRA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::cndo2FockMatrixRA </td>
-          <td>(</td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>p_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>p_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>mat </dd></dl>
-
-</div>
-</div>
-<a id="a37286d10939c43b153a24e31b66b7e1b" name="a37286d10939c43b153a24e31b66b7e1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37286d10939c43b153a24e31b66b7e1b">&#9670;&nbsp;</a></span>gammaMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::gammaMatrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>vec </dd></dl>
-
-</div>
-</div>
-<a id="a3389229703edf2e7701d4776d51d6fa5" name="a3389229703edf2e7701d4776d51d6fa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3389229703edf2e7701d4776d51d6fa5">&#9670;&nbsp;</a></span>gammaMatrixRA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::gammaMatrixRA </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>vec </dd></dl>
-
-</div>
-</div>
-<a id="aa23c4b0cace95da1a55b7a3c2fd2d593" name="aa23c4b0cace95da1a55b7a3c2fd2d593"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa23c4b0cace95da1a55b7a3c2fd2d593">&#9670;&nbsp;</a></span>overlapMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::overlapMatrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>mat </dd></dl>
-
-</div>
-</div>
-<a id="aee07ef5be59f470ca218d9d647e266fe" name="aee07ef5be59f470ca218d9d647e266fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee07ef5be59f470ca218d9d647e266fe">&#9670;&nbsp;</a></span>overlapMatrixRA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::overlapMatrixRA </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>mat </dd></dl>
-
-</div>
-</div>
 <a id="a5c8d163fa46c4f71b2dd807087245dcb" name="a5c8d163fa46c4f71b2dd807087245dcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c8d163fa46c4f71b2dd807087245dcb">&#9670;&nbsp;</a></span>sBasisFunctions()</h2>
 
@@ -461,49 +279,6 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>mat </dd></dl>
-
-</div>
-</div>
-<a id="a6ea5738623c8ecd5aceacb2f371e506f" name="a6ea5738623c8ecd5aceacb2f371e506f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ea5738623c8ecd5aceacb2f371e506f">&#9670;&nbsp;</a></span>x()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mat Cluster::x </td>
-          <td>(</td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>p_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>p_b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mat&#160;</td>
-          <td class="paramname"><em>bonding_parameters</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p_a</td><td></td></tr>
-    <tr><td class="paramname">p_b</td><td></td></tr>
-    <tr><td class="paramname">bonding_parameters</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>mat </dd></dl>
 
 </div>

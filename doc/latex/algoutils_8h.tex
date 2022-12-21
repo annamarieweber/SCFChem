@@ -1,0 +1,42 @@
+\hypertarget{algoutils_8h}{}\doxysection{include/algoutils.h File Reference}
+\label{algoutils_8h}\index{include/algoutils.h@{include/algoutils.h}}
+
+
+Defines utility functions used in algorithm calculations.  
+
+
+{\ttfamily \#include $<$armadillo$>$}\newline
+{\ttfamily \#include \char`\"{}cluster.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacealgo}{algo}}
+\begin{DoxyCompactList}\small\item\em namespace for all algorithms used in SCF chem calculations \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespacealgo_1_1utils}{algo\+::utils}}
+\begin{DoxyCompactList}\small\item\em namespace for utility functions used in algorithms \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_a84fc1cf29477457faa2f4e78a80e1550}{algo\+::utils\+::gamma\+Matrix}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em calculates the gamma matrix used to calculate the fock matrix \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_aa03ebac4540e122069e7fc278670d365}{algo\+::utils\+::gamma\+Matrix\+RA}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em gradient of gamma matrix, rows are x y z, columns are atom pairs (A, B) \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_af7d0c90b41306848bb72fcc10d093d32}{algo\+::utils\+::overlap\+Matrix}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em overlap matrix \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_a7cd040b503a21471d4009b5aaa6b8bd7}{algo\+::utils\+::overlap\+Matrix\+RA}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em gradient of overlap matrix, rows are x y z, columns are overlap matrix elements \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Anna Weber (\href{mailto:anna@scfchem.com}{\texttt{ anna@scfchem.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/12-\/21
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}

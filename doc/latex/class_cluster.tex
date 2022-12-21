@@ -4,33 +4,11 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_cluster_ae1396978d8b6298311af1141ea576259}{Cluster}} (int num\+Atoms)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_cluster}{Cluster}} constructor @detail Creates a cluster of atoms represented as a matrix with num\+Atoms rows and 4 columns where the first column is the atomic number and the remaining there columns are the x, y, and z coordinates of the given atom respectively. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_cluster}{Cluster}} constructor. \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{class_cluster_ab1512ad6472652e408848071f817ae40}{basis\+Functions}} ()
 \begin{DoxyCompactList}\small\item\em Returns a matrix representing the basis functions for all of the overlaps. \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{class_cluster_a5c8d163fa46c4f71b2dd807087245dcb}{s\+Basis\+Functions}} ()
 \begin{DoxyCompactList}\small\item\em Returns a matrix representing the s basis functions for all of the overlaps. \end{DoxyCompactList}\item 
-mat \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}} (mat p\+\_\+a, mat p\+\_\+b, mat bonding\+\_\+parameters)
-\begin{DoxyCompactList}\small\item\em calculate the x component of the gradient calculation \end{DoxyCompactList}\item 
-mat \mbox{\hyperlink{class_cluster_aaf9429ba8789a2e700f5403711c1c995}{cndo2\+Fock\+Matrix}} (mat p\+\_\+a, mat p\+\_\+b, mat \&bonding\+\_\+params)
-\begin{DoxyCompactList}\small\item\em returns the CNDO2 Fock Matrix for the molecule \end{DoxyCompactList}\item 
-mat \mbox{\hyperlink{class_cluster_a088f19ffbac085cd35830c518f20c7f1}{cndo2\+Fock\+Matrix\+RA}} (mat p\+\_\+a, mat p\+\_\+b)
-\begin{DoxyCompactList}\small\item\em returns the derivative of CNDO2 Fock Matrix for the molecule with respect to Ra \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_cluster_aee83b1144a64a3d8dbbebe648f94732b}\label{class_cluster_aee83b1144a64a3d8dbbebe648f94732b}} 
-mat {\bfseries x} (mat p\+\_\+a, mat p\+\_\+b, vec b\+\_\+a, vec b\+\_\+b)
-\item 
-\mbox{\Hypertarget{class_cluster_aa0713a6ebf1a40ac5ef6252ef569795f}\label{class_cluster_aa0713a6ebf1a40ac5ef6252ef569795f}} 
-void {\bfseries calc\+SCFEnergy} (float threshold)
-\item 
-mat \mbox{\hyperlink{class_cluster_aa23c4b0cace95da1a55b7a3c2fd2d593}{overlap\+Matrix}} ()
-\begin{DoxyCompactList}\small\item\em overlap matrix \end{DoxyCompactList}\item 
-mat \mbox{\hyperlink{class_cluster_aee07ef5be59f470ca218d9d647e266fe}{overlap\+Matrix\+RA}} ()
-\begin{DoxyCompactList}\small\item\em gradient of overlap matrix, rows are x y z, columns are overlap matrix elements \end{DoxyCompactList}\item 
-mat \mbox{\hyperlink{class_cluster_a37286d10939c43b153a24e31b66b7e1b}{gamma\+Matrix}} ()
-\begin{DoxyCompactList}\small\item\em gamma matrix, \end{DoxyCompactList}\item 
-mat \mbox{\hyperlink{class_cluster_a3389229703edf2e7701d4776d51d6fa5}{gamma\+Matrix\+RA}} ()
-\begin{DoxyCompactList}\small\item\em gradient of gamma matrix, rows are x y z, columns are atom pairs (A, B) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}{calc\+SCFEnergy\+RA}} (float threshold)
-\begin{DoxyCompactList}\small\item\em gradient of energy, rows are x y z, columns are atoms \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_cluster_aac00bac4df568dbcf2b7b25c53ae9e5e}\label{class_cluster_aac00bac4df568dbcf2b7b25c53ae9e5e}} 
 mat {\bfseries molecular\+Orbital\+Coefficients} ()
 \item 
@@ -40,10 +18,13 @@ vec {\bfseries eigenvalues} ()
 \mbox{\Hypertarget{class_cluster_a4992f29606bf2e74738c14a802f11f4e}\label{class_cluster_a4992f29606bf2e74738c14a802f11f4e}} 
 double {\bfseries molecular\+Energy} ()
 \item 
-void \mbox{\hyperlink{class_cluster_a57ea38e70543bf83b66a6b6974941db3}{add\+Atom}} (int index, int atom\+Num, double \mbox{\hyperlink{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}{x}}, double y, double z, double e, double s)
+void \mbox{\hyperlink{class_cluster_a57ea38e70543bf83b66a6b6974941db3}{add\+Atom}} (int index, int atom\+Num, double x, double y, double z, double e, double s)
 \begin{DoxyCompactList}\small\item\em inserts an atom into the cluster \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_cluster_a186bf3f563c3751f2ce21f79f2ed2d1e}\label{class_cluster_a186bf3f563c3751f2ce21f79f2ed2d1e}} 
+int {\bfseries K}
 \item 
 \mbox{\Hypertarget{class_cluster_a7dd183181a9b6a2f226cbc75a52b6fc2}\label{class_cluster_a7dd183181a9b6a2f226cbc75a52b6fc2}} 
 mat {\bfseries atom\+Matrix}
@@ -81,7 +62,7 @@ std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\
 \doxysubsubsection{\texorpdfstring{Cluster()}{Cluster()}}
 {\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}\item[{int}]{num\+Atoms }\end{DoxyParamCaption})}
 
-
+Creates a cluster of atoms represented as a matrix with num\+Atoms rows and 4 columns where the first column is the atomic number and the remaining there columns are the x, y, and z coordinates of the given atom respectively. 
 \begin{DoxyParams}{Parameters}
 {\em num\+Atoms} & int\+: the number of atoms to be included in the cluster \\
 \hline
@@ -121,93 +102,12 @@ std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\
 \begin{DoxyReturn}{Returns}
 mat 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}\label{class_cluster_a84acbd2acb93b6180a6263db3c1efc88}} 
-\index{Cluster@{Cluster}!calcSCFEnergyRA@{calcSCFEnergyRA}}
-\index{calcSCFEnergyRA@{calcSCFEnergyRA}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{calcSCFEnergyRA()}{calcSCFEnergyRA()}}
-{\footnotesize\ttfamily void Cluster\+::calc\+SCFEnergy\+RA (\begin{DoxyParamCaption}\item[{float}]{threshold }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-vec 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_aaf9429ba8789a2e700f5403711c1c995}\label{class_cluster_aaf9429ba8789a2e700f5403711c1c995}} 
-\index{Cluster@{Cluster}!cndo2FockMatrix@{cndo2FockMatrix}}
-\index{cndo2FockMatrix@{cndo2FockMatrix}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{cndo2FockMatrix()}{cndo2FockMatrix()}}
-{\footnotesize\ttfamily mat Cluster\+::cndo2\+Fock\+Matrix (\begin{DoxyParamCaption}\item[{mat}]{p\+\_\+a,  }\item[{mat}]{p\+\_\+b,  }\item[{mat \&}]{bonding\+\_\+params }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-mat 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_a088f19ffbac085cd35830c518f20c7f1}\label{class_cluster_a088f19ffbac085cd35830c518f20c7f1}} 
-\index{Cluster@{Cluster}!cndo2FockMatrixRA@{cndo2FockMatrixRA}}
-\index{cndo2FockMatrixRA@{cndo2FockMatrixRA}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{cndo2FockMatrixRA()}{cndo2FockMatrixRA()}}
-{\footnotesize\ttfamily mat Cluster\+::cndo2\+Fock\+Matrix\+RA (\begin{DoxyParamCaption}\item[{mat}]{p\+\_\+a,  }\item[{mat}]{p\+\_\+b }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-mat 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_a37286d10939c43b153a24e31b66b7e1b}\label{class_cluster_a37286d10939c43b153a24e31b66b7e1b}} 
-\index{Cluster@{Cluster}!gammaMatrix@{gammaMatrix}}
-\index{gammaMatrix@{gammaMatrix}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{gammaMatrix()}{gammaMatrix()}}
-{\footnotesize\ttfamily mat Cluster\+::gamma\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-vec 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_a3389229703edf2e7701d4776d51d6fa5}\label{class_cluster_a3389229703edf2e7701d4776d51d6fa5}} 
-\index{Cluster@{Cluster}!gammaMatrixRA@{gammaMatrixRA}}
-\index{gammaMatrixRA@{gammaMatrixRA}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{gammaMatrixRA()}{gammaMatrixRA()}}
-{\footnotesize\ttfamily mat Cluster\+::gamma\+Matrix\+RA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-vec 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_aa23c4b0cace95da1a55b7a3c2fd2d593}\label{class_cluster_aa23c4b0cace95da1a55b7a3c2fd2d593}} 
-\index{Cluster@{Cluster}!overlapMatrix@{overlapMatrix}}
-\index{overlapMatrix@{overlapMatrix}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{overlapMatrix()}{overlapMatrix()}}
-{\footnotesize\ttfamily mat Cluster\+::overlap\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-mat 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_aee07ef5be59f470ca218d9d647e266fe}\label{class_cluster_aee07ef5be59f470ca218d9d647e266fe}} 
-\index{Cluster@{Cluster}!overlapMatrixRA@{overlapMatrixRA}}
-\index{overlapMatrixRA@{overlapMatrixRA}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{overlapMatrixRA()}{overlapMatrixRA()}}
-{\footnotesize\ttfamily mat Cluster\+::overlap\+Matrix\+RA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\begin{DoxyReturn}{Returns}
-mat 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_cluster_a5c8d163fa46c4f71b2dd807087245dcb}\label{class_cluster_a5c8d163fa46c4f71b2dd807087245dcb}} 
 \index{Cluster@{Cluster}!sBasisFunctions@{sBasisFunctions}}
 \index{sBasisFunctions@{sBasisFunctions}!Cluster@{Cluster}}
 \doxysubsubsection{\texorpdfstring{sBasisFunctions()}{sBasisFunctions()}}
 {\footnotesize\ttfamily mat Cluster\+::s\+Basis\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\begin{DoxyReturn}{Returns}
-mat 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}\label{class_cluster_a6ea5738623c8ecd5aceacb2f371e506f}} 
-\index{Cluster@{Cluster}!x@{x}}
-\index{x@{x}!Cluster@{Cluster}}
-\doxysubsubsection{\texorpdfstring{x()}{x()}}
-{\footnotesize\ttfamily mat Cluster\+::x (\begin{DoxyParamCaption}\item[{mat}]{p\+\_\+a,  }\item[{mat}]{p\+\_\+b,  }\item[{mat}]{bonding\+\_\+parameters }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em p\+\_\+a} & \\
-\hline
-{\em p\+\_\+b} & \\
-\hline
-{\em bonding\+\_\+parameters} & \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 mat 
 \end{DoxyReturn}

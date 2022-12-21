@@ -1,0 +1,48 @@
+\hypertarget{namespacealgo_1_1scf}{}\doxysection{algo\+::scf Namespace Reference}
+\label{namespacealgo_1_1scf}\index{algo::scf@{algo::scf}}
+
+
+namespace contains functions for running SCF algorithms  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+mat \mbox{\hyperlink{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}{x\+\_\+component}} (mat p\+\_\+a, mat p\+\_\+b, mat bonding\+\_\+parameters)
+\begin{DoxyCompactList}\small\item\em calculate the x component of the gradient calculation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}{calc\+SCFEnergy}} (float threshold, \mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em calculates and prints the nuclear, electron, and total energy for the molecule \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}\label{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}} 
+\index{algo::scf@{algo::scf}!calcSCFEnergy@{calcSCFEnergy}}
+\index{calcSCFEnergy@{calcSCFEnergy}!algo::scf@{algo::scf}}
+\doxysubsubsection{\texorpdfstring{calcSCFEnergy()}{calcSCFEnergy()}}
+{\footnotesize\ttfamily void algo\+::scf\+::calc\+SCFEnergy (\begin{DoxyParamCaption}\item[{float}]{threshold,  }\item[{\mbox{\hyperlink{class_cluster}{Cluster}}}]{cluster }\end{DoxyParamCaption})}
+
+calculates the energy using the SCF algorithm running until the input threshold is reached
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & (float)\+: the threshold to run the algorithm to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}\label{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}} 
+\index{algo::scf@{algo::scf}!x\_component@{x\_component}}
+\index{x\_component@{x\_component}!algo::scf@{algo::scf}}
+\doxysubsubsection{\texorpdfstring{x\_component()}{x\_component()}}
+{\footnotesize\ttfamily mat algo\+::scf\+::x\+\_\+component (\begin{DoxyParamCaption}\item[{mat}]{p\+\_\+a,  }\item[{mat}]{p\+\_\+b,  }\item[{mat}]{bonding\+\_\+parameters }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+a} & \\
+\hline
+{\em p\+\_\+b} & \\
+\hline
+{\em bonding\+\_\+parameters} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}

@@ -87,12 +87,41 @@ $(document).ready(function(){initNavTree('cndo2_8h_source.html',''); initResizab
   <div class="headertitle"><div class="title">cndo2.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="cndo2_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef CNDO2</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define CNDO2</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;armadillo&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="cluster_8h.html">cluster.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacealgo.html">algo</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacealgo_1_1cndo2.html">   24</a></span>    <span class="keyword">namespace </span>cndo2</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">using namespace </span>arma;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html">   30</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html">CNDO2Result</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html#aa695770b1684a733fe934f92696981e8">   32</a></span>            mat <a class="code hl_variable" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html#aa695770b1684a733fe934f92696981e8">fock</a>;              </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html#a708e5d643c8a9ca1e2bb5ee233063427">   33</a></span>            mat <a class="code hl_variable" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html#a708e5d643c8a9ca1e2bb5ee233063427">bonding_param_tot</a>; </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespacealgo_1_1cndo2.html#a12f334cba78e6b8efe6efeb9045a9045">   44</a></span>        <a class="code hl_struct" href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html">CNDO2Result</a> <a class="code hl_function" href="namespacealgo_1_1cndo2.html#a12f334cba78e6b8efe6efeb9045a9045">fockMatrix</a>(mat p_a, mat p_b, <a class="code hl_class" href="class_cluster.html">Cluster</a> cluster);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_cluster_html"><div class="ttname"><a href="class_cluster.html">Cluster</a></div><div class="ttdef"><b>Definition:</b> cluster.h:23</div></div>
+<div class="ttc" id="acluster_8h_html"><div class="ttname"><a href="cluster_8h.html">cluster.h</a></div><div class="ttdoc">Definition of the cluster class and its methods.</div></div>
+<div class="ttc" id="anamespacealgo_1_1cndo2_html_a12f334cba78e6b8efe6efeb9045a9045"><div class="ttname"><a href="namespacealgo_1_1cndo2.html#a12f334cba78e6b8efe6efeb9045a9045">algo::cndo2::fockMatrix</a></div><div class="ttdeci">CNDO2Result fockMatrix(mat p_a, mat p_b, Cluster cluster)</div><div class="ttdoc">returns the CNDO2 Fock Matrix for the molecule</div></div>
+<div class="ttc" id="anamespacealgo_html"><div class="ttname"><a href="namespacealgo.html">algo</a></div><div class="ttdoc">namespace for all algorithms used in SCF chem calculations</div><div class="ttdef"><b>Definition:</b> algoutils.h:23</div></div>
+<div class="ttc" id="astructalgo_1_1cndo2_1_1_c_n_d_o2_result_html"><div class="ttname"><a href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html">algo::cndo2::CNDO2Result</a></div><div class="ttdoc">an object for storing output of the cndo2 calculation</div><div class="ttdef"><b>Definition:</b> cndo2.h:31</div></div>
+<div class="ttc" id="astructalgo_1_1cndo2_1_1_c_n_d_o2_result_html_a708e5d643c8a9ca1e2bb5ee233063427"><div class="ttname"><a href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html#a708e5d643c8a9ca1e2bb5ee233063427">algo::cndo2::CNDO2Result::bonding_param_tot</a></div><div class="ttdeci">mat bonding_param_tot</div><div class="ttdef"><b>Definition:</b> cndo2.h:33</div></div>
+<div class="ttc" id="astructalgo_1_1cndo2_1_1_c_n_d_o2_result_html_aa695770b1684a733fe934f92696981e8"><div class="ttname"><a href="structalgo_1_1cndo2_1_1_c_n_d_o2_result.html#aa695770b1684a733fe934f92696981e8">algo::cndo2::CNDO2Result::fock</a></div><div class="ttdeci">mat fock</div><div class="ttdef"><b>Definition:</b> cndo2.h:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>cndo2.h</b></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="cndo2_8h.html">cndo2.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

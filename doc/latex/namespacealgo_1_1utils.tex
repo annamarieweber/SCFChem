@@ -1,0 +1,57 @@
+\hypertarget{namespacealgo_1_1utils}{}\doxysection{algo\+::utils Namespace Reference}
+\label{namespacealgo_1_1utils}\index{algo::utils@{algo::utils}}
+
+
+namespace for utility functions used in algorithms  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_a84fc1cf29477457faa2f4e78a80e1550}{gamma\+Matrix}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em calculates the gamma matrix used to calculate the fock matrix \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_aa03ebac4540e122069e7fc278670d365}{gamma\+Matrix\+RA}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em gradient of gamma matrix, rows are x y z, columns are atom pairs (A, B) \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_af7d0c90b41306848bb72fcc10d093d32}{overlap\+Matrix}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em overlap matrix \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{namespacealgo_1_1utils_a7cd040b503a21471d4009b5aaa6b8bd7}{overlap\+Matrix\+RA}} (\mbox{\hyperlink{class_cluster}{Cluster}} cluster)
+\begin{DoxyCompactList}\small\item\em gradient of overlap matrix, rows are x y z, columns are overlap matrix elements \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacealgo_1_1utils_a84fc1cf29477457faa2f4e78a80e1550}\label{namespacealgo_1_1utils_a84fc1cf29477457faa2f4e78a80e1550}} 
+\index{algo::utils@{algo::utils}!gammaMatrix@{gammaMatrix}}
+\index{gammaMatrix@{gammaMatrix}!algo::utils@{algo::utils}}
+\doxysubsubsection{\texorpdfstring{gammaMatrix()}{gammaMatrix()}}
+{\footnotesize\ttfamily mat algo\+::utils\+::gamma\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cluster}{Cluster}}}]{cluster }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacealgo_1_1utils_aa03ebac4540e122069e7fc278670d365}\label{namespacealgo_1_1utils_aa03ebac4540e122069e7fc278670d365}} 
+\index{algo::utils@{algo::utils}!gammaMatrixRA@{gammaMatrixRA}}
+\index{gammaMatrixRA@{gammaMatrixRA}!algo::utils@{algo::utils}}
+\doxysubsubsection{\texorpdfstring{gammaMatrixRA()}{gammaMatrixRA()}}
+{\footnotesize\ttfamily mat algo\+::utils\+::gamma\+Matrix\+RA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cluster}{Cluster}}}]{cluster }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacealgo_1_1utils_af7d0c90b41306848bb72fcc10d093d32}\label{namespacealgo_1_1utils_af7d0c90b41306848bb72fcc10d093d32}} 
+\index{algo::utils@{algo::utils}!overlapMatrix@{overlapMatrix}}
+\index{overlapMatrix@{overlapMatrix}!algo::utils@{algo::utils}}
+\doxysubsubsection{\texorpdfstring{overlapMatrix()}{overlapMatrix()}}
+{\footnotesize\ttfamily mat algo\+::utils\+::overlap\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cluster}{Cluster}}}]{cluster }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacealgo_1_1utils_a7cd040b503a21471d4009b5aaa6b8bd7}\label{namespacealgo_1_1utils_a7cd040b503a21471d4009b5aaa6b8bd7}} 
+\index{algo::utils@{algo::utils}!overlapMatrixRA@{overlapMatrixRA}}
+\index{overlapMatrixRA@{overlapMatrixRA}!algo::utils@{algo::utils}}
+\doxysubsubsection{\texorpdfstring{overlapMatrixRA()}{overlapMatrixRA()}}
+{\footnotesize\ttfamily mat algo\+::utils\+::overlap\+Matrix\+RA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_cluster}{Cluster}}}]{cluster }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+mat 
+\end{DoxyReturn}
