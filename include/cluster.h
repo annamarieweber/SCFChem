@@ -24,9 +24,9 @@ class Cluster
 private:
   vec epsilons;
   vec sigmas;
-  int K;
 
 public:
+  int K;
   mat atomMatrix;
   int p; // spin up electrons
   int q; // spin down electrons
@@ -39,7 +39,7 @@ public:
 
   /**
    * @brief Cluster constructor
-   * @detail Creates a cluster of atoms represented as a matrix with numAtoms rows and 4 columns
+   * @details Creates a cluster of atoms represented as a matrix with numAtoms rows and 4 columns
    * where the first column is the atomic number and the remaining there columns are the x, y, and z coordinates
    * of the given atom respectively.
    * @param numAtoms int: the number of atoms to be included in the cluster
@@ -58,75 +58,12 @@ public:
    */
   mat sBasisFunctions();
 
-  /**
-   * @brief calculate the x component of the gradient calculation
-   *
-   * @param p_a
-   * @param p_b
-   * @param bonding_parameters
-   * @return mat
-   */
-  mat x(mat p_a, mat p_b, mat bonding_parameters);
-
-  /**
-   * @brief returns the CNDO2 Fock Matrix for the molecule
-   *
-   * @return mat
-   */
-  mat cndo2FockMatrix(mat p_a, mat p_b, mat &bonding_params);
-
-  /**
-   * @brief returns the derivative of CNDO2 Fock Matrix for the molecule with respect to Ra
-   *
-   * @return mat
-   */
-  mat cndo2FockMatrixRA(mat p_a, mat p_b);
-
-  mat x(mat p_a, mat p_b, vec b_a, vec b_b);
-
-  void calcSCFEnergy(float threshold);
-
-  /**
-   * @brief overlap matrix
-   *
-   * @return mat
-   */
-  mat overlapMatrix();
-
-  /**
-   * @brief gradient of overlap matrix, rows are x y z, columns are overlap matrix elements
-   *
-   * @return mat
-   */
-  mat overlapMatrixRA();
-
-  /**
-   * @brief  gamma matrix,
-   *
-   * @return vec
-   */
-  mat gammaMatrix();
-
-  /**
-   * @brief  gradient of gamma matrix, rows are x y z, columns are atom pairs (A, B)
-   *
-   * @return vec
-   */
-  mat gammaMatrixRA();
-
-  /**
-   * @brief gradient of energy, rows are x y z, columns are atoms
-   *
-   * @return vec
-   */
-  void calcSCFEnergyRA(float threshold);
-
   mat molecularOrbitalCoefficients();
 
   vec eigenvalues();
 
   /*;
-   * @brief used eigenvalues to calculate total molecular energy
+   * @brief uses eigenvalues to calculate total molecular energy
    * @return double
    */
   double molecularEnergy();

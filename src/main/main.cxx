@@ -8,6 +8,9 @@
 #include "filereader.h"
 #include "baseexception.h"
 #include "clusterconfigexception.h"
+#include "algoutils.h"
+#include "cndo2.h"
+#include "scf.h"
 #include <exception> // std::set_terminate
 using std::string;
 using std::vector;
@@ -52,7 +55,7 @@ int main(int argc, char *argv[])
 		std::cout << "BasisFunctions:" << std::endl
 				  << cluster.basisFunctions() << std::endl;
 		std::cout << "OV_mat_Ra: " << std::endl
-				  << cluster.overlapMatrixRA() << std::endl;
+				  << algo::utils::overlapMatrixRA(cluster) << std::endl;
 		// std::cout << "H_mat: " << std::endl
 		// 		  << cluster.extendedHuckelHamiltonian() << std::endl;
 		// std::cout << "MO Coeffs:" << std::endl
@@ -61,16 +64,15 @@ int main(int argc, char *argv[])
 		// std::cout << "sBasisFunctions:" << std::endl
 		// 		  << cluster.sBasisFunctions() << std::endl;
 		std::cout << "Gamma RA: " << std::endl
-				  << cluster.gammaMatrixRA() << std::endl;
+				  << algo::utils::gammaMatrixRA(cluster) << std::endl;
 		std::cout << "OV_mat: " << std::endl
-				  << cluster.overlapMatrix() << std::endl;
+				  << algo::utils::overlapMatrix(cluster) << std::endl;
 		std::cout << "Gamma RA: " << std::endl
-				  << cluster.gammaMatrixRA() << std::endl;
+				  << algo::utils::gammaMatrixRA(cluster) << std::endl;
 		// std::cout << "FockMatrix: " << std::endl
 		// 		  << cluster.cndo2FockMatrix(mat(testpa), mat(testpb)) << std::endl;
 
-		cluster.calcSCFEnergy(10e-6);
-		double h = 1e-4;
+		algo::scf::calcSCFEnergy(10e-6, cluster);
 	}
 	catch (std::invalid_argument &e)
 	{

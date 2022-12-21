@@ -5,6 +5,7 @@
 # This is the main build makefile
 
 MOL_DIR = src/molecules
+ALGO_DIR = src/algorithms
 FUNC_DIR = src/functions
 EXCEPTIONS = src/exceptions
 MAIN_DIR = src/main
@@ -15,13 +16,17 @@ mol:
 	cd $(MOL_DIR); make all
 
 func:
-	cd $(FUNC_DIR); make debug
+	cd $(FUNC_DIR); make all
+
+algo:
+	cd $(ALGO_DIR); make all
 
 all:	
 	cd $(EXCEPTIONS); make all
 	cd $(UTIL_DIR); make all
 	cd $(FUNC_DIR); make all
 	cd $(MOL_DIR); make all
+	cd $(ALGO_DIR); make all
 	cd $(MAIN_DIR); make all
 
 docs:
@@ -33,6 +38,10 @@ debug:
 
 	cd $(MOL_DIR); make debug
 	cd $(MAIN_DIR); make debug
+
+buildrun:
+	make all;
+	make run;
 
 run:
 	cd $(MAIN_DIR); make run
