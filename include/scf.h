@@ -13,6 +13,7 @@
 #define SCF
 #include <armadillo>
 #include "cluster.h"
+#include "timing.h"
 namespace algo
 {
 
@@ -38,6 +39,7 @@ namespace algo
          * @details calculates the energy using the SCF algorithm running until the input threshold is reached
          *
          * @param threshold (float): the threshold to run the algorithm to
+         * @param cluster (Cluster): the cluster to run the scf algorithm on
          */
         void calcSCFEnergy(float threshold, Cluster cluster);
     }

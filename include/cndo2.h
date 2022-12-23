@@ -38,6 +38,7 @@ namespace algo
          *
          * @param p_a (mat): the alpha density matrix
          * @param p_b (mat): the beta density matrix
+         * @param cluster (Cluster): the cluster to calculate the fock matrix for
          *
          * @return CNDO2Result
          */
