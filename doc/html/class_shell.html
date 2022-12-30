@@ -84,47 +84,25 @@ $(document).ready(function(){initNavTree('class_shell.html',''); initResizable()
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_shell-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Shell Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ac3e974821d6935bfbdef3007460a219c"><td class="memItemLeft" align="right" valign="top"><a id="ac3e974821d6935bfbdef3007460a219c" name="ac3e974821d6935bfbdef3007460a219c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Shell</b> (int atomicNum, vec r_a, int l)</td></tr>
-<tr class="separator:ac3e974821d6935bfbdef3007460a219c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad167e8caa815e8da6b6f38f1bb6aee56"><td class="memItemLeft" align="right" valign="top"><a id="ad167e8caa815e8da6b6f38f1bb6aee56" name="ad167e8caa815e8da6b6f38f1bb6aee56"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Shell</b> (int atomicNum, vec r_a, vec d_k, vec alpha, rowvec l)</td></tr>
-<tr class="separator:ad167e8caa815e8da6b6f38f1bb6aee56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa578c07a461997b14047603d046c80e7"><td class="memItemLeft" align="right" valign="top"><a id="aa578c07a461997b14047603d046c80e7" name="aa578c07a461997b14047603d046c80e7"></a>
-mat&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (vec r)</td></tr>
-<tr class="separator:aa578c07a461997b14047603d046c80e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0038a02abf9345e19c25cfd2680fdd9"><td class="memItemLeft" align="right" valign="top"><a id="ab0038a02abf9345e19c25cfd2680fdd9" name="ab0038a02abf9345e19c25cfd2680fdd9"></a>
-vec&#160;</td><td class="memItemRight" valign="bottom"><b>r_a</b> ()</td></tr>
-<tr class="separator:ab0038a02abf9345e19c25cfd2680fdd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39c37d4a231293fa4663a04ee01a70d2"><td class="memItemLeft" align="right" valign="top"><a id="a39c37d4a231293fa4663a04ee01a70d2" name="a39c37d4a231293fa4663a04ee01a70d2"></a>
-vec&#160;</td><td class="memItemRight" valign="bottom"><b>l_a</b> (int i)</td></tr>
-<tr class="separator:a39c37d4a231293fa4663a04ee01a70d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb8471ab51e9cb9e1101dd8d0a615232"><td class="memItemLeft" align="right" valign="top"><a id="afb8471ab51e9cb9e1101dd8d0a615232" name="afb8471ab51e9cb9e1101dd8d0a615232"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>num_quantum_arrangements</b> ()</td></tr>
-<tr class="separator:afb8471ab51e9cb9e1101dd8d0a615232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfcc6760347bb00fc78a667e4a912fa2"><td class="memItemLeft" align="right" valign="top"><a id="acfcc6760347bb00fc78a667e4a912fa2" name="acfcc6760347bb00fc78a667e4a912fa2"></a>
-vec&#160;</td><td class="memItemRight" valign="bottom"><b>alpha</b> ()</td></tr>
-<tr class="separator:acfcc6760347bb00fc78a667e4a912fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ded7bc4e39a1a9dddfde8c85c063d82"><td class="memItemLeft" align="right" valign="top"><a id="a7ded7bc4e39a1a9dddfde8c85c063d82" name="a7ded7bc4e39a1a9dddfde8c85c063d82"></a>
-mat&#160;</td><td class="memItemRight" valign="bottom"><b>alphaMat</b> ()</td></tr>
-<tr class="separator:a7ded7bc4e39a1a9dddfde8c85c063d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26ae4cada8db72ebc29537d4973f6e80"><td class="memItemLeft" align="right" valign="top"><a id="a26ae4cada8db72ebc29537d4973f6e80" name="a26ae4cada8db72ebc29537d4973f6e80"></a>
-vec&#160;</td><td class="memItemRight" valign="bottom"><b>d_k</b> ()</td></tr>
-<tr class="separator:a26ae4cada8db72ebc29537d4973f6e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25d159d996c2fbe8c642addd9c8b46aa"><td class="memItemLeft" align="right" valign="top"><a id="a25d159d996c2fbe8c642addd9c8b46aa" name="a25d159d996c2fbe8c642addd9c8b46aa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>printShellMatrix</b> ()</td></tr>
-<tr class="separator:a25d159d996c2fbe8c642addd9c8b46aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+
+<p>A class for representing an electron shell.  
+ <a href="class_shell.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="shell_8h_source.html">shell.h</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The <a class="el" href="class_shell.html" title="A class for representing an electron shell.">Shell</a> class provides a way to represent an electron shell, including its center, angular momentum, and other properties.</p>
+<dl class="section author"><dt>Author</dt><dd>Anna Weber (<a href="#" onclick="location.href='mai'+'lto:'+'ann'+'a@'+'scf'+'ch'+'em.'+'co'+'m'; return false;">anna@<span style="display: none;">.nosp@m.</span>scfc<span style="display: none;">.nosp@m.</span>hem.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-12-17 </dd>
+<dd>
+2022-12-17</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022</dd></dl>
+<p>The <a class="el" href="class_shell.html" title="A class for representing an electron shell.">Shell</a> class provides a way to represent an electron shell, including its center, angular momentum, and other properties.</p>
+<dl class="section author"><dt>Author</dt><dd>Anna Weber (<a href="#" onclick="location.href='mai'+'lto:'+'ann'+'a@'+'scf'+'ch'+'em.'+'co'+'m'; return false;">anna@<span style="display: none;">.nosp@m.</span>scfc<span style="display: none;">.nosp@m.</span>hem.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-12-17 </dd></dl>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="shell_8h_source.html">shell.h</a></li>
 </ul>
 </div><!-- contents -->

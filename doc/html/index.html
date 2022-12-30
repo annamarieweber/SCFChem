@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SCFChem: Main Page</title>
+<title>SCFChem: SCFChem</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,10 +83,47 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">SCFChem Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">SCFChem </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md_README"></a>SCFChem is a C++ tool for calculating nuclear energy, force, and other properties of molecules using the Self-Consistent Field (SCF) method. This package is designed for use in quantum chemistry and computational materials science, and allows users to easily compute and analyze the electronic structure of molecules.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Installation</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+To install SCFChem++, follow these steps:</h2>
+<p >Clone the repository using the following command: </p><div class="fragment"><div class="line">git clone https://github.com/your-username/SCFChem++.git</div>
+</div><!-- fragment --><p> Navigate to the directory where you cloned the repository:</p>
+<div class="fragment"><div class="line">cd SCFChem++</div>
+</div><!-- fragment --><p >Compile the code using the provided makefile:</p>
+<div class="fragment"><div class="line">make build all</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Dependencies</h2>
+<p >SCFChem requires the armadillo library to be installed on your system. Armadillo can be downloaded from <a href="https://arma.sourceforge.net/download.html">https://arma.sourceforge.net/download.html</a>. You should be able to find installation instructions there as well.</p>
+<p >If your armadillo header and library files are installed in a location other than <code>/usr/local/include</code> and <code>/usr/local/lib</code> respectively be sure to set the environment variable <code>LOCAL_PATHS</code> using one of the methods described below.</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Set LOCAL_PATHS at the directory level with direnv</h3>
+<p >If you have direnv set up on your system you can set the environment variable by creating a .envrc file and adding the following line to it: <code>LOCAL_PATHS="-I/path/to/armadillo/headers -L/path/to/armadillo/libraries"</code> and then running direnv allow. Alternatively the following line will also complete these steps for you <code>echo LOCAL_PATHS="-I/path/to/armadillo/headers -L/path/to/armadillo/libraries"</code>.</p>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Set LOCAL_PATHS in your shell profile</h3>
+<p >Add <code>export LOCAL_PATHS="-I/path/to/armadillo/headers -L/path/to/armadillo/libraries"</code> to the profile file for your shell of choice. For example, if you use zsh add the line to your <code>~/.zshrc</code> file.</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Temporarily set LOCAL_PATHS in terminal</h3>
+<p >Run <code>export LOCAL_PATHS="-I/path/to/armadillo/headers -L/path/to/armadillo/libraries"</code> in the terminal prior to running make commands. note that the environment variable will only be set for that session and you will need to re run the command each time you start a new session.</p>
+<p ><code>path/to/armadillo/headers</code> and <code>/path/to/armadillo/libraries</code> should be the parent directories where these items are stored. For example if your armadillo installation has the header files at <code>/usr/share/include/armadillo</code> and <code>/usr/share/include/armadillo_bits</code> and library files at <code>/usr/share/lib/libarmadillo.dylib</code> then your <code>LOCAL_PATHS</code> environment variable should be <code>"-I/usr/share/include -L/usr/share/lib"</code></p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Usage</h1>
+<p >To use SCFChem, run the following command:</p>
+<div class="fragment"><div class="line">make run mol=molecule</div>
+</div><!-- fragment --><p> Where <code>molecule</code> is a file (<code>molecule.txt</code>) in the <code>molecule_files</code> directory containing the input data for the calculation . The input data should include the atomic coordinates and other necessary information for the calculation. The output will be written to a file in the <code>output</code> directory called <code>molecule.out</code>. Some example molecules are already included in the molecule_files directory for convenience.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Docs</h1>
+<p ><a href="https://github.com/annamarieweber/SCFChem/actions/workflows/publish_docs.yml"><img src="https://github.com/annamarieweber/SCFChem/actions/workflows/publish_docs.yml/badge.svg" alt="Publish Docs" style="pointer-events: none;" class="inline"/></a></p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Credits</h1>
+<p >SCFChem was developed and is maintained by Anna Weber.</p>
+<p >I hope this readme is helpful! Let me know if you have any questions or need further assistance. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

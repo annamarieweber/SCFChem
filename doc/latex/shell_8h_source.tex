@@ -1,51 +1,36 @@
 \hypertarget{shell_8h_source}{}\doxysection{shell.\+h}
 \label{shell_8h_source}\index{include/shell.h@{include/shell.h}}
-\mbox{\hyperlink{shell_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef SHELL}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#define SHELL}}
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <armadillo>}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <cmath>}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{17 \textcolor{keyword}{using} arma::mat;}
-\DoxyCodeLine{18 \textcolor{keyword}{using} arma::rowvec;}
-\DoxyCodeLine{19 \textcolor{keyword}{using} arma::vec;}
-\DoxyCodeLine{20 \textcolor{keyword}{using} std::string;}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell}{Shell}}}
-\DoxyCodeLine{23 \{}
-\DoxyCodeLine{24 \textcolor{keyword}{private}:}
-\DoxyCodeLine{25     vec \_r\_a; \textcolor{comment}{// center (x,y,z, ...)}}
-\DoxyCodeLine{26     mat \_l\_a; \textcolor{comment}{// matrix containing all possible (l,m,n....) combinations}}
-\DoxyCodeLine{27     vec \_d\_k;}
-\DoxyCodeLine{28     vec \_alpha;}
-\DoxyCodeLine{29     mat angularMomentum(\textcolor{keywordtype}{int} l);}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31 \textcolor{keyword}{public}:}
-\DoxyCodeLine{32     \mbox{\hyperlink{class_shell}{Shell}}();}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{34     \mbox{\hyperlink{class_shell}{Shell}}(\textcolor{keywordtype}{int} atomicNum, vec r\_a, \textcolor{keywordtype}{int} l);}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     \mbox{\hyperlink{class_shell}{Shell}}(\textcolor{keywordtype}{int} atomicNum, vec r\_a, vec d\_k, vec alpha, rowvec l);}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38     mat operator()(vec r);}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40     vec r\_a();}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     vec l\_a(\textcolor{keywordtype}{int} i);}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{44     \textcolor{keywordtype}{int} num\_quantum\_arrangements();}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef SHELL}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define SHELL}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <armadillo>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{21 \textcolor{keyword}{using} arma::mat;}
+\DoxyCodeLine{22 \textcolor{keyword}{using} arma::rowvec;}
+\DoxyCodeLine{23 \textcolor{keyword}{using} arma::vec;}
+\DoxyCodeLine{24 \textcolor{keyword}{using} std::string;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell}{Shell}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     vec \_r\_a;}
 \DoxyCodeLine{45 }
-\DoxyCodeLine{46     vec alpha();}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48     mat alphaMat();}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50     vec d\_k();}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52     \textcolor{keywordtype}{void} printShellMatrix();}
-\DoxyCodeLine{53 \};}
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51     mat \_l\_a;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{58     vec \_d\_k;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{65     vec \_alpha;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{76     mat angularMomentum(\textcolor{keywordtype}{int} l);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{public}:}
+\DoxyCodeLine{85     \mbox{\hyperlink{class_shell}{Shell}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{98     \mbox{\hyperlink{class_shell}{Shell}}(\textcolor{keywordtype}{int} atomicNum, vec r\_a, \textcolor{keywordtype}{int} l);}
+\DoxyCodeLine{99 }
 
 \end{DoxyCode}

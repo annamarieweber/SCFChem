@@ -4,8 +4,8 @@ var searchData=
   ['sbasisfunctions_1',['sBasisFunctions',['../class_cluster.html#a5c8d163fa46c4f71b2dd807087245dcb',1,'Cluster']]],
   ['sbderivativeintegral_2',['sbDerivativeIntegral',['../class_shell_overlap_integral.html#a42fa8a298bb03de526986980a8db5999',1,'ShellOverlapIntegral']]],
   ['scf_2eh_3',['scf.h',['../scf_8h.html',1,'']]],
-  ['shell_4',['Shell',['../class_shell.html',1,'']]],
-  ['shell_2eh_5',['shell.h',['../shell_8h.html',1,'']]],
+  ['scfchem_4',['SCFChem',['../index.html',1,'']]],
+  ['shell_5',['Shell',['../class_shell.html',1,'']]],
   ['shelloverlapintegral_6',['ShellOverlapIntegral',['../class_shell_overlap_integral.html',1,'ShellOverlapIntegral'],['../class_shell_overlap_integral.html#a052dbc9337c1ad3c91cf07b6edaa602b',1,'ShellOverlapIntegral::ShellOverlapIntegral()'],['../class_shell_overlap_integral.html#a1facc7a176dcafbf0f90fb9ae6e9a9f2',1,'ShellOverlapIntegral::ShellOverlapIntegral(Shell s_a, Shell s_b)']]],
   ['spindownelectrons_7',['spinDownElectrons',['../molutils_8h.html#adb8a9e599e413f51b5ed7bc4da319e10',1,'molutils.h']]],
   ['spinupelectrons_8',['spinUpElectrons',['../molutils_8h.html#a6afc2187d063ee7eb44165340bb7b12a',1,'molutils.h']]]

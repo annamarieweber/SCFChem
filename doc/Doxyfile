@@ -29,7 +29,11 @@ REPEAT_BRIEF           = NO
 ABBREVIATE_BRIEF       = "The $name class"
 
 # The INPUT
-INPUT                  = src include test
+INPUT                  = README.md src include test
+
+MARKDOWN_SUPPORT       = YES
+
+USE_MDFILE_AS_MAINPAGE = README.md
 
 # The FILE_PATTERNS 
 FILE_PATTERNS          = *.cpp *.h

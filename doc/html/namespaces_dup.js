@@ -1,7 +1,6 @@
 var namespaces_dup =
 [
     [ "algo", "namespacealgo.html", "namespacealgo" ],
-    [ "combinatorics", "namespacecombinatorics.html", null ],
     [ "combo", "namespacecombo.html", "namespacecombo" ],
     [ "util", null, [
       [ "io", null, [
