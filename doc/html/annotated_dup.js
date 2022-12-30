@@ -5,8 +5,8 @@ var annotated_dup =
         [ "CNDO2Result", "structalgo_1_1cndo2_1_1_c_n_d_o2_result.html", "structalgo_1_1cndo2_1_1_c_n_d_o2_result" ]
       ] ]
     ] ],
-    [ "util", null, [
-      [ "timing", null, [
+    [ "util", "namespaceutil.html", [
+      [ "timing", "namespaceutil_1_1timing.html", [
         [ "TimedFunctional", "classutil_1_1timing_1_1_timed_functional.html", "classutil_1_1timing_1_1_timed_functional" ]
       ] ]
     ] ],

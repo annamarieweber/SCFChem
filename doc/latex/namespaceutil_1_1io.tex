@@ -1,0 +1,85 @@
+\hypertarget{namespaceutil_1_1io}{}\doxysection{util\+::io Namespace Reference}
+\label{namespaceutil_1_1io}\index{util::io@{util::io}}
+
+
+Namespace containing utility functions for input output processing.  
+
+
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceutil_1_1io_a0a9a956e3db84b14f386361a00eb8be2}\label{namespaceutil_1_1io_a0a9a956e3db84b14f386361a00eb8be2}} 
+enum {\bfseries Compare\+Method} \{ {\bfseries LTE}
+, {\bfseries EQ}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceutil_1_1io_a7759b213ddab46d8c5f21da733e00260}{validate\+Atom\+Count}} (int atom\+\_\+count, int expected\+\_\+count, Compare\+Method method)
+\begin{DoxyCompactList}\small\item\em Validates that the number of atoms counted is \texorpdfstring{$<$}{<}= the expected number of atoms. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceutil_1_1io_a40c3a5595f54efe52e72e99fe7ded12e}{get\+Atom\+Num}} (string atom\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Converts string identifier used for atoms into atomic number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cluster}{Cluster}} \mbox{\hyperlink{namespaceutil_1_1io_a1c0384b87d085464e850499d91d1e124}{readfile}} (string \&filename)
+\begin{DoxyCompactList}\small\item\em reads files with molecule data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceutil_1_1io_a40c3a5595f54efe52e72e99fe7ded12e}\label{namespaceutil_1_1io_a40c3a5595f54efe52e72e99fe7ded12e}} 
+\index{util::io@{util::io}!getAtomNum@{getAtomNum}}
+\index{getAtomNum@{getAtomNum}!util::io@{util::io}}
+\doxysubsubsection{\texorpdfstring{getAtomNum()}{getAtomNum()}}
+{\footnotesize\ttfamily int util\+::io\+::get\+Atom\+Num (\begin{DoxyParamCaption}\item[{string}]{atom\+\_\+id }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceutil_1_1io_a1c0384b87d085464e850499d91d1e124}\label{namespaceutil_1_1io_a1c0384b87d085464e850499d91d1e124}} 
+\index{util::io@{util::io}!readfile@{readfile}}
+\index{readfile@{readfile}!util::io@{util::io}}
+\doxysubsubsection{\texorpdfstring{readfile()}{readfile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cluster}{Cluster}} util\+::io\+::readfile (\begin{DoxyParamCaption}\item[{string \&}]{filename }\end{DoxyParamCaption})}
+
+reads molecule files where the first line is the number of molecules and the remaining lines follow the format below\+: atomic\+\_\+number x\+\_\+coord y\+\_\+coord z\+\_\+coord
+
+atomic\+\_\+numbers must be \texorpdfstring{$>$}{>} 0 and \texorpdfstring{$<$}{<} MAX\+\_\+\+ATOMIC\+\_\+\+NUM (Set by MAX\+\_\+\+ATOMIC\+\_\+\+NUM environment variable) atomic\+\_\+numbers can be restricted with ALLOWED\+\_\+\+ATOMIC\+\_\+\+NUM environment variable which is a list of allowed atomic\+\_\+numbers \begin{DoxyVerb}the number of atoms described by the file must match the specified number of atoms in the first line
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em filename} & (string) the name of the file containing molecule data for the cluster \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_cluster}{Cluster}} 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Anna Weber 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{namespaceutil_1_1io_a7759b213ddab46d8c5f21da733e00260}\label{namespaceutil_1_1io_a7759b213ddab46d8c5f21da733e00260}} 
+\index{util::io@{util::io}!validateAtomCount@{validateAtomCount}}
+\index{validateAtomCount@{validateAtomCount}!util::io@{util::io}}
+\doxysubsubsection{\texorpdfstring{validateAtomCount()}{validateAtomCount()}}
+{\footnotesize\ttfamily void util\+::io\+::validate\+Atom\+Count (\begin{DoxyParamCaption}\item[{int}]{atom\+\_\+count,  }\item[{int}]{expected\+\_\+count,  }\item[{Compare\+Method}]{method }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em atom\+\_\+count} & (int) the number of atoms read \\
+\hline
+{\em expected\+\_\+count} & (int) the expected number of atoms \\
+\hline
+{\em method} & the method of comparison to use \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_cluster_config_exception}{Cluster\+Config\+Exception(\+Atom\+Count\+Mismatch)}}} & \\
+\hline
+\end{DoxyExceptions}
