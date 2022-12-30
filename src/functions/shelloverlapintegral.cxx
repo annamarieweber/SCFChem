@@ -40,8 +40,8 @@ vec ShellOverlapIntegral::overlap_summation(vec x_p, int l_pair_a, int l_pair_b)
         {
             if ((i + j) % 2 == 0)
             {
-                double binomial_term = calc_binomial(l_pair_a, i) * calc_binomial(l_pair_b, j);
-                double factorial_term = factorial(i + j - 1, 2);
+                double binomial_term = combo::recur::calc_binomial(l_pair_a, i) * combo::recur::calc_binomial(l_pair_b, j);
+                double factorial_term = combo::recur::factorial(i + j - 1, 2);
                 vec a_term = pow(x_p - _s_a.r_a(), l_pair_a - i);
                 vec b_term = pow(x_p - _s_b.r_a(), l_pair_b - j);
                 vec denominator = pow(2.0 * alphas_sum(), (i + j) / 2.0);
@@ -64,9 +64,15 @@ ShellOverlapIntegral::ShellOverlapIntegral(Shell s_a, Shell s_b)
 {
     _s_a = s_a;
     _s_b = s_b;
+    _overlap = overlap();
 };
 
 mat ShellOverlapIntegral::operator()()
+{
+    return _overlap;
+}
+
+mat ShellOverlapIntegral::overlap()
 {
     vec x_p = product_center();
     mat x_cent = _s_a.alphaMat() * _s_a.r_a() + _s_b.alphaMat() * _s_b.r_a();

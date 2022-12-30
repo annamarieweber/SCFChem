@@ -3,6 +3,7 @@ var namespacealgo =
     [ "cndo2", "namespacealgo_1_1cndo2.html", "namespacealgo_1_1cndo2" ],
     [ "scf", "namespacealgo_1_1scf.html", [
       [ "calcSCFEnergy", "namespacealgo_1_1scf.html#a4b5c907757925b3ef40e4ee06fcde312", null ],
+      [ "run_eig_sym", "namespacealgo_1_1scf.html#ab90a00241adbf72b2badcaccd30c27af", null ],
       [ "x_component", "namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f", null ]
     ] ],
     [ "utils", "namespacealgo_1_1utils.html", [

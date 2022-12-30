@@ -5,11 +5,11 @@
 
 using std::string;
 
-using namespace exception_constants;
+using namespace constants::exceptions;
 
-ClusterConfigException::ClusterConfigException(Error_Type t)
+ClusterConfigException::ClusterConfigException(std::string t)
 {
-  message = ERROR_MESSAGE.at(t);
+  message = t;
 }
 
 void ClusterConfigException::displayError()

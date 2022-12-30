@@ -4,8 +4,17 @@
 #include "molutils.h"
 #include "cndo2.h"
 #include "algoutils.h"
+#include "timedfunctional.h"
+#include <chrono>
 
 using namespace arma;
+
+int algo::scf::run_eig_sym(vec &e_a, mat &c_a, mat &f_a, vec &e_b, mat &c_b, mat &f_b)
+{
+    eig_sym(e_a, c_a, f_a);
+    eig_sym(e_b, c_b, f_b);
+    return 1;
+}
 
 mat algo::scf::x_component(mat p_a, mat p_b, mat bonding_params)
 {
@@ -43,22 +52,31 @@ void algo::scf::calcSCFEnergy(float threshold, Cluster cluster)
     // matrix that stores the bonding param sum
     mat bonding_params(cluster.numValenceElectrons, cluster.numValenceElectrons, fill::zeros);
 
+    // create timed call to fock matrix generation
+    util::timing::TimedFunctional<std::function<algo::cndo2::CNDO2Result(arma::mat p_a, arma::mat p_b, Cluster cluster)>, mat, mat, Cluster> timedFockMatrix(algo::cndo2::fockMatrix, "fockMatrix");
+    util::timing::TimedFunctional<std::function<int(arma::vec &, arma::mat &, arma::mat &, arma::vec &, arma::mat &, arma::mat &)>, vec &, mat &, mat &, vec &, mat &, mat &> timed_run_eig_sym(algo::scf::run_eig_sym, "eig_sym");
     while (!mats_eq)
     {
-        f_a = cndo2::fockMatrix(p_a, p_b, cluster).fock;
+        f_a = timedFockMatrix(p_a, p_b, cluster).fock;
 
-        f_b = cndo2::fockMatrix(p_b, p_a, cluster).fock;
+        f_b = timedFockMatrix(p_b, p_a, cluster).fock;
 
         p_a_old = p_a;
         p_b_old = p_b;
 
-        eig_sym(e_a, c_a, f_a);
-        eig_sym(e_b, c_b, f_b);
+        timed_run_eig_sym(e_a, c_a, f_a, e_b, c_b, f_b);
 
         p_a = (c_a.cols(0, cluster.p - 1) * c_a.cols(0, cluster.p - 1).t());
         p_b = (c_b.cols(0, cluster.q - 1) * c_b.cols(0, cluster.q - 1).t());
 
         mats_eq = approx_equal(p_a_old, p_a, "absdiff", threshold) && approx_equal(p_b_old, p_b, "absdiff", threshold);
+
+        // std::cout << "p_a diff" << std::endl;
+        // std::cout << p_a_old - p_a << std::endl;
+        // std::cout << approx_equal(p_a_old, p_a, "absdiff", threshold) << std::endl;
+        // std::cout << "p_b diff" << std::endl;
+        // std::cout << p_b_old - p_b << std::endl;
+        // std::cout << approx_equal(p_b_old, p_b, "absdiff", threshold) << std::endl;
     }
 
     algo::cndo2::CNDO2Result cndo2Result = algo::cndo2::fockMatrix(mat(cluster.numValenceElectrons, cluster.numValenceElectrons, fill::zeros), mat(cluster.numValenceElectrons, cluster.numValenceElectrons, fill::zeros), cluster);

@@ -13,7 +13,7 @@
 #define SCF
 #include <armadillo>
 #include "cluster.h"
-#include "timing.h"
+#include "timedfunctional.h"
 namespace algo
 {
 
@@ -24,6 +24,18 @@ namespace algo
      */
     namespace scf
     {
+        /**
+         * @brief calls eigsym and updates values for alpha and beta
+         *
+         * @param e_a
+         * @param c_a
+         * @param f_a
+         * @param e_b
+         * @param c_b
+         * @param f_b
+         */
+        int run_eig_sym(vec &e_a, mat &c_a, mat &f_a, vec &e_b, mat &c_b, mat &f_b);
+
         /**
          * @brief calculate the x component of the gradient calculation
          *

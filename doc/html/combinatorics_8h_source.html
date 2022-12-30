@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('combinatorics_8h_source.html',''); ini
   <div class="headertitle"><div class="title">combinatorics.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="combinatorics_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef COMBO</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define COMBO</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -95,27 +95,59 @@ $(document).ready(function(){initNavTree('combinatorics_8h_source.html',''); ini
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using</span> arma::vec;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">int</span> factorial(<span class="keywordtype">int</span> n);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// calculates the a factorial where the output is the product of all integers from 1 to n where x%a == n%a</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">int</span> factorial(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> a);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span> ncr(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacecombo.html">   22</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecombo.html">combo</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">double</span> calc_binomial(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>vec vec_factorial(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> a);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>vec vec_factorial(<span class="keywordtype">int</span> n);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>vec calc_binomial(vec m, vec n);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html">   29</a></span>    <span class="keyword">namespace </span>iter</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#a4e9e222eb492b80334f7463f9711f5c3">   36</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacecombo_1_1iter.html#a4e9e222eb492b80334f7463f9711f5c3">factorial</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#a40d6a2e28fe0dd8a90061f572355440a">   44</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacecombo_1_1iter.html#a4e9e222eb492b80334f7463f9711f5c3">factorial</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> a);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#a13da008d082e5a21b9de677efe2842de">   52</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacecombo_1_1iter.html#a13da008d082e5a21b9de677efe2842de">ncr</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#a69c0e49b3ce63e6cf4b8866200335244">   60</a></span>        <span class="keywordtype">double</span> <a class="code hl_function" href="namespacecombo_1_1iter.html#a69c0e49b3ce63e6cf4b8866200335244">calc_binomial</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#a336e4656e381f1baa644b7008e210138">   68</a></span>        vec <a class="code hl_function" href="namespacecombo_1_1iter.html#a336e4656e381f1baa644b7008e210138">vec_factorial</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> a);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#abf1eab96beb29b45a068d6c8e78be7fd">   75</a></span>        vec <a class="code hl_function" href="namespacecombo_1_1iter.html#a336e4656e381f1baa644b7008e210138">vec_factorial</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="namespacecombo_1_1iter.html#af0f589447cd7a4053f37f0833a34dafb">   82</a></span>        vec <a class="code hl_function" href="namespacecombo_1_1iter.html#a69c0e49b3ce63e6cf4b8866200335244">calc_binomial</a>(vec m, vec n);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html">   89</a></span>    <span class="keyword">namespace </span>recur</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#a9a5188f3e7b75512061e9338f1404927">   96</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacecombo_1_1recur.html#a9a5188f3e7b75512061e9338f1404927">factorial</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#a6d5d13ffb1fac48182b57be3048cae54">  104</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacecombo_1_1recur.html#a9a5188f3e7b75512061e9338f1404927">factorial</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> a);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#ae92a592ecd0566ce7c78f30a01c06d5c">  112</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacecombo_1_1recur.html#ae92a592ecd0566ce7c78f30a01c06d5c">ncr</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> r);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#a8bb39ca5349bba4d786246f0a197201d">  120</a></span>        <span class="keywordtype">double</span> <a class="code hl_function" href="namespacecombo_1_1recur.html#a8bb39ca5349bba4d786246f0a197201d">calc_binomial</a>(<span class="keywordtype">int</span> m, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#a05ffc92b1cbc2c994e0d81c9d8142ffc">  128</a></span>        vec <a class="code hl_function" href="namespacecombo_1_1recur.html#a05ffc92b1cbc2c994e0d81c9d8142ffc">vec_factorial</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> a);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#a2e2ff6ae0bbb74949a6159dacd841c63">  135</a></span>        vec <a class="code hl_function" href="namespacecombo_1_1recur.html#a05ffc92b1cbc2c994e0d81c9d8142ffc">vec_factorial</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="namespacecombo_1_1recur.html#afc9c0248102362abb9d7ba149a02f6cc">  142</a></span>        vec <a class="code hl_function" href="namespacecombo_1_1recur.html#a8bb39ca5349bba4d786246f0a197201d">calc_binomial</a>(vec m, vec n);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>}</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespacecombo_1_1iter_html_a13da008d082e5a21b9de677efe2842de"><div class="ttname"><a href="namespacecombo_1_1iter.html#a13da008d082e5a21b9de677efe2842de">combo::iter::ncr</a></div><div class="ttdeci">int ncr(int n, int r)</div><div class="ttdoc">Calculates the number of combinations of r items from a set of n items. Uses an iterative implementat...</div></div>
+<div class="ttc" id="anamespacecombo_1_1iter_html_a336e4656e381f1baa644b7008e210138"><div class="ttname"><a href="namespacecombo_1_1iter.html#a336e4656e381f1baa644b7008e210138">combo::iter::vec_factorial</a></div><div class="ttdeci">vec vec_factorial(int n, int a)</div><div class="ttdoc">Calculates the factorial of a given vector of integers. Uses an iterative implementation.</div></div>
+<div class="ttc" id="anamespacecombo_1_1iter_html_a4e9e222eb492b80334f7463f9711f5c3"><div class="ttname"><a href="namespacecombo_1_1iter.html#a4e9e222eb492b80334f7463f9711f5c3">combo::iter::factorial</a></div><div class="ttdeci">int factorial(int n)</div><div class="ttdoc">Calculates the factorial of a given integer. Uses an iterative implementation.</div></div>
+<div class="ttc" id="anamespacecombo_1_1iter_html_a69c0e49b3ce63e6cf4b8866200335244"><div class="ttname"><a href="namespacecombo_1_1iter.html#a69c0e49b3ce63e6cf4b8866200335244">combo::iter::calc_binomial</a></div><div class="ttdeci">double calc_binomial(int m, int n)</div><div class="ttdoc">Calculates the binomial coefficient for the given values of m and n. Uses an iterative implementation...</div></div>
+<div class="ttc" id="anamespacecombo_1_1recur_html_a05ffc92b1cbc2c994e0d81c9d8142ffc"><div class="ttname"><a href="namespacecombo_1_1recur.html#a05ffc92b1cbc2c994e0d81c9d8142ffc">combo::recur::vec_factorial</a></div><div class="ttdeci">vec vec_factorial(int n, int a)</div><div class="ttdoc">Calculates the factorial of a given vector of integers. Uses a recursive implementation.</div></div>
+<div class="ttc" id="anamespacecombo_1_1recur_html_a8bb39ca5349bba4d786246f0a197201d"><div class="ttname"><a href="namespacecombo_1_1recur.html#a8bb39ca5349bba4d786246f0a197201d">combo::recur::calc_binomial</a></div><div class="ttdeci">double calc_binomial(int m, int n)</div><div class="ttdoc">Calculates the binomial coefficient for the given values of m and n. Uses a recursive implementation.</div></div>
+<div class="ttc" id="anamespacecombo_1_1recur_html_a9a5188f3e7b75512061e9338f1404927"><div class="ttname"><a href="namespacecombo_1_1recur.html#a9a5188f3e7b75512061e9338f1404927">combo::recur::factorial</a></div><div class="ttdeci">int factorial(int n)</div><div class="ttdoc">Calculates the factorial of a given integer. Uses a recursive implementation.</div></div>
+<div class="ttc" id="anamespacecombo_1_1recur_html_ae92a592ecd0566ce7c78f30a01c06d5c"><div class="ttname"><a href="namespacecombo_1_1recur.html#ae92a592ecd0566ce7c78f30a01c06d5c">combo::recur::ncr</a></div><div class="ttdeci">int ncr(int n, int r)</div><div class="ttdoc">Calculates the number of combinations of r items from a set of n items. Uses a recursive implementati...</div></div>
+<div class="ttc" id="anamespacecombo_html"><div class="ttname"><a href="namespacecombo.html">combo</a></div><div class="ttdoc">combinatorics functions</div><div class="ttdef"><b>Definition:</b> combinatorics.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="combinatorics_8h.html">combinatorics.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>combinatorics.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

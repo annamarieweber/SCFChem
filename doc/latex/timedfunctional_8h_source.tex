@@ -1,0 +1,80 @@
+\hypertarget{timedfunctional_8h_source}{}\doxysection{timedfunctional.\+h}
+\label{timedfunctional_8h_source}\index{include/timedfunctional.h@{include/timedfunctional.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TIMED\_FUNCTIONAL}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TIMED\_FUNCTIONAL}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <armadillo>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cndo2_8h}{cndo2.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cluster_8h}{cluster.h}}"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }util}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{namespace }timing}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{22         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{23         \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional}{TimedFunctional}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \{}
+\DoxyCodeLine{26         \textcolor{keyword}{public}:}
+\DoxyCodeLine{27             F \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_a96f511c64c2aa05ebbc0833a1a66a144}{fn}}; }
+\DoxyCodeLine{28             \textcolor{keywordtype}{string} fn\_name;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30             \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional}{TimedFunctional}}(F \&\&val);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32             \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional}{TimedFunctional}}(F \&\&val, \textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{40             \textcolor{keyword}{typename} std::invoke\_result<F, Args...>::type \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_ac0ad052ffaafc503f79bb5592b737f69}{operator()}}(Args... args);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47             \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_a99312d0e573baea767fa5f282a46829b}{printTiming}}(std::chrono::duration<double> elapsed);}
+\DoxyCodeLine{48         \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{51         \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional}{TimedFunctional<F, Args...>::TimedFunctional}}(F \&\&val)}
+\DoxyCodeLine{52         \{}
+\DoxyCodeLine{53             fn = val;}
+\DoxyCodeLine{54             fn\_name = \textcolor{keyword}{typeid}(fn).name();}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{58         TimedFunctional<F, Args...>::TimedFunctional(F \&\&val, \textcolor{keywordtype}{string} name)}
+\DoxyCodeLine{59         \{}
+\DoxyCodeLine{60             fn = val;}
+\DoxyCodeLine{61             fn\_name = name;}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{65         \textcolor{keyword}{typename} std::invoke\_result<F, Args...>::type \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_ac0ad052ffaafc503f79bb5592b737f69}{TimedFunctional<F, Args...>::operator()}}(Args... args)}
+\DoxyCodeLine{66         \{}
+\DoxyCodeLine{67             std::chrono::time\_point<std::chrono::system\_clock> start, end;}
+\DoxyCodeLine{68             std::chrono::duration<double> elapsed;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70             \textcolor{comment}{// starting clock}}
+\DoxyCodeLine{71             start = std::chrono::system\_clock::now();}
+\DoxyCodeLine{72             \textcolor{comment}{// calling function and saving result}}
+\DoxyCodeLine{73             \textcolor{keyword}{auto} result = fn(args...);}
+\DoxyCodeLine{74             \textcolor{comment}{// stopping clock}}
+\DoxyCodeLine{75             end = std::chrono::system\_clock::now();}
+\DoxyCodeLine{76             \textcolor{comment}{// calculating elapsed time}}
+\DoxyCodeLine{77             elapsed = end -\/ start;}
+\DoxyCodeLine{78             \textcolor{comment}{// print timing output}}
+\DoxyCodeLine{79             \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_a99312d0e573baea767fa5f282a46829b}{TimedFunctional::printTiming}}(elapsed);}
+\DoxyCodeLine{80             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{keyword}{template} <\textcolor{keyword}{typename} F, \textcolor{keyword}{typename}... Args>}
+\DoxyCodeLine{84         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_a99312d0e573baea767fa5f282a46829b}{TimedFunctional<F, Args...>::printTiming}}(std::chrono::duration<double> elapsed)}
+\DoxyCodeLine{85         \{}
+\DoxyCodeLine{86             std::cout << \textcolor{stringliteral}{"{}Executed Call  "{}} << fn\_name << \textcolor{stringliteral}{"{}: "{}} << elapsed.count() << \textcolor{stringliteral}{"{} secs"{}} << std::endl;}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

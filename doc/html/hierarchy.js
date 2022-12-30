@@ -7,5 +7,6 @@ var hierarchy =
       [ "ClusterConfigException", "class_cluster_config_exception.html", null ]
     ] ],
     [ "Shell", "class_shell.html", null ],
-    [ "ShellOverlapIntegral", "class_shell_overlap_integral.html", null ]
+    [ "ShellOverlapIntegral", "class_shell_overlap_integral.html", null ],
+    [ "util::timing::TimedFunctional< F, Args >", "classutil_1_1timing_1_1_timed_functional.html", null ]
 ];

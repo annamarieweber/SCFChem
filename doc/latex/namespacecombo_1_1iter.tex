@@ -1,0 +1,135 @@
+\hypertarget{namespacecombo_1_1iter}{}\doxysection{combo\+::iter Namespace Reference}
+\label{namespacecombo_1_1iter}\index{combo::iter@{combo::iter}}
+
+
+Iterative combinatorics implementation.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacecombo_1_1iter_a4e9e222eb492b80334f7463f9711f5c3}{factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given integer. Uses an iterative implementation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecombo_1_1iter_a40d6a2e28fe0dd8a90061f572355440a}{factorial}} (int n, int a)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given integer where the output is the product of all integers from 1 to n where xa == na. Uses an iterative implementation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecombo_1_1iter_a13da008d082e5a21b9de677efe2842de}{ncr}} (int n, int r)
+\begin{DoxyCompactList}\small\item\em Calculates the number of combinations of r items from a set of n items. Uses an iterative implementation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacecombo_1_1iter_a69c0e49b3ce63e6cf4b8866200335244}{calc\+\_\+binomial}} (int m, int n)
+\begin{DoxyCompactList}\small\item\em Calculates the binomial coefficient for the given values of m and n. Uses an iterative implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{namespacecombo_1_1iter_a336e4656e381f1baa644b7008e210138}{vec\+\_\+factorial}} (int n, int a)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given vector of integers. Uses an iterative implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{namespacecombo_1_1iter_abf1eab96beb29b45a068d6c8e78be7fd}{vec\+\_\+factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given vector of integers. Uses an iterative implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{namespacecombo_1_1iter_af0f589447cd7a4053f37f0833a34dafb}{calc\+\_\+binomial}} (vec m, vec n)
+\begin{DoxyCompactList}\small\item\em Calculates the binomial coefficient for the given vectors of m and n. Uses an iterative implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacecombo_1_1iter_a69c0e49b3ce63e6cf4b8866200335244}\label{namespacecombo_1_1iter_a69c0e49b3ce63e6cf4b8866200335244}} 
+\index{combo::iter@{combo::iter}!calc\_binomial@{calc\_binomial}}
+\index{calc\_binomial@{calc\_binomial}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{calc\_binomial()}{calc\_binomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double combo\+::iter\+::calc\+\_\+binomial (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The first value. \\
+\hline
+{\em n} & The second value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1iter_af0f589447cd7a4053f37f0833a34dafb}\label{namespacecombo_1_1iter_af0f589447cd7a4053f37f0833a34dafb}} 
+\index{combo::iter@{combo::iter}!calc\_binomial@{calc\_binomial}}
+\index{calc\_binomial@{calc\_binomial}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{calc\_binomial()}{calc\_binomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec combo\+::iter\+::calc\+\_\+binomial (\begin{DoxyParamCaption}\item[{vec}]{m,  }\item[{vec}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The first vector. \\
+\hline
+{\em n} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1iter_a4e9e222eb492b80334f7463f9711f5c3}\label{namespacecombo_1_1iter_a4e9e222eb492b80334f7463f9711f5c3}} 
+\index{combo::iter@{combo::iter}!factorial@{factorial}}
+\index{factorial@{factorial}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int combo\+::iter\+::factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to calculate the factorial for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1iter_a40d6a2e28fe0dd8a90061f572355440a}\label{namespacecombo_1_1iter_a40d6a2e28fe0dd8a90061f572355440a}} 
+\index{combo::iter@{combo::iter}!factorial@{factorial}}
+\index{factorial@{factorial}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int combo\+::iter\+::factorial (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to calculate the factorial for. \\
+\hline
+{\em a} & The modulo value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1iter_a13da008d082e5a21b9de677efe2842de}\label{namespacecombo_1_1iter_a13da008d082e5a21b9de677efe2842de}} 
+\index{combo::iter@{combo::iter}!ncr@{ncr}}
+\index{ncr@{ncr}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{ncr()}{ncr()}}
+{\footnotesize\ttfamily int combo\+::iter\+::ncr (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{r }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of items in the set. \\
+\hline
+{\em r} & The number of items to choose. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of combinations. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1iter_abf1eab96beb29b45a068d6c8e78be7fd}\label{namespacecombo_1_1iter_abf1eab96beb29b45a068d6c8e78be7fd}} 
+\index{combo::iter@{combo::iter}!vec\_factorial@{vec\_factorial}}
+\index{vec\_factorial@{vec\_factorial}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{vec\_factorial()}{vec\_factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vec combo\+::iter\+::vec\+\_\+factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The vector of integers to calculate the factorial for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1iter_a336e4656e381f1baa644b7008e210138}\label{namespacecombo_1_1iter_a336e4656e381f1baa644b7008e210138}} 
+\index{combo::iter@{combo::iter}!vec\_factorial@{vec\_factorial}}
+\index{vec\_factorial@{vec\_factorial}!combo::iter@{combo::iter}}
+\doxysubsubsection{\texorpdfstring{vec\_factorial()}{vec\_factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec combo\+::iter\+::vec\+\_\+factorial (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The vector of integers to calculate the factorial for. \\
+\hline
+{\em a} & The modulo value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}

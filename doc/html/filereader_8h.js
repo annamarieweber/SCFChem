@@ -1,6 +1,6 @@
 var filereader_8h =
 [
-    [ "getAtomNum", "filereader_8h.html#a6e2ace7a3778d79cc5d665e939a128c2", null ],
-    [ "readfile", "filereader_8h.html#afeb24120b3db25072ad684756ef0198b", null ],
-    [ "validateAtomCount", "filereader_8h.html#a37c24b3d0bcc814dc9417dda7d8760f6", null ]
+    [ "getAtomNum", "filereader_8h.html#a40c3a5595f54efe52e72e99fe7ded12e", null ],
+    [ "readfile", "filereader_8h.html#a1c0384b87d085464e850499d91d1e124", null ],
+    [ "validateAtomCount", "filereader_8h.html#a7759b213ddab46d8c5f21da733e00260", null ]
 ];

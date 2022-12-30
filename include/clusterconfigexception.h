@@ -13,10 +13,7 @@
 #include <exception>
 #include <string>
 #include <iostream>
-#include "exceptionconstants.h"
 using std::string;
-
-using namespace exception_constants;
 
 class ClusterConfigException : public std::exception
 {
@@ -24,7 +21,7 @@ private:
   string message;
 
 public:
-  ClusterConfigException(Error_Type);
+  ClusterConfigException(std::string);
   void displayError();
   string what();
 };

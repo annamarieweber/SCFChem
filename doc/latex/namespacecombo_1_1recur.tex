@@ -1,0 +1,135 @@
+\hypertarget{namespacecombo_1_1recur}{}\doxysection{combo\+::recur Namespace Reference}
+\label{namespacecombo_1_1recur}\index{combo::recur@{combo::recur}}
+
+
+Recursive combinatorics implementation.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacecombo_1_1recur_a9a5188f3e7b75512061e9338f1404927}{factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given integer. Uses a recursive implementation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecombo_1_1recur_a6d5d13ffb1fac48182b57be3048cae54}{factorial}} (int n, int a)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given integer where the output is the product of all integers from 1 to n where xa == na. Uses a recursive implementation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacecombo_1_1recur_ae92a592ecd0566ce7c78f30a01c06d5c}{ncr}} (int n, int r)
+\begin{DoxyCompactList}\small\item\em Calculates the number of combinations of r items from a set of n items. Uses a recursive implementation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacecombo_1_1recur_a8bb39ca5349bba4d786246f0a197201d}{calc\+\_\+binomial}} (int m, int n)
+\begin{DoxyCompactList}\small\item\em Calculates the binomial coefficient for the given values of m and n. Uses a recursive implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{namespacecombo_1_1recur_a05ffc92b1cbc2c994e0d81c9d8142ffc}{vec\+\_\+factorial}} (int n, int a)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given vector of integers. Uses a recursive implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{namespacecombo_1_1recur_a2e2ff6ae0bbb74949a6159dacd841c63}{vec\+\_\+factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given vector of integers. Uses a recursive implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{namespacecombo_1_1recur_afc9c0248102362abb9d7ba149a02f6cc}{calc\+\_\+binomial}} (vec m, vec n)
+\begin{DoxyCompactList}\small\item\em Calculates the binomial coefficient for the given vectors of m and n. Uses a recursive implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacecombo_1_1recur_a8bb39ca5349bba4d786246f0a197201d}\label{namespacecombo_1_1recur_a8bb39ca5349bba4d786246f0a197201d}} 
+\index{combo::recur@{combo::recur}!calc\_binomial@{calc\_binomial}}
+\index{calc\_binomial@{calc\_binomial}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{calc\_binomial()}{calc\_binomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double combo\+::recur\+::calc\+\_\+binomial (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The first value. \\
+\hline
+{\em n} & The second value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1recur_afc9c0248102362abb9d7ba149a02f6cc}\label{namespacecombo_1_1recur_afc9c0248102362abb9d7ba149a02f6cc}} 
+\index{combo::recur@{combo::recur}!calc\_binomial@{calc\_binomial}}
+\index{calc\_binomial@{calc\_binomial}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{calc\_binomial()}{calc\_binomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec combo\+::recur\+::calc\+\_\+binomial (\begin{DoxyParamCaption}\item[{vec}]{m,  }\item[{vec}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The first vector. \\
+\hline
+{\em n} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1recur_a9a5188f3e7b75512061e9338f1404927}\label{namespacecombo_1_1recur_a9a5188f3e7b75512061e9338f1404927}} 
+\index{combo::recur@{combo::recur}!factorial@{factorial}}
+\index{factorial@{factorial}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int combo\+::recur\+::factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to calculate the factorial for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1recur_a6d5d13ffb1fac48182b57be3048cae54}\label{namespacecombo_1_1recur_a6d5d13ffb1fac48182b57be3048cae54}} 
+\index{combo::recur@{combo::recur}!factorial@{factorial}}
+\index{factorial@{factorial}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int combo\+::recur\+::factorial (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to calculate the factorial for. \\
+\hline
+{\em a} & The modulo value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1recur_ae92a592ecd0566ce7c78f30a01c06d5c}\label{namespacecombo_1_1recur_ae92a592ecd0566ce7c78f30a01c06d5c}} 
+\index{combo::recur@{combo::recur}!ncr@{ncr}}
+\index{ncr@{ncr}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{ncr()}{ncr()}}
+{\footnotesize\ttfamily int combo\+::recur\+::ncr (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{r }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of items in the set. \\
+\hline
+{\em r} & The number of items to choose. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of combinations. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1recur_a2e2ff6ae0bbb74949a6159dacd841c63}\label{namespacecombo_1_1recur_a2e2ff6ae0bbb74949a6159dacd841c63}} 
+\index{combo::recur@{combo::recur}!vec\_factorial@{vec\_factorial}}
+\index{vec\_factorial@{vec\_factorial}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{vec\_factorial()}{vec\_factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vec combo\+::recur\+::vec\+\_\+factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The vector of integers to calculate the factorial for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacecombo_1_1recur_a05ffc92b1cbc2c994e0d81c9d8142ffc}\label{namespacecombo_1_1recur_a05ffc92b1cbc2c994e0d81c9d8142ffc}} 
+\index{combo::recur@{combo::recur}!vec\_factorial@{vec\_factorial}}
+\index{vec\_factorial@{vec\_factorial}!combo::recur@{combo::recur}}
+\doxysubsubsection{\texorpdfstring{vec\_factorial()}{vec\_factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec combo\+::recur\+::vec\+\_\+factorial (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The vector of integers to calculate the factorial for. \\
+\hline
+{\em a} & The modulo value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}

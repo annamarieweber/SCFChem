@@ -94,23 +94,29 @@ $(document).ready(function(){initNavTree('filereader_8h_source.html',''); initRe
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="cluster_8h.html">cluster.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">enum</span> CompareMethod</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>util</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  LTE,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  EQ</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="filereader_8h.html#a37c24b3d0bcc814dc9417dda7d8760f6">   31</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="filereader_8h.html#a37c24b3d0bcc814dc9417dda7d8760f6">validateAtomCount</a>(<span class="keywordtype">int</span> atom_count, <span class="keywordtype">int</span> expected_count, CompareMethod method);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="filereader_8h.html#a6e2ace7a3778d79cc5d665e939a128c2">   39</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="filereader_8h.html#a6e2ace7a3778d79cc5d665e939a128c2">getAtomNum</a>(<span class="keywordtype">string</span> atom_id);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="filereader_8h.html#afeb24120b3db25072ad684756ef0198b">   58</a></span><a class="code hl_class" href="class_cluster.html">Cluster</a> <a class="code hl_function" href="filereader_8h.html#afeb24120b3db25072ad684756ef0198b">readfile</a>(<span class="keywordtype">string</span> &amp;filename);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">namespace </span>io</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">enum</span> CompareMethod</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      LTE,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      EQ</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="filereader_8h.html#a7759b213ddab46d8c5f21da733e00260">   35</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="filereader_8h.html#a7759b213ddab46d8c5f21da733e00260">validateAtomCount</a>(<span class="keywordtype">int</span> atom_count, <span class="keywordtype">int</span> expected_count, CompareMethod method);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="filereader_8h.html#a40c3a5595f54efe52e72e99fe7ded12e">   43</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="filereader_8h.html#a40c3a5595f54efe52e72e99fe7ded12e">getAtomNum</a>(<span class="keywordtype">string</span> atom_id);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="filereader_8h.html#a1c0384b87d085464e850499d91d1e124">   62</a></span>    <a class="code hl_class" href="class_cluster.html">Cluster</a> <a class="code hl_function" href="filereader_8h.html#a1c0384b87d085464e850499d91d1e124">readfile</a>(<span class="keywordtype">string</span> &amp;filename);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_cluster_html"><div class="ttname"><a href="class_cluster.html">Cluster</a></div><div class="ttdef"><b>Definition:</b> cluster.h:23</div></div>
 <div class="ttc" id="acluster_8h_html"><div class="ttname"><a href="cluster_8h.html">cluster.h</a></div><div class="ttdoc">Definition of the cluster class and its methods.</div></div>
-<div class="ttc" id="afilereader_8h_html_a37c24b3d0bcc814dc9417dda7d8760f6"><div class="ttname"><a href="filereader_8h.html#a37c24b3d0bcc814dc9417dda7d8760f6">validateAtomCount</a></div><div class="ttdeci">void validateAtomCount(int atom_count, int expected_count, CompareMethod method)</div><div class="ttdoc">Validates that the number of atoms counted is &lt;= the expected number of atoms.</div></div>
-<div class="ttc" id="afilereader_8h_html_a6e2ace7a3778d79cc5d665e939a128c2"><div class="ttname"><a href="filereader_8h.html#a6e2ace7a3778d79cc5d665e939a128c2">getAtomNum</a></div><div class="ttdeci">int getAtomNum(string atom_id)</div><div class="ttdoc">Converts string identifier used for atoms into atomic number.</div></div>
-<div class="ttc" id="afilereader_8h_html_afeb24120b3db25072ad684756ef0198b"><div class="ttname"><a href="filereader_8h.html#afeb24120b3db25072ad684756ef0198b">readfile</a></div><div class="ttdeci">Cluster readfile(string &amp;filename)</div><div class="ttdoc">reads files with molecule data</div></div>
+<div class="ttc" id="afilereader_8h_html_a1c0384b87d085464e850499d91d1e124"><div class="ttname"><a href="filereader_8h.html#a1c0384b87d085464e850499d91d1e124">util::io::readfile</a></div><div class="ttdeci">Cluster readfile(string &amp;filename)</div><div class="ttdoc">reads files with molecule data</div></div>
+<div class="ttc" id="afilereader_8h_html_a40c3a5595f54efe52e72e99fe7ded12e"><div class="ttname"><a href="filereader_8h.html#a40c3a5595f54efe52e72e99fe7ded12e">util::io::getAtomNum</a></div><div class="ttdeci">int getAtomNum(string atom_id)</div><div class="ttdoc">Converts string identifier used for atoms into atomic number.</div></div>
+<div class="ttc" id="afilereader_8h_html_a7759b213ddab46d8c5f21da733e00260"><div class="ttname"><a href="filereader_8h.html#a7759b213ddab46d8c5f21da733e00260">util::io::validateAtomCount</a></div><div class="ttdeci">void validateAtomCount(int atom_count, int expected_count, CompareMethod method)</div><div class="ttdoc">Validates that the number of atoms counted is &lt;= the expected number of atoms.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

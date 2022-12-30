@@ -1,0 +1,157 @@
+\hypertarget{combinatorics__recur_8h}{}\doxysection{include/combinatorics\+\_\+recur.h File Reference}
+\label{combinatorics__recur_8h}\index{include/combinatorics\_recur.h@{include/combinatorics\_recur.h}}
+
+
+This file contains an API to all recursive combinatorics functions.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$armadillo$>$}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacecombinatorics}{combinatorics}}
+\begin{DoxyCompactList}\small\item\em combinatorics functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{combinatorics__recur_8h_a65f684489175f3b47b6cab6db86c95a8}{combinatorics\+::recur\+::factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given integer. Uses a recursive implementation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{combinatorics__recur_8h_a4b1920b7d12081974b27c14506e41e11}{combinatorics\+::recur\+::factorial}} (int n, int a)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given integer where the output is the product of all integers from 1 to n where xa == na. Uses a recursive implementation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{combinatorics__recur_8h_a7ca8c694f1eb8d9a5bdff15908abf18b}{combinatorics\+::recur\+::ncr}} (int n, int r)
+\begin{DoxyCompactList}\small\item\em Calculates the number of combinations of r items from a set of n items. Uses a recursive implementation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{combinatorics__recur_8h_a58a718465b678d4fb13dc3b0743ee3f5}{combinatorics\+::recur\+::calc\+\_\+binomial}} (int m, int n)
+\begin{DoxyCompactList}\small\item\em Calculates the binomial coefficient for the given values of m and n. Uses a recursive implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{combinatorics__recur_8h_ae924cdb9b313dba279a6813f1ebcdbb5}{combinatorics\+::recur\+::vec\+\_\+factorial}} (int n, int a)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given vector of integers. Uses a recursive implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{combinatorics__recur_8h_a1a0e19e92caa58dc3367c27f1b0cd4f8}{combinatorics\+::recur\+::vec\+\_\+factorial}} (int n)
+\begin{DoxyCompactList}\small\item\em Calculates the factorial of a given vector of integers. Uses a recursive implementation. \end{DoxyCompactList}\item 
+vec \mbox{\hyperlink{combinatorics__recur_8h_aa2ccca352a0d2ba097d19457247db0e9}{combinatorics\+::recur\+::calc\+\_\+binomial}} (vec m, vec n)
+\begin{DoxyCompactList}\small\item\em Calculates the binomial coefficient for the given vectors of m and n. Uses a recursive implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Anna Weber (\href{mailto:anna@scf.com}{\texttt{ anna@scf.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/12-\/22
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{combinatorics__recur_8h_a58a718465b678d4fb13dc3b0743ee3f5}\label{combinatorics__recur_8h_a58a718465b678d4fb13dc3b0743ee3f5}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!calc\_binomial@{calc\_binomial}}
+\index{calc\_binomial@{calc\_binomial}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{calc\_binomial()}{calc\_binomial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double combinatorics\+::recur\+::calc\+\_\+binomial (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The first value. \\
+\hline
+{\em n} & The second value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combinatorics__recur_8h_aa2ccca352a0d2ba097d19457247db0e9}\label{combinatorics__recur_8h_aa2ccca352a0d2ba097d19457247db0e9}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!calc\_binomial@{calc\_binomial}}
+\index{calc\_binomial@{calc\_binomial}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{calc\_binomial()}{calc\_binomial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec combinatorics\+::recur\+::calc\+\_\+binomial (\begin{DoxyParamCaption}\item[{vec}]{m,  }\item[{vec}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The first vector. \\
+\hline
+{\em n} & The second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The binomial coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combinatorics__recur_8h_a65f684489175f3b47b6cab6db86c95a8}\label{combinatorics__recur_8h_a65f684489175f3b47b6cab6db86c95a8}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!factorial@{factorial}}
+\index{factorial@{factorial}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int combinatorics\+::recur\+::factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to calculate the factorial for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combinatorics__recur_8h_a4b1920b7d12081974b27c14506e41e11}\label{combinatorics__recur_8h_a4b1920b7d12081974b27c14506e41e11}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!factorial@{factorial}}
+\index{factorial@{factorial}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int combinatorics\+::recur\+::factorial (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to calculate the factorial for. \\
+\hline
+{\em a} & The modulo value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combinatorics__recur_8h_a7ca8c694f1eb8d9a5bdff15908abf18b}\label{combinatorics__recur_8h_a7ca8c694f1eb8d9a5bdff15908abf18b}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!ncr@{ncr}}
+\index{ncr@{ncr}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{ncr()}{ncr()}}
+{\footnotesize\ttfamily int combinatorics\+::recur\+::ncr (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{r }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number of items in the set. \\
+\hline
+{\em r} & The number of items to choose. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of combinations. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combinatorics__recur_8h_a1a0e19e92caa58dc3367c27f1b0cd4f8}\label{combinatorics__recur_8h_a1a0e19e92caa58dc3367c27f1b0cd4f8}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!vec\_factorial@{vec\_factorial}}
+\index{vec\_factorial@{vec\_factorial}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{vec\_factorial()}{vec\_factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vec combinatorics\+::recur\+::vec\+\_\+factorial (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The vector of integers to calculate the factorial for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{combinatorics__recur_8h_ae924cdb9b313dba279a6813f1ebcdbb5}\label{combinatorics__recur_8h_ae924cdb9b313dba279a6813f1ebcdbb5}} 
+\index{combinatorics\_recur.h@{combinatorics\_recur.h}!vec\_factorial@{vec\_factorial}}
+\index{vec\_factorial@{vec\_factorial}!combinatorics\_recur.h@{combinatorics\_recur.h}}
+\doxysubsubsection{\texorpdfstring{vec\_factorial()}{vec\_factorial()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vec combinatorics\+::recur\+::vec\+\_\+factorial (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The vector of integers to calculate the factorial for. \\
+\hline
+{\em a} & The modulo value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The factorial of n. 
+\end{DoxyReturn}

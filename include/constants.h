@@ -25,12 +25,6 @@ using std::vector;
 
 namespace constants
 {
-    const map<string, int> ATOM_NUM = {
-        {"H", 1},
-        {"C", 6},
-        {"N", 7},
-        {"O", 8},
-    };
 
     const vector<float> ATOMIC_BONDING_PARAMETERS = {
         9.0,  // Hydrogen

@@ -4,10 +4,10 @@
 # This makefile creates the main executable and runs it
 
 # GNU C++ Compiler
-CXX         = g++      
+CXX         = g++-12
 
-# compiler flags, -O3 optimized version -c create a library object
-CXXFLAGS    = -std=c++14 -o
+# compiler flags,
+CXXFLAGS    = $(LOCAL_FLAGS) $(PROFILE_PATHS) -std=c++17 -o
 
 OPTIM       = -O3
 
@@ -34,6 +34,9 @@ SRC_DIR = ../../src
 # The directory for molecule input files
 MOL_FILE_DIR = ../../molecule_files
 
+# The directory where profileing data is stored
+PROFILE_DIR = ../../profile_results
+
 # The main src directory
 MAIN_DIR = $(SRC_DIR)/main
 
@@ -53,7 +56,7 @@ FUNC_DIR = $(SRC_DIR)/functions
 MOL_DIR = $(SRC_DIR)/molecules
 
 # The util header files
-UTIL_HEADERS = $(INC_DIR)/filereader.h $(INC_DIR)/combinatorics.h
+UTIL_HEADERS = $(INC_DIR)/filereader.h $(INC_DIR)/combinatorics.h $(INC_DIR)/timedfunctional.h
 
 # The algorithm header files
 ALGO_HEADERS = $(INC_DIR)/algoutils.h $(INC_DIR)/cndo2.h $(INC_DIR)/scf.h
@@ -71,14 +74,14 @@ MOL_HEADERS = $(INC_DIR)/cluster.h $(INC_DIR)/molutils.h
 CONST_HEADERS = $(INC_DIR)/constants.h
 
 # All of the header files
-INC_HEADERS = $(UTIL_HEADERS) $(ALGO_HEADERS) $(EXCEPT_HEADERS) $(FUNC_HEADERS) $(MOL_HEADERS) $(CONST_HEADERS)
+INC_HEADERS = $(ALGO_HEADERS) $(EXCEPT_HEADERS) $(FUNC_HEADERS) $(MOL_HEADERS) $(CONST_HEADERS) $(UTIL_HEADERS) 
 
 # The main objects
 MAIN_OBJ = $(SRC_DIR)/main
 
 # The util objects
-UTIL_OBJ = $(LIB_DIR)/filereader.o $(LIB_DIR)/combinatorics.o
-DEBUG_UTIL_OBJ = $(LIB_DIR)/debug_filereader.o $(LIB_DIR)/debug_combinatorics.o
+UTIL_OBJ = $(LIB_DIR)/filereader.o $(LIB_DIR)/combinatorics.o 
+DEBUG_UTIL_OBJ = $(LIB_DIR)/debug_filereader.o $(LIB_DIR)/debug_combinatorics.o 
 
 # The algorithm objects
 ALGO_OBJ = $(LIB_DIR)/algoutils.o $(LIB_DIR)/cndo2.o $(LIB_DIR)/scf.o 
@@ -100,26 +103,29 @@ DEBUG_MOL_OBJ = $(LIB_DIR)/debug_cluster.o $(LIB_DIR)/debug_molutils.o
 INC_OBJS = $(INC_DIR) $(UTIL_OBJ) $(EXCEPT_OBJ) $(FUNC_OBJ) $(MOL_OBJ) $(ALGO_OBJ)
 
 #the list of debug opjects to include
-DEBUG_OBJS = $(INC_DIR) $(DEBUG_UTIL_OBJ) $(DEBUG_ALGO_OBJ) $(DEBUG_EXCEPT_OBJ) $(DEBUG_FUNC_OBJ) $(DEBUG_MOL_OBJ)
+DEBUG_OBJS = $(INC_DIR) $(DEBUG_UTIL_OBJ) $(DEBUG_EXCEPT_OBJ) $(DEBUG_FUNC_OBJ) $(DEBUG_MOL_OBJ) $(DEBUG_ALGO_OBJ)
 
 # The next line contains the list of utility objects created by this Makefile.
 EXECUTABLES = main_program
 
 main_program: $(INC_HEADERS)  
-	$(CXX) $(CXXFLAGS) main_program $(OPTIM) main.cxx -I$(INC_OBJS) $(ARMAFLAGS)
+	$(CXX) $(CXXFLAGS) main_program $(OPTIM) main.cxx -I$(INC_OBJS) $(ARMAFLAGS) $(PROFILE)
 	mv main_program $(BIN_DIR)
 
 all: $(EXECUTABLES)
 
 debug: $(INC_HEADERS) 
-	$(CXX) $(DEBUG_FLAG) $(CXXFLAGS) main_program main.cxx -I$(DEBUG_OBJS) $(ARMAFLAGS)
+	$(CXX) $(DEBUG_FLAG) $(CXXFLAGS) main_program main.cxx -I$(DEBUG_OBJS) $(ARMAFLAGS) $(PROFILE)
 	rm -rf $(BIN_DIR)/*
 	mv main_program* $(BIN_DIR)
-	
+
 run:
 	make all
 	$(BIN_DIR)/main_program $(MOL_FILE_DIR)/$(mol).txt | tee $(OUTPUT_DIR)/$(mol).out
 
+runprofile:
+	make debug
+	$(BIN_DIR)/main_program $(MOL_FILE_DIR)/$(mol).txt | tee $(OUTPUT_DIR)/$(mol).out
 
 cleanall:
 	cd $(BIN_DIR); rm $(EXECUTABLES)

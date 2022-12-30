@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('exceptionconstants_8h.html',''); initR
 
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">exceptionconstants.h File Reference</div></div>
 </div><!--header-->
@@ -96,44 +95,24 @@ $(document).ready(function(){initNavTree('exceptionconstants_8h.html',''); initR
 </div>
 <p><a href="exceptionconstants_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:acddad482552b86f3483673bb2c94f91b"><td class="memItemLeft" align="right" valign="top"><a id="acddad482552b86f3483673bb2c94f91b" name="acddad482552b86f3483673bb2c94f91b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Error_Type</b> { <b>INVALID_ATOM_IDENTIFIER</b>
-, <b>ATOM_COUNT_MISMATCH</b>
-, <b>INVALID_ATOM_POSITION</b>
- }</td></tr>
-<tr class="separator:acddad482552b86f3483673bb2c94f91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac3526ff0518166fd541c471e54bc00f0"><td class="memItemLeft" align="right" valign="top">const map&lt; Error_Type, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exceptionconstants_8h.html#ac3526ff0518166fd541c471e54bc00f0">exception_constants::ERROR_MESSAGE</a></td></tr>
-<tr class="separator:ac3526ff0518166fd541c471e54bc00f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2902924e845d98bdbc78f0c6cf695013"><td class="memItemLeft" align="right" valign="top"><a id="a2902924e845d98bdbc78f0c6cf695013" name="a2902924e845d98bdbc78f0c6cf695013"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>constants::exceptions::INVALID_ATOM_IDENTIFIER</b> = &quot;InvalidAtomIdentifier: One or more atom identifier is not a valid atom id.&quot;</td></tr>
+<tr class="separator:a2902924e845d98bdbc78f0c6cf695013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a375f13111d6c321ce30480df942d2"><td class="memItemLeft" align="right" valign="top"><a id="a55a375f13111d6c321ce30480df942d2" name="a55a375f13111d6c321ce30480df942d2"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>constants::exceptions::ATOM_COUNT_MISMATCH</b> = &quot;AtomCountMismatch: Atom Count provided in input file must match number of atoms listed&quot;</td></tr>
+<tr class="separator:a55a375f13111d6c321ce30480df942d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da355643780c1a0eb9099f69378e5a6"><td class="memItemLeft" align="right" valign="top"><a id="a5da355643780c1a0eb9099f69378e5a6" name="a5da355643780c1a0eb9099f69378e5a6"></a>
+const string&#160;</td><td class="memItemRight" valign="bottom"><b>constants::exceptions::INVALID_ATOM_POSITION</b> = &quot;InvalidAtomPosition: Distance between atoms must be &gt; 0. Check coordinates to ensure coordinates are valid.&quot;</td></tr>
+<tr class="separator:a5da355643780c1a0eb9099f69378e5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Anna Weber(<a href="#" onclick="location.href='mai'+'lto:'+'ann'+'@s'+'cfc'+'he'+'m.c'+'om'; return false;">ann@s<span style="display: none;">.nosp@m.</span>cfch<span style="display: none;">.nosp@m.</span>em.co<span style="display: none;">.nosp@m.</span>m</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-12-17</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
-</div><h2 class="groupheader">Variable Documentation</h2>
-<a id="ac3526ff0518166fd541c471e54bc00f0" name="ac3526ff0518166fd541c471e54bc00f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3526ff0518166fd541c471e54bc00f0">&#9670;&nbsp;</a></span>ERROR_MESSAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const map&lt;Error_Type, string&gt; exception_constants::ERROR_MESSAGE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">        {INVALID_ATOM_IDENTIFIER, <span class="stringliteral">&quot;InvalidAtomIdentifier: One or more atom identifier is not a valid atom id.&quot;</span>},</div>
-<div class="line">        {ATOM_COUNT_MISMATCH, <span class="stringliteral">&quot;AtomCountMismatch: Atom Count provided in input file must match number of atoms listed&quot;</span>},</div>
-<div class="line">        {INVALID_ATOM_POSITION, <span class="stringliteral">&quot;InvalidAtomPosition: Distance between atoms must be &gt; 0. Check coordinates to ensure coordinates are valid.&quot;</span>}}</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

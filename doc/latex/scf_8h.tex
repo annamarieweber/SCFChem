@@ -7,6 +7,7 @@ definition of SCF algorithm methods
 
 {\ttfamily \#include $<$armadillo$>$}\newline
 {\ttfamily \#include \char`\"{}cluster.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timedfunctional.\+h\char`\"{}}\newline
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,6 +18,8 @@ namespace \mbox{\hyperlink{namespacealgo_1_1scf}{algo\+::scf}}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{namespacealgo_1_1scf_ab90a00241adbf72b2badcaccd30c27af}{algo\+::scf\+::run\+\_\+eig\+\_\+sym}} (vec \&e\+\_\+a, mat \&c\+\_\+a, mat \&f\+\_\+a, vec \&e\+\_\+b, mat \&c\+\_\+b, mat \&f\+\_\+b)
+\begin{DoxyCompactList}\small\item\em calls eigsym and updates values for alpha and beta \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}{algo\+::scf\+::x\+\_\+component}} (mat p\+\_\+a, mat p\+\_\+b, mat bonding\+\_\+parameters)
 \begin{DoxyCompactList}\small\item\em calculate the x component of the gradient calculation \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}{algo\+::scf\+::calc\+SCFEnergy}} (float threshold, \mbox{\hyperlink{class_cluster}{Cluster}} cluster)

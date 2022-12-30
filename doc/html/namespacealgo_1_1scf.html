@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('namespacealgo_1_1scf.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ab90a00241adbf72b2badcaccd30c27af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacealgo_1_1scf.html#ab90a00241adbf72b2badcaccd30c27af">run_eig_sym</a> (vec &amp;e_a, mat &amp;c_a, mat &amp;f_a, vec &amp;e_b, mat &amp;c_b, mat &amp;f_b)</td></tr>
+<tr class="memdesc:ab90a00241adbf72b2badcaccd30c27af"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls eigsym and updates values for alpha and beta  <a href="namespacealgo_1_1scf.html#ab90a00241adbf72b2badcaccd30c27af">More...</a><br /></td></tr>
+<tr class="separator:ab90a00241adbf72b2badcaccd30c27af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e8ab2d7ac2ba2f5c2af95175ba8413f"><td class="memItemLeft" align="right" valign="top">mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">x_component</a> (mat p_a, mat p_b, mat bonding_parameters)</td></tr>
 <tr class="memdesc:a3e8ab2d7ac2ba2f5c2af95175ba8413f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the x component of the gradient calculation  <a href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">More...</a><br /></td></tr>
 <tr class="separator:a3e8ab2d7ac2ba2f5c2af95175ba8413f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +135,70 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">threshold</td><td>(float): the threshold to run the algorithm to </td></tr>
+    <tr><td class="paramname">cluster</td><td>(<a class="el" href="class_cluster.html">Cluster</a>): the cluster to run the scf algorithm on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab90a00241adbf72b2badcaccd30c27af" name="ab90a00241adbf72b2badcaccd30c27af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90a00241adbf72b2badcaccd30c27af">&#9670;&nbsp;</a></span>run_eig_sym()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int algo::scf::run_eig_sym </td>
+          <td>(</td>
+          <td class="paramtype">vec &amp;&#160;</td>
+          <td class="paramname"><em>e_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat &amp;&#160;</td>
+          <td class="paramname"><em>c_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat &amp;&#160;</td>
+          <td class="paramname"><em>f_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vec &amp;&#160;</td>
+          <td class="paramname"><em>e_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat &amp;&#160;</td>
+          <td class="paramname"><em>c_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mat &amp;&#160;</td>
+          <td class="paramname"><em>f_b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e_a</td><td></td></tr>
+    <tr><td class="paramname">c_a</td><td></td></tr>
+    <tr><td class="paramname">f_a</td><td></td></tr>
+    <tr><td class="paramname">e_b</td><td></td></tr>
+    <tr><td class="paramname">c_b</td><td></td></tr>
+    <tr><td class="paramname">f_b</td><td></td></tr>
   </table>
   </dd>
 </dl>

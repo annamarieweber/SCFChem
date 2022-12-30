@@ -11,7 +11,7 @@ Definitions for file reading functions for SCFChem.
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{filereader_8h_a6fb08838494fe9f0c13e04d1bfc191fb}\label{filereader_8h_a6fb08838494fe9f0c13e04d1bfc191fb}} 
+\mbox{\Hypertarget{filereader_8h_a0a9a956e3db84b14f386361a00eb8be2}\label{filereader_8h_a0a9a956e3db84b14f386361a00eb8be2}} 
 enum {\bfseries Compare\+Method} \{ {\bfseries LTE}
 , {\bfseries EQ}
  \}
@@ -19,11 +19,11 @@ enum {\bfseries Compare\+Method} \{ {\bfseries LTE}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{filereader_8h_a37c24b3d0bcc814dc9417dda7d8760f6}{validate\+Atom\+Count}} (int atom\+\_\+count, int expected\+\_\+count, Compare\+Method method)
+void \mbox{\hyperlink{filereader_8h_a7759b213ddab46d8c5f21da733e00260}{util\+::io\+::validate\+Atom\+Count}} (int atom\+\_\+count, int expected\+\_\+count, Compare\+Method method)
 \begin{DoxyCompactList}\small\item\em Validates that the number of atoms counted is \texorpdfstring{$<$}{<}= the expected number of atoms. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{filereader_8h_a6e2ace7a3778d79cc5d665e939a128c2}{get\+Atom\+Num}} (string atom\+\_\+id)
+int \mbox{\hyperlink{filereader_8h_a40c3a5595f54efe52e72e99fe7ded12e}{util\+::io\+::get\+Atom\+Num}} (string atom\+\_\+id)
 \begin{DoxyCompactList}\small\item\em Converts string identifier used for atoms into atomic number. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_cluster}{Cluster}} \mbox{\hyperlink{filereader_8h_afeb24120b3db25072ad684756ef0198b}{readfile}} (string \&filename)
+\mbox{\hyperlink{class_cluster}{Cluster}} \mbox{\hyperlink{filereader_8h_a1c0384b87d085464e850499d91d1e124}{util\+::io\+::readfile}} (string \&filename)
 \begin{DoxyCompactList}\small\item\em reads files with molecule data \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -43,11 +43,11 @@ Copyright (c) 2022
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{filereader_8h_a6e2ace7a3778d79cc5d665e939a128c2}\label{filereader_8h_a6e2ace7a3778d79cc5d665e939a128c2}} 
+\mbox{\Hypertarget{filereader_8h_a40c3a5595f54efe52e72e99fe7ded12e}\label{filereader_8h_a40c3a5595f54efe52e72e99fe7ded12e}} 
 \index{filereader.h@{filereader.h}!getAtomNum@{getAtomNum}}
 \index{getAtomNum@{getAtomNum}!filereader.h@{filereader.h}}
 \doxysubsubsection{\texorpdfstring{getAtomNum()}{getAtomNum()}}
-{\footnotesize\ttfamily int get\+Atom\+Num (\begin{DoxyParamCaption}\item[{string}]{atom\+\_\+id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int util\+::io\+::get\+Atom\+Num (\begin{DoxyParamCaption}\item[{string}]{atom\+\_\+id }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -57,11 +57,11 @@ Copyright (c) 2022
 \begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
-\mbox{\Hypertarget{filereader_8h_afeb24120b3db25072ad684756ef0198b}\label{filereader_8h_afeb24120b3db25072ad684756ef0198b}} 
+\mbox{\Hypertarget{filereader_8h_a1c0384b87d085464e850499d91d1e124}\label{filereader_8h_a1c0384b87d085464e850499d91d1e124}} 
 \index{filereader.h@{filereader.h}!readfile@{readfile}}
 \index{readfile@{readfile}!filereader.h@{filereader.h}}
 \doxysubsubsection{\texorpdfstring{readfile()}{readfile()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_cluster}{Cluster}} readfile (\begin{DoxyParamCaption}\item[{string \&}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cluster}{Cluster}} util\+::io\+::readfile (\begin{DoxyParamCaption}\item[{string \&}]{filename }\end{DoxyParamCaption})}
 
 reads molecule files where the first line is the number of molecules and the remaining lines follow the format below\+: atomic\+\_\+number x\+\_\+coord y\+\_\+coord z\+\_\+coord
 
@@ -81,11 +81,11 @@ Anna Weber
 \begin{DoxyVersion}{Version}
 0.\+0.\+1 
 \end{DoxyVersion}
-\mbox{\Hypertarget{filereader_8h_a37c24b3d0bcc814dc9417dda7d8760f6}\label{filereader_8h_a37c24b3d0bcc814dc9417dda7d8760f6}} 
+\mbox{\Hypertarget{filereader_8h_a7759b213ddab46d8c5f21da733e00260}\label{filereader_8h_a7759b213ddab46d8c5f21da733e00260}} 
 \index{filereader.h@{filereader.h}!validateAtomCount@{validateAtomCount}}
 \index{validateAtomCount@{validateAtomCount}!filereader.h@{filereader.h}}
 \doxysubsubsection{\texorpdfstring{validateAtomCount()}{validateAtomCount()}}
-{\footnotesize\ttfamily void validate\+Atom\+Count (\begin{DoxyParamCaption}\item[{int}]{atom\+\_\+count,  }\item[{int}]{expected\+\_\+count,  }\item[{Compare\+Method}]{method }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void util\+::io\+::validate\+Atom\+Count (\begin{DoxyParamCaption}\item[{int}]{atom\+\_\+count,  }\item[{int}]{expected\+\_\+count,  }\item[{Compare\+Method}]{method }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}

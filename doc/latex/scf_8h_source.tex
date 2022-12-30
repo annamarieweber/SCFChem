@@ -7,17 +7,20 @@
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#define SCF}}
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include <armadillo>}}
 \DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cluster_8h}{cluster.h}}"{}}}
-\DoxyCodeLine{16 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacealgo}{algo}}}
-\DoxyCodeLine{17 \{}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{19     \textcolor{keyword}{using namespace }arma;}
-\DoxyCodeLine{24     \textcolor{keyword}{namespace }scf}
-\DoxyCodeLine{25     \{}
-\DoxyCodeLine{34         mat \mbox{\hyperlink{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}{x\_component}}(mat p\_a, mat p\_b, mat bonding\_parameters);}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}{calcSCFEnergy}}(\textcolor{keywordtype}{float} threshold, \mbox{\hyperlink{class_cluster}{Cluster}} cluster);}
-\DoxyCodeLine{43     \}}
-\DoxyCodeLine{44 \}}
-\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}timedfunctional.h"{}}}
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacealgo}{algo}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{using namespace }arma;}
+\DoxyCodeLine{25     \textcolor{keyword}{namespace }scf}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{37         \textcolor{keywordtype}{int} \mbox{\hyperlink{namespacealgo_1_1scf_ab90a00241adbf72b2badcaccd30c27af}{run\_eig\_sym}}(vec \&e\_a, mat \&c\_a, mat \&f\_a, vec \&e\_b, mat \&c\_b, mat \&f\_b);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{47         mat \mbox{\hyperlink{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}{x\_component}}(mat p\_a, mat p\_b, mat bonding\_parameters);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} \mbox{\hyperlink{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}{calcSCFEnergy}}(\textcolor{keywordtype}{float} threshold, \mbox{\hyperlink{class_cluster}{Cluster}} cluster);}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 \}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

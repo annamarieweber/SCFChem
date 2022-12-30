@@ -9,17 +9,23 @@
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cstdlib>}}
 \DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cluster_8h}{cluster.h}}"{}}}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{keyword}{enum} CompareMethod}
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }util}
 \DoxyCodeLine{18 \{}
-\DoxyCodeLine{19   LTE,}
-\DoxyCodeLine{20   EQ}
-\DoxyCodeLine{21 \};}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{31 \textcolor{keywordtype}{void} \mbox{\hyperlink{filereader_8h_a37c24b3d0bcc814dc9417dda7d8760f6}{validateAtomCount}}(\textcolor{keywordtype}{int} atom\_count, \textcolor{keywordtype}{int} expected\_count, CompareMethod method);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{39 \textcolor{keywordtype}{int} \mbox{\hyperlink{filereader_8h_a6e2ace7a3778d79cc5d665e939a128c2}{getAtomNum}}(\textcolor{keywordtype}{string} atom\_id);}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{58 \mbox{\hyperlink{class_cluster}{Cluster}} \mbox{\hyperlink{filereader_8h_afeb24120b3db25072ad684756ef0198b}{readfile}}(\textcolor{keywordtype}{string} \&filename);}
-\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19   \textcolor{keyword}{namespace }io}
+\DoxyCodeLine{20   \{}
+\DoxyCodeLine{21     \textcolor{keyword}{enum} CompareMethod}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23       LTE,}
+\DoxyCodeLine{24       EQ}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{filereader_8h_a7759b213ddab46d8c5f21da733e00260}{validateAtomCount}}(\textcolor{keywordtype}{int} atom\_count, \textcolor{keywordtype}{int} expected\_count, CompareMethod method);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{filereader_8h_a40c3a5595f54efe52e72e99fe7ded12e}{getAtomNum}}(\textcolor{keywordtype}{string} atom\_id);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{62     \mbox{\hyperlink{class_cluster}{Cluster}} \mbox{\hyperlink{filereader_8h_a1c0384b87d085464e850499d91d1e124}{readfile}}(\textcolor{keywordtype}{string} \&filename);}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

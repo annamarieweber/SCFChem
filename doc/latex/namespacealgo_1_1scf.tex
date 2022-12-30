@@ -8,6 +8,8 @@ namespace contains functions for running SCF algorithms
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{namespacealgo_1_1scf_ab90a00241adbf72b2badcaccd30c27af}{run\+\_\+eig\+\_\+sym}} (vec \&e\+\_\+a, mat \&c\+\_\+a, mat \&f\+\_\+a, vec \&e\+\_\+b, mat \&c\+\_\+b, mat \&f\+\_\+b)
+\begin{DoxyCompactList}\small\item\em calls eigsym and updates values for alpha and beta \end{DoxyCompactList}\item 
 mat \mbox{\hyperlink{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}{x\+\_\+component}} (mat p\+\_\+a, mat p\+\_\+b, mat bonding\+\_\+parameters)
 \begin{DoxyCompactList}\small\item\em calculate the x component of the gradient calculation \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespacealgo_1_1scf_a4b5c907757925b3ef40e4ee06fcde312}{calc\+SCFEnergy}} (float threshold, \mbox{\hyperlink{class_cluster}{Cluster}} cluster)
@@ -26,6 +28,29 @@ calculates the energy using the SCF algorithm running until the input threshold 
 
 \begin{DoxyParams}{Parameters}
 {\em threshold} & (float)\+: the threshold to run the algorithm to \\
+\hline
+{\em cluster} & (\mbox{\hyperlink{class_cluster}{Cluster}})\+: the cluster to run the scf algorithm on \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacealgo_1_1scf_ab90a00241adbf72b2badcaccd30c27af}\label{namespacealgo_1_1scf_ab90a00241adbf72b2badcaccd30c27af}} 
+\index{algo::scf@{algo::scf}!run\_eig\_sym@{run\_eig\_sym}}
+\index{run\_eig\_sym@{run\_eig\_sym}!algo::scf@{algo::scf}}
+\doxysubsubsection{\texorpdfstring{run\_eig\_sym()}{run\_eig\_sym()}}
+{\footnotesize\ttfamily int algo\+::scf\+::run\+\_\+eig\+\_\+sym (\begin{DoxyParamCaption}\item[{vec \&}]{e\+\_\+a,  }\item[{mat \&}]{c\+\_\+a,  }\item[{mat \&}]{f\+\_\+a,  }\item[{vec \&}]{e\+\_\+b,  }\item[{mat \&}]{c\+\_\+b,  }\item[{mat \&}]{f\+\_\+b }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em e\+\_\+a} & \\
+\hline
+{\em c\+\_\+a} & \\
+\hline
+{\em f\+\_\+a} & \\
+\hline
+{\em e\+\_\+b} & \\
+\hline
+{\em c\+\_\+b} & \\
+\hline
+{\em f\+\_\+b} & \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}\label{namespacealgo_1_1scf_a3e8ab2d7ac2ba2f5c2af95175ba8413f}} 

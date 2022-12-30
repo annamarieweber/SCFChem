@@ -92,22 +92,26 @@ $(document).ready(function(){initNavTree('scf_8h_source.html',''); initResizable
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define SCF</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;armadillo&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="cluster_8h.html">cluster.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacealgo.html">algo</a></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">using namespace </span>arma;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html">   24</a></span>    <span class="keyword">namespace </span>scf</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">   34</a></span>        mat <a class="code hl_function" href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">x_component</a>(mat p_a, mat p_b, mat bonding_parameters);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html#a4b5c907757925b3ef40e4ee06fcde312">   42</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespacealgo_1_1scf.html#a4b5c907757925b3ef40e4ee06fcde312">calcSCFEnergy</a>(<span class="keywordtype">float</span> threshold, <a class="code hl_class" href="class_cluster.html">Cluster</a> cluster);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;timedfunctional.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacealgo.html">algo</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">using namespace </span>arma;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html">   25</a></span>    <span class="keyword">namespace </span>scf</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html#ab90a00241adbf72b2badcaccd30c27af">   37</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="namespacealgo_1_1scf.html#ab90a00241adbf72b2badcaccd30c27af">run_eig_sym</a>(vec &amp;e_a, mat &amp;c_a, mat &amp;f_a, vec &amp;e_b, mat &amp;c_b, mat &amp;f_b);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">   47</a></span>        mat <a class="code hl_function" href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">x_component</a>(mat p_a, mat p_b, mat bonding_parameters);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespacealgo_1_1scf.html#a4b5c907757925b3ef40e4ee06fcde312">   56</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="namespacealgo_1_1scf.html#a4b5c907757925b3ef40e4ee06fcde312">calcSCFEnergy</a>(<span class="keywordtype">float</span> threshold, <a class="code hl_class" href="class_cluster.html">Cluster</a> cluster);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_cluster_html"><div class="ttname"><a href="class_cluster.html">Cluster</a></div><div class="ttdef"><b>Definition:</b> cluster.h:23</div></div>
 <div class="ttc" id="acluster_8h_html"><div class="ttname"><a href="cluster_8h.html">cluster.h</a></div><div class="ttdoc">Definition of the cluster class and its methods.</div></div>
 <div class="ttc" id="anamespacealgo_1_1scf_html_a3e8ab2d7ac2ba2f5c2af95175ba8413f"><div class="ttname"><a href="namespacealgo_1_1scf.html#a3e8ab2d7ac2ba2f5c2af95175ba8413f">algo::scf::x_component</a></div><div class="ttdeci">mat x_component(mat p_a, mat p_b, mat bonding_parameters)</div><div class="ttdoc">calculate the x component of the gradient calculation</div></div>
 <div class="ttc" id="anamespacealgo_1_1scf_html_a4b5c907757925b3ef40e4ee06fcde312"><div class="ttname"><a href="namespacealgo_1_1scf.html#a4b5c907757925b3ef40e4ee06fcde312">algo::scf::calcSCFEnergy</a></div><div class="ttdeci">void calcSCFEnergy(float threshold, Cluster cluster)</div><div class="ttdoc">calculates and prints the nuclear, electron, and total energy for the molecule</div></div>
+<div class="ttc" id="anamespacealgo_1_1scf_html_ab90a00241adbf72b2badcaccd30c27af"><div class="ttname"><a href="namespacealgo_1_1scf.html#ab90a00241adbf72b2badcaccd30c27af">algo::scf::run_eig_sym</a></div><div class="ttdeci">int run_eig_sym(vec &amp;e_a, mat &amp;c_a, mat &amp;f_a, vec &amp;e_b, mat &amp;c_b, mat &amp;f_b)</div><div class="ttdoc">calls eigsym and updates values for alpha and beta</div></div>
 <div class="ttc" id="anamespacealgo_html"><div class="ttname"><a href="namespacealgo.html">algo</a></div><div class="ttdoc">namespace for all algorithms used in SCF chem calculations</div><div class="ttdef"><b>Definition:</b> algoutils.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

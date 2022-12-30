@@ -5,10 +5,10 @@
 # after creation the objects are relocated to the ../lib directory
 
 # GNU C++ Compiler
-CXX         = g++      
+CXX         = g++-12
 
 # compiler flags -g debug, -O3 optimized version -c create a library object
-CXXFLAGS    = -std=c++14 -c  
+CXXFLAGS    = $(LOCAL_FLAGS) -std=c++17 -c  
 
 OPTIM       = -O3
 

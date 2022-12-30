@@ -1,22 +1,106 @@
 \hypertarget{class_shell_overlap_integral}{}\doxysection{Shell\+Overlap\+Integral Class Reference}
 \label{class_shell_overlap_integral}\index{ShellOverlapIntegral@{ShellOverlapIntegral}}
+
+
+A class for calculating electron shell overlap integrals.  
+
+
+
+
+{\ttfamily \#include $<$shelloverlapintegral.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_shell_overlap_integral_a1facc7a176dcafbf0f90fb9ae6e9a9f2}\label{class_shell_overlap_integral_a1facc7a176dcafbf0f90fb9ae6e9a9f2}} 
-{\bfseries Shell\+Overlap\+Integral} (\mbox{\hyperlink{class_shell}{Shell}} s\+\_\+a, \mbox{\hyperlink{class_shell}{Shell}} s\+\_\+b)
-\item 
+\mbox{\hyperlink{class_shell_overlap_integral_a052dbc9337c1ad3c91cf07b6edaa602b}{Shell\+Overlap\+Integral}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shell_overlap_integral_a1facc7a176dcafbf0f90fb9ae6e9a9f2}{Shell\+Overlap\+Integral}} (\mbox{\hyperlink{class_shell}{Shell}} s\+\_\+a, \mbox{\hyperlink{class_shell}{Shell}} s\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} class. \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{class_shell_overlap_integral_ac540086b4b20ec84fe9cfdee2aee5076}{operator()}} ()
+\begin{DoxyCompactList}\small\item\em Overloaded function call operator to retrieve the overlap integral matrix. \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{class_shell_overlap_integral_a6cfdba7256fe839cb67c9a70a8e1e201}{sa\+Derivative\+Integral}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the derivative integral matrix with respect to the first \mbox{\hyperlink{class_shell}{Shell}} object. \end{DoxyCompactList}\item 
+mat \mbox{\hyperlink{class_shell_overlap_integral_a42fa8a298bb03de526986980a8db5999}{sb\+Derivative\+Integral}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the derivative integral matrix with respect to the second \mbox{\hyperlink{class_shell}{Shell}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} class provides a way to calculate electron shell overlap integrals between two shells, represented by the \mbox{\hyperlink{class_shell}{Shell}} class.
+
+\begin{DoxyNote}{Note}
+The \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} class depends on the \mbox{\hyperlink{class_shell}{Shell}} class, which should be included in the \char`\"{}shell.\+h\char`\"{} header file.
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Anna Weber (\href{mailto:anna@scfchem.com}{\texttt{ anna@scfchem.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/12-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_shell_overlap_integral_a052dbc9337c1ad3c91cf07b6edaa602b}\label{class_shell_overlap_integral_a052dbc9337c1ad3c91cf07b6edaa602b}} 
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\doxysubsubsection{\texorpdfstring{ShellOverlapIntegral()}{ShellOverlapIntegral()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Shell\+Overlap\+Integral\+::\+Shell\+Overlap\+Integral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor for the \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} class. This constructs an empty \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} object with default-\/initialized \mbox{\hyperlink{class_shell}{Shell}} objects. \mbox{\Hypertarget{class_shell_overlap_integral_a1facc7a176dcafbf0f90fb9ae6e9a9f2}\label{class_shell_overlap_integral_a1facc7a176dcafbf0f90fb9ae6e9a9f2}} 
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\doxysubsubsection{\texorpdfstring{ShellOverlapIntegral()}{ShellOverlapIntegral()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Shell\+Overlap\+Integral\+::\+Shell\+Overlap\+Integral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shell}{Shell}}}]{s\+\_\+a,  }\item[{\mbox{\hyperlink{class_shell}{Shell}}}]{s\+\_\+b }\end{DoxyParamCaption})}
+
+Constructor for the \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} class. This constructs a \mbox{\hyperlink{class_shell_overlap_integral}{Shell\+Overlap\+Integral}} object with the specified \mbox{\hyperlink{class_shell}{Shell}} objects.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s\+\_\+a} & The first \mbox{\hyperlink{class_shell}{Shell}} object \\
+\hline
+\mbox{\texttt{ in}}  & {\em s\+\_\+b} & The second \mbox{\hyperlink{class_shell}{Shell}} object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_shell_overlap_integral_ac540086b4b20ec84fe9cfdee2aee5076}\label{class_shell_overlap_integral_ac540086b4b20ec84fe9cfdee2aee5076}} 
-mat {\bfseries operator()} ()
-\item 
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!operator()@{operator()}}
+\index{operator()@{operator()}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily mat Shell\+Overlap\+Integral\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Overloaded function call operator to calculate the overlap integral matrix between the two \mbox{\hyperlink{class_shell}{Shell}} objects.
+
+\begin{DoxyReturn}{Returns}
+The overlap integral matrix 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_shell_overlap_integral_a6cfdba7256fe839cb67c9a70a8e1e201}\label{class_shell_overlap_integral_a6cfdba7256fe839cb67c9a70a8e1e201}} 
-mat {\bfseries sa\+Derivative\+Integral} ()
-\item 
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!saDerivativeIntegral@{saDerivativeIntegral}}
+\index{saDerivativeIntegral@{saDerivativeIntegral}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\doxysubsubsection{\texorpdfstring{saDerivativeIntegral()}{saDerivativeIntegral()}}
+{\footnotesize\ttfamily mat Shell\+Overlap\+Integral\+::sa\+Derivative\+Integral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculate the derivative integral matrix with respect to the first \mbox{\hyperlink{class_shell}{Shell}} object.
+
+\begin{DoxyReturn}{Returns}
+The derivative integral matrix 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_shell_overlap_integral_a42fa8a298bb03de526986980a8db5999}\label{class_shell_overlap_integral_a42fa8a298bb03de526986980a8db5999}} 
-mat {\bfseries sb\+Derivative\+Integral} ()
-\end{DoxyCompactItemize}
+\index{ShellOverlapIntegral@{ShellOverlapIntegral}!sbDerivativeIntegral@{sbDerivativeIntegral}}
+\index{sbDerivativeIntegral@{sbDerivativeIntegral}!ShellOverlapIntegral@{ShellOverlapIntegral}}
+\doxysubsubsection{\texorpdfstring{sbDerivativeIntegral()}{sbDerivativeIntegral()}}
+{\footnotesize\ttfamily mat Shell\+Overlap\+Integral\+::sb\+Derivative\+Integral (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Calculate the derivative integral matrix with respect to the second \mbox{\hyperlink{class_shell}{Shell}} object.
+
+\begin{DoxyReturn}{Returns}
+The derivative integral matrix 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{shelloverlapintegral_8h}{shelloverlapintegral.\+h}}\end{DoxyCompactItemize}
+include/shelloverlapintegral.\+h\end{DoxyCompactItemize}

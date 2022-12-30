@@ -1,0 +1,80 @@
+\hypertarget{classutil_1_1timing_1_1_timed_functional}{}\doxysection{util\+::timing\+::Timed\+Functional\texorpdfstring{$<$}{<} F, Args \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutil_1_1timing_1_1_timed_functional}\index{util::timing::TimedFunctional$<$ F, Args $>$@{util::timing::TimedFunctional$<$ F, Args $>$}}
+
+
+A class that wraps a function or function pointer and measures the elapsed time when the function is called.  
+
+
+
+
+{\ttfamily \#include $<$timedfunctional.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutil_1_1timing_1_1_timed_functional_a52d90d626cae496bb4453d34438c0113}\label{classutil_1_1timing_1_1_timed_functional_a52d90d626cae496bb4453d34438c0113}} 
+{\bfseries Timed\+Functional} (F \&\&val)
+\item 
+\mbox{\Hypertarget{classutil_1_1timing_1_1_timed_functional_aca94ad4e24e81fd58b4af9a0e45b17a1}\label{classutil_1_1timing_1_1_timed_functional_aca94ad4e24e81fd58b4af9a0e45b17a1}} 
+{\bfseries Timed\+Functional} (F \&\&val, string name)
+\item 
+std\+::invoke\+\_\+result$<$ F, Args... $>$\+::type \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_ac0ad052ffaafc503f79bb5592b737f69}{operator()}} (Args... args)
+\begin{DoxyCompactList}\small\item\em Calls the wrapped function or function pointer and measures the elapsed time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional_a99312d0e573baea767fa5f282a46829b}{print\+Timing}} (std\+::chrono\+::duration$<$ double $>$ elapsed)
+\begin{DoxyCompactList}\small\item\em Prints the elapsed time and the name of the wrapped function or function pointer to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classutil_1_1timing_1_1_timed_functional_a96f511c64c2aa05ebbc0833a1a66a144}\label{classutil_1_1timing_1_1_timed_functional_a96f511c64c2aa05ebbc0833a1a66a144}} 
+F {\bfseries fn}
+\begin{DoxyCompactList}\small\item\em The function or function pointer to be wrapped. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classutil_1_1timing_1_1_timed_functional_a6dfcd65f30c8b4f33c79d5115b6ce5a7}\label{classutil_1_1timing_1_1_timed_functional_a6dfcd65f30c8b4f33c79d5115b6ce5a7}} 
+string {\bfseries fn\+\_\+name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename F, typename... Args$>$\newline
+class util\+::timing\+::\+Timed\+Functional$<$ F, Args $>$}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em F} & the functional to time. \\
+\hline
+{\em Args} & The argument types of the function or function pointer. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1timing_1_1_timed_functional_ac0ad052ffaafc503f79bb5592b737f69}\label{classutil_1_1timing_1_1_timed_functional_ac0ad052ffaafc503f79bb5592b737f69}} 
+\index{util::timing::TimedFunctional$<$ F, Args $>$@{util::timing::TimedFunctional$<$ F, Args $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!util::timing::TimedFunctional$<$ F, Args $>$@{util::timing::TimedFunctional$<$ F, Args $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename F , typename... Args$>$ \\
+std\+::invoke\+\_\+result$<$ F, Args... $>$\+::type \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional}{util\+::timing\+::\+Timed\+Functional}}$<$ F, Args $>$\+::operator() (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments to be passed to the wrapped function or function pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value of the wrapped function or function pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classutil_1_1timing_1_1_timed_functional_a99312d0e573baea767fa5f282a46829b}\label{classutil_1_1timing_1_1_timed_functional_a99312d0e573baea767fa5f282a46829b}} 
+\index{util::timing::TimedFunctional$<$ F, Args $>$@{util::timing::TimedFunctional$<$ F, Args $>$}!printTiming@{printTiming}}
+\index{printTiming@{printTiming}!util::timing::TimedFunctional$<$ F, Args $>$@{util::timing::TimedFunctional$<$ F, Args $>$}}
+\doxysubsubsection{\texorpdfstring{printTiming()}{printTiming()}}
+{\footnotesize\ttfamily template$<$typename F , typename... Args$>$ \\
+void \mbox{\hyperlink{classutil_1_1timing_1_1_timed_functional}{util\+::timing\+::\+Timed\+Functional}}$<$ F, Args $>$\+::print\+Timing (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ double $>$}]{elapsed }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em elapsed} & The elapsed time to be printed. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/timedfunctional.\+h\end{DoxyCompactItemize}

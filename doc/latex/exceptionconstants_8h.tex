@@ -3,19 +3,17 @@
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$map$>$}\newline
-\doxysubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{exceptionconstants_8h_acddad482552b86f3483673bb2c94f91b}\label{exceptionconstants_8h_acddad482552b86f3483673bb2c94f91b}} 
-enum {\bfseries Error\+\_\+\+Type} \{ {\bfseries INVALID\+\_\+\+ATOM\+\_\+\+IDENTIFIER}
-, {\bfseries ATOM\+\_\+\+COUNT\+\_\+\+MISMATCH}
-, {\bfseries INVALID\+\_\+\+ATOM\+\_\+\+POSITION}
- \}
-\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const map$<$ Error\+\_\+\+Type, string $>$ \mbox{\hyperlink{exceptionconstants_8h_ac3526ff0518166fd541c471e54bc00f0}{exception\+\_\+constants\+::\+ERROR\+\_\+\+MESSAGE}}
+\mbox{\Hypertarget{exceptionconstants_8h_a2902924e845d98bdbc78f0c6cf695013}\label{exceptionconstants_8h_a2902924e845d98bdbc78f0c6cf695013}} 
+const string {\bfseries constants\+::exceptions\+::\+INVALID\+\_\+\+ATOM\+\_\+\+IDENTIFIER} = \char`\"{}Invalid\+Atom\+Identifier\+: One or more atom identifier is not a valid atom id.\char`\"{}
+\item 
+\mbox{\Hypertarget{exceptionconstants_8h_a55a375f13111d6c321ce30480df942d2}\label{exceptionconstants_8h_a55a375f13111d6c321ce30480df942d2}} 
+const string {\bfseries constants\+::exceptions\+::\+ATOM\+\_\+\+COUNT\+\_\+\+MISMATCH} = \char`\"{}Atom\+Count\+Mismatch\+: Atom Count provided in input file must match number of atoms listed\char`\"{}
+\item 
+\mbox{\Hypertarget{exceptionconstants_8h_a5da355643780c1a0eb9099f69378e5a6}\label{exceptionconstants_8h_a5da355643780c1a0eb9099f69378e5a6}} 
+const string {\bfseries constants\+::exceptions\+::\+INVALID\+\_\+\+ATOM\+\_\+\+POSITION} = \char`\"{}Invalid\+Atom\+Position\+: Distance between atoms must be $>$ 0. Check coordinates to ensure coordinates are valid.\char`\"{}
 \end{DoxyCompactItemize}
 
 
@@ -32,20 +30,3 @@ Anna Weber(\href{mailto:ann@scfchem.com}{\texttt{ ann@scfchem.\+com}})
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
 \end{DoxyCopyright}
-
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{exceptionconstants_8h_ac3526ff0518166fd541c471e54bc00f0}\label{exceptionconstants_8h_ac3526ff0518166fd541c471e54bc00f0}} 
-\index{exceptionconstants.h@{exceptionconstants.h}!ERROR\_MESSAGE@{ERROR\_MESSAGE}}
-\index{ERROR\_MESSAGE@{ERROR\_MESSAGE}!exceptionconstants.h@{exceptionconstants.h}}
-\doxysubsubsection{\texorpdfstring{ERROR\_MESSAGE}{ERROR\_MESSAGE}}
-{\footnotesize\ttfamily const map$<$Error\+\_\+\+Type, string$>$ exception\+\_\+constants\+::\+ERROR\+\_\+\+MESSAGE}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{= \{}
-\DoxyCodeLine{        \{INVALID\_ATOM\_IDENTIFIER, \textcolor{stringliteral}{"{}InvalidAtomIdentifier: One or more atom identifier is not a valid atom id."{}}\},}
-\DoxyCodeLine{        \{ATOM\_COUNT\_MISMATCH, \textcolor{stringliteral}{"{}AtomCountMismatch: Atom Count provided in input file must match number of atoms listed"{}}\},}
-\DoxyCodeLine{        \{INVALID\_ATOM\_POSITION, \textcolor{stringliteral}{"{}InvalidAtomPosition: Distance between atoms must be > 0. Check coordinates to ensure coordinates are valid."{}}\}\}}
-
-\end{DoxyCode}

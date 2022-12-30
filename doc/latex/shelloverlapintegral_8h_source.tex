@@ -1,46 +1,51 @@
 \hypertarget{shelloverlapintegral_8h_source}{}\doxysection{shelloverlapintegral.\+h}
 \label{shelloverlapintegral_8h_source}\index{include/shelloverlapintegral.h@{include/shelloverlapintegral.h}}
-\mbox{\hyperlink{shelloverlapintegral_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef SHELL\_OVERLAP\_INTEGRAL}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#define SHELL\_OVERLAP\_INTEGRAL}}
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shell_8h}{shell.h}}"{}}}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15 \textcolor{keyword}{using} arma::cube;}
-\DoxyCodeLine{16 \textcolor{keyword}{using} std::vector;}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}}
-\DoxyCodeLine{19 \{}
-\DoxyCodeLine{20 \textcolor{keyword}{private}:}
-\DoxyCodeLine{21     \mbox{\hyperlink{class_shell}{Shell}} \_s\_a;}
-\DoxyCodeLine{22     \mbox{\hyperlink{class_shell}{Shell}} \_s\_b;}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef SHELL\_OVERLAP\_INTEGRAL}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define SHELL\_OVERLAP\_INTEGRAL}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shell_8h}{shell.h}}"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{using} arma::cube;}
+\DoxyCodeLine{22 \textcolor{keyword}{using} std::vector;}
 \DoxyCodeLine{23 }
-\DoxyCodeLine{24     vec alphas\_product();}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     vec alphas\_sum();}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     vec dim\_dist\_sqr();}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30     vec exponential\_prefactor();}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     vec root\_term();}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_shell}{Shell}} \_s\_a;}
 \DoxyCodeLine{33 }
-\DoxyCodeLine{34     vec overlap\_summation(vec x\_p, \textcolor{keywordtype}{int} l\_pair\_a, \textcolor{keywordtype}{int} l\_pair\_b);}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     vec product\_center();}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38 \textcolor{keyword}{public}:}
-\DoxyCodeLine{39     \mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}();}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_shell}{Shell}} \_s\_b;}
 \DoxyCodeLine{40 }
-\DoxyCodeLine{41     \mbox{\hyperlink{class_shell_overlap_integral}{ShellOverlapIntegral}}(\mbox{\hyperlink{class_shell}{Shell}} s\_a, \mbox{\hyperlink{class_shell}{Shell}} s\_b);}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43     mat operator()();}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45     mat saDerivativeIntegral();}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     mat sbDerivativeIntegral();}
-\DoxyCodeLine{48 \};}
-\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46     mat \_overlap;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{55     vec alphas\_product();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{64     vec alphas\_sum();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{73     vec dim\_dist\_sqr();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{82     vec exponential\_prefactor();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{91     vec root\_term();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{104     vec overlap\_summation(vec x\_p, \textcolor{keywordtype}{int} lpair\_a, \textcolor{keywordtype}{int} l\_pair\_b);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{113     mat overlap();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{122     vec product\_center();}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keyword}{public}:}
+\DoxyCodeLine{131     \mbox{\hyperlink{class_shell_overlap_integral_a052dbc9337c1ad3c91cf07b6edaa602b}{ShellOverlapIntegral}}();}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{142     \mbox{\hyperlink{class_shell_overlap_integral_a1facc7a176dcafbf0f90fb9ae6e9a9f2}{ShellOverlapIntegral}}(\mbox{\hyperlink{class_shell}{Shell}} s\_a, \mbox{\hyperlink{class_shell}{Shell}} s\_b);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{152     mat \mbox{\hyperlink{class_shell_overlap_integral_ac540086b4b20ec84fe9cfdee2aee5076}{operator()}}();}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{161     mat \mbox{\hyperlink{class_shell_overlap_integral_a6cfdba7256fe839cb67c9a70a8e1e201}{saDerivativeIntegral}}();}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{170     mat \mbox{\hyperlink{class_shell_overlap_integral_a42fa8a298bb03de526986980a8db5999}{sbDerivativeIntegral}}();}
+\DoxyCodeLine{171 \};}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

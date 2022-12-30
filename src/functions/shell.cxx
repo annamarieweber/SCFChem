@@ -13,7 +13,7 @@ using namespace constants;
 
 mat Shell::angularMomentum(int l)
 {
-    mat amMatrix(ncr(l + 3 - 1, 3 - 1), 3);
+    mat amMatrix(combo::recur::ncr(l + 3 - 1, 3 - 1), 3);
     int idx = 0;
     for (int i = 0; i <= l; i++)
     {
